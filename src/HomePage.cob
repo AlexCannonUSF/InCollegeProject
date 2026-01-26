@@ -28,29 +28,25 @@ MAIN-LOGIC.
                 DISPLAY "Invalid choice. Please try again."
         END-EVALUATE
     END-PERFORM
-    STOP RUN.
+    GOBACK.
 
 DISPLAY-WELCOME.
-    DISPLAY "Welcome, " LNK-USER-NAME "!".
+    DISPLAY "Welcome, " FUNCTION TRIM(LNK-USER-NAME) "!".
     DISPLAY SPACE.
 
 DISPLAY-MENU.
-    DISPLAY "Search for a job".
-    DISPLAY "Find someone you know".
-    DISPLAY "Learn a new skill".
+    DISPLAY "1. Search for a job".
+    DISPLAY "2. Find someone you know".
+    DISPLAY "3. Learn a new skill".
     DISPLAY "Enter your choice:".
-    DISPLAY SPACE.
 
 JOB-SEARCH.
     DISPLAY "Job search/internship is under construction.".
-    DISPLAY SPACE.
 
 FIND-SOMEONE.
     DISPLAY "Find someone you know is under construction.".
-    DISPLAY SPACE.
 
 LEARN-SKILL.
     DISPLAY "Learn a new skill is under construction.".
-    DISPLAY SPACE.
 
 END PROGRAM HomePage.
