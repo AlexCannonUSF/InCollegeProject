@@ -27,6 +27,13 @@ Welcome, justin!
 3. Learn a new skill
 4. Logout
 Enter your choice:
+5
+Invalid choice. Please try again.
+1. Search for a job
+2. Find someone you know
+3. Learn a new skill
+4. Logout
+Enter your choice:
 1
 Job search/internship is under construction.
 1. Search for a job
