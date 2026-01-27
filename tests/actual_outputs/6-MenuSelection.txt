@@ -21,7 +21,6 @@ Enter password:
 Abcdef1!    
 You have successfully logged in
 Welcome, justin!
- 
 1. Search for a job
 2. Find someone you know
 3. Learn a new skill
