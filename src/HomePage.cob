@@ -17,6 +17,7 @@ MAIN-LOGIC.
     PERFORM UNTIL EXIT-FLAG = 'Y'
         PERFORM DISPLAY-MENU
         ACCEPT USER-CHOICE
+        DISPLAY USER-CHOICE
         EVALUATE USER-CHOICE
             WHEN 1
                 PERFORM JOB-SEARCH
@@ -24,33 +25,36 @@ MAIN-LOGIC.
                 PERFORM FIND-SOMEONE
             WHEN 3
                 PERFORM LEARN-SKILL
+                CALL 'SkillMenu' 
+            WHEN 4
+                PERFORM LOGOUT
             WHEN OTHER
                 DISPLAY "Invalid choice. Please try again."
         END-EVALUATE
     END-PERFORM
-    STOP RUN.
+    GOBACK.
 
 DISPLAY-WELCOME.
-    DISPLAY "Welcome, " LNK-USER-NAME "!".
-    DISPLAY SPACE.
+    DISPLAY "Welcome, " FUNCTION TRIM(LNK-USER-NAME) "!".
 
 DISPLAY-MENU.
-    DISPLAY "Search for a job".
-    DISPLAY "Find someone you know".
-    DISPLAY "Learn a new skill".
+    DISPLAY "1. Search for a job".
+    DISPLAY "2. Find someone you know".
+    DISPLAY "3. Learn a new skill".
+    DISPLAY "4. Logout".
     DISPLAY "Enter your choice:".
-    DISPLAY SPACE.
 
 JOB-SEARCH.
     DISPLAY "Job search/internship is under construction.".
-    DISPLAY SPACE.
 
 FIND-SOMEONE.
     DISPLAY "Find someone you know is under construction.".
-    DISPLAY SPACE.
 
 LEARN-SKILL.
     DISPLAY "Learn a new skill is under construction.".
-    DISPLAY SPACE.
+
+LOGOUT.
+    DISPLAY "Logging out...".
+    MOVE 'Y' TO EXIT-FLAG.
 
 END PROGRAM HomePage.

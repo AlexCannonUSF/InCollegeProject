@@ -5,32 +5,32 @@ Welcome to InCollege!
 Choose an option: 
 2
 Enter a username: 
-Felix                         
+Bobby                         
 Enter password: 
-L21pQ!mp412 
+Lma@#12421  
 Account created successfully!
 Welcome to InCollege!
 1) Log In
 2) Create Account
 3) Exit
 Choose an option: 
-2
-Enter a username: 
-Alex                          
+1
+Enter username: 
+Tyler                         
 Enter password: 
-Apple1412$! 
-Account created successfully!
+Lma@#12421  
+Incorrect username/password, please try again
 Welcome to InCollege!
 1) Log In
 2) Create Account
 3) Exit
 Choose an option: 
-2
-Enter a username: 
-Pablo                         
+1
+Enter username: 
+Bobby                         
 Enter password: 
-2421Ab@!$Cd 
-Account created successfully!
+Smith       
+Incorrect username/password, please try again
 Welcome to InCollege!
 1) Log In
 2) Create Account

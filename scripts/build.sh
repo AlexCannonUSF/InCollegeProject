@@ -6,6 +6,8 @@ cobc -x -free -o bin/InCollege \
   src/InCollege.cob \
   src/CreateAccount.cob \
   src/LogIn.cob \
-  src/DataStore.cob
+  src/DataStore.cob\
+  src/HomePage.cob \
+  src/SkillMenu.cob
 
 echo "Build complete: bin/InCollege"
