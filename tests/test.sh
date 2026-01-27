@@ -4,7 +4,9 @@ for input_file in tests/inputs/*.txt; do
         continue
     fi
 
-    > ./data/accounts.dat
+    if [$input_file != "tests/inputs/7-PersistenceTestPart1.txt"]; then
+        > ./data/accounts.dat
+    fi
     FILENAME=$(echo $input_file | cut -d '/' -f 3)
     
     ACTUAL_OUTPUT_FILE_NAME=("tests/actual_outputs/$FILENAME")

@@ -1,0 +1,58 @@
+Welcome to InCollege!
+1) Log In
+2) Create Account
+3) Exit
+Choose an option: 
+1
+Enter username: 
+Tyler                         
+Enter password: 
+LAMS        
+Incorrect username/password, please try again
+Welcome to InCollege!
+1) Log In
+2) Create Account
+3) Exit
+Choose an option: 
+3
+root@9efcd2cfc49e:/workspaces/InCollegeProject# ./bin/InCollege
+root@9efcd2cfc49e:/workspaces/InCollegeProject# ./bin/InCollege
+Welcome to InCollege!
+1) Log In
+2) Create Account
+3) Exit
+Choose an option: 
+2
+Enter a username: 
+Bobby                         
+Enter password: 
+Lma@#12421  
+Account created successfully!
+Welcome to InCollege!
+1) Log In
+2) Create Account
+3) Exit
+Choose an option: 
+1
+Enter username: 
+Tyler                         
+Enter password: 
+Lma@#12421  
+Incorrect username/password, please try again
+Welcome to InCollege!
+1) Log In
+2) Create Account
+3) Exit
+Choose an option: 
+1
+Enter username: 
+Bobby                         
+Enter password: 
+Smith       
+Incorrect username/password, please try again
+Welcome to InCollege!
+1) Log In
+2) Create Account
+3) Exit
+Choose an option: 
+3
