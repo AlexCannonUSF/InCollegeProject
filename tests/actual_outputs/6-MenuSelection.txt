@@ -51,7 +51,47 @@ Skill 4
 Skill 5
 Go Back
 Enter your choice:
+1
+This skill is under construction.
+Learn a New Skill:
+Skill 1
+Skill 2
+Skill 3
+Skill 4
+Skill 5
+Go Back
+Enter your choice:
+2
+This skill is under construction.
+Learn a New Skill:
+Skill 1
+Skill 2
+Skill 3
+Skill 4
+Skill 5
+Go Back
+Enter your choice:
+3
+This skill is under construction.
+Learn a New Skill:
+Skill 1
+Skill 2
+Skill 3
+Skill 4
+Skill 5
+Go Back
+Enter your choice:
 4
+This skill is under construction.
+Learn a New Skill:
+Skill 1
+Skill 2
+Skill 3
+Skill 4
+Skill 5
+Go Back
+Enter your choice:
+5
 This skill is under construction.
 Learn a New Skill:
 Skill 1
@@ -84,4 +124,4 @@ Welcome to InCollege!
 2) Create Account
 3) Exit
 Choose an option: 
- 
+3
