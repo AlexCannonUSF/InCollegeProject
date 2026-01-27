@@ -1,6 +1,6 @@
 #!/bin/bash
 for input_file in tests/inputs/*.txt; do
-    if [$input_file == "tests/test.sh"]; then
+    if [ $input_file == "tests/test.sh" ]; then
         continue
     fi
 
