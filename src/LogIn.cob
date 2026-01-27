@@ -30,6 +30,7 @@ LOGIN-FLOW.
     IF WS-CREDS-MATCHED = "Y"
         DISPLAY "You have successfully logged in"
         MOVE "Y" TO LK-LOGIN-SUCCESS
+        CALL "HomePage" USING WS-INPUT-USERNAME
     ELSE
         DISPLAY "Incorrect username/password, please try again"
         MOVE "N" TO LK-LOGIN-SUCCESS
