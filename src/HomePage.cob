@@ -24,6 +24,7 @@ MAIN-LOGIC.
                 PERFORM FIND-SOMEONE
             WHEN 3
                 PERFORM LEARN-SKILL
+                CALL 'SkillMenu' 
             WHEN OTHER
                 DISPLAY "Invalid choice. Please try again."
         END-EVALUATE
