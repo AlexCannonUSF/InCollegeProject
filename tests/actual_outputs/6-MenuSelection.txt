@@ -3,13 +3,24 @@ Welcome to InCollege!
 2) Create Account
 3) Exit
 Choose an option: 
+2
+Enter a username: 
+justin                        
+Enter password: 
+Abcdef1!    
+Account created successfully!
+Welcome to InCollege!
+1) Log In
+2) Create Account
+3) Exit
+Choose an option: 
 1
 Enter username: 
-alex                          
+justin                        
 Enter password: 
 Abcdef1!    
 You have successfully logged in
-Welcome, alex!
+Welcome, justin!
  
 1. Search for a job
 2. Find someone you know
