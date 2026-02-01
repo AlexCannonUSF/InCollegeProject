@@ -22,7 +22,7 @@ MAIN-LOGIC.
             WHEN 1
                 DISPLAY "Create/Edit is under construction."            
             WhEN 2
-                CALL "PersonalProfile" USING LNK-USER-NAME
+                CALL "PersonalProfile"
             WHEN 3
                 DISPLAY "Job search/internship is under construction.".
             WHEN 4
