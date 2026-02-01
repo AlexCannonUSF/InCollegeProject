@@ -30,7 +30,7 @@ MAIN-LOGIC.
             WHEN 5
                 CALL "SkillMenu"
             WHEN 6
-                PERFORM LOGOUT
+                MOVE 'Y' TO EXIT-FLAG
             WHEN OTHER
                 DISPLAY "Invalid choice. Please try again."
         END-EVALUATE
@@ -49,8 +49,4 @@ DISPLAY-MENU.
     DISPLAY "6. Logout"
     DISPLAY "Enter your choice:"
     
-LOGOUT.
-    DISPLAY "Logging out...".
-    MOVE 'Y' TO EXIT-FLAG.
-
 END PROGRAM HomePage.
