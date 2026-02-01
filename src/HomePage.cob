@@ -20,13 +20,16 @@ MAIN-LOGIC.
         DISPLAY USER-CHOICE
         EVALUATE USER-CHOICE
             WHEN 1
-                PERFORM JOB-SEARCH
-            WHEN 2
-                PERFORM FIND-SOMEONE
+                DISPLAY "Create/Edit is under construction."            
+            WhEN 2
+                CALL "PersonalProfile" USING LNK-USER-NAME
             WHEN 3
-                PERFORM LEARN-SKILL
-                CALL 'SkillMenu' 
+                DISPLAY "Job search/internship is under construction.".
             WHEN 4
+                DISPLAY "Find someone you know is under construction.".
+            WHEN 5
+                CALL 'SkillMenu' 
+            WHEN 6
                 PERFORM LOGOUT
             WHEN OTHER
                 DISPLAY "Invalid choice. Please try again."
@@ -38,21 +41,14 @@ DISPLAY-WELCOME.
     DISPLAY "Welcome, " FUNCTION TRIM(LNK-USER-NAME) "!".
 
 DISPLAY-MENU.
-    DISPLAY "1. Search for a job".
-    DISPLAY "2. Find someone you know".
-    DISPLAY "3. Learn a new skill".
-    DISPLAY "4. Logout".
+    DISPLAY "1. Create/Edit My Profile"
+    DISPLAY "2. View My Profile"
+    DISPLAY "3. Search for a job".
+    DISPLAY "4. Find someone you know".
+    DISPLAY "5. Learn a new skill".
+    DISPLAY "6. Logout".
     DISPLAY "Enter your choice:".
-
-JOB-SEARCH.
-    DISPLAY "Job search/internship is under construction.".
-
-FIND-SOMEONE.
-    DISPLAY "Find someone you know is under construction.".
-
-LEARN-SKILL.
-    DISPLAY "Learn a new skill is under construction.".
-
+    
 LOGOUT.
     DISPLAY "Logging out...".
     MOVE 'Y' TO EXIT-FLAG.
