@@ -3,64 +3,102 @@ IDENTIFICATION DIVISION.
 PROGRAM-ID. PersonalProfile.
 
 ENVIRONMENT DIVISION.
-DATA DIVISION.
-WORKING-STORAGE SECTION.
-77 I                 PIC 9(2) VALUE 0.
-77 WorkCount         PIC 9(2) VALUE 0.
-77 EduCount          PIC 9(2) VALUE 0.
-01 UserProfile.
-   05 Name            PIC X(50).
-   05 UserUniversity  PIC X(50).
-   05 Major           PIC X(50).
-   05 GraduationYear  PIC 9(4).
-   05 AboutMe         PIC X(200).
-   05 WorkExperience   OCCURS 3 TIMES.
-      10 JobTitle      PIC X(50).
-      10 Company       PIC X(50).
-      10 Dates         PIC X(30).
-      10 Description   PIC X(200).
-   05 EducationHistory OCCURS 3 TIMES.
-      10 Degree        PIC X(50).
-      10 EduUniversity PIC X(50).
-      10 Years         PIC X(30).
-LINKAGE SECTION.
-01 LK-USER-NAME PIC X(20).
+INPUT-OUTPUT SECTION.
+FILE-CONTROL.
+    SELECT ProfileFile ASSIGN TO "data/profiles.dat"
+        ORGANIZATION IS SEQUENTIAL.
 
-PROCEDURE DIVISION USING LK-USER-NAME.
+DATA DIVISION.
+FILE SECTION.
+FD ProfileFile.
+01 Profile-Record.
+   05 Username      PIC X(20).
+   05 Name          PIC X(50).
+   05 University    PIC X(50).
+   05 Major         PIC X(50).
+   05 GradYear      PIC 9(4).
+   05 About         PIC X(200).
+   05 JobTitle      OCCURS 3 TIMES PIC X(50).
+   05 Company       OCCURS 3 TIMES PIC X(50).
+   05 Dates         OCCURS 3 TIMES PIC X(30).
+   05 Desc          OCCURS 3 TIMES PIC X(200).
+   05 Degree        OCCURS 3 TIMES PIC X(50).
+   05 Univ          OCCURS 3 TIMES PIC X(50).
+   05 Years         OCCURS 3 TIMES PIC X(30).
+WORKING-STORAGE SECTION.
+77 EOF-FLAG    PIC X VALUE "N".
+77 FOUND-FLAG  PIC X VALUE "N".
+77 I           PIC 9(1) COMP VALUE 1.
+
+LINKAGE SECTION.
+01 LNK-USER-NAME PIC X(20).
+
+PROCEDURE DIVISION USING LNK-USER-NAME.
+
 MAIN.
-    DISPLAY 'Welcome to Your Personal Profile Page'.
-    DISPLAY 'Viewing Profile for: ' FUNCTION TRIM(LK-USER-NAME).
-    DISPLAY 'Name: ' FUNCTION TRIM(Name).
-    DISPLAY 'University: ' FUNCTION TRIM(UserUniversity).
-    DISPLAY 'Major: ' FUNCTION TRIM(Major).
-    DISPLAY 'Graduation Year: ' GraduationYear.
-    DISPLAY 'About Me: ' FUNCTION TRIM(AboutMe).
-    PERFORM DISPLAY-WORK-EXPERIENCE.
-    PERFORM DISPLAY-EDUCATION.
+    PERFORM SEARCH-PROFILE
+    DISPLAY "Welcome to Your Personal Profile Page"
+    DISPLAY "Name: " FUNCTION TRIM(Name)
+    DISPLAY "University: " FUNCTION TRIM(University)
+    DISPLAY "Major: " FUNCTION TRIM(Major)
+    DISPLAY "Graduation Year: " GradYear
+    DISPLAY "About Me: " FUNCTION TRIM(About)
+    PERFORM WORK-EXPERIENCE
+    PERFORM EDUCATION
     GOBACK.
 
-DISPLAY-WORK-EXPERIENCE.
-    DISPLAY "Experience:".
-    IF WorkCount = 0 THEN
-        DISPLAY 'No work experience.'
+SEARCH-PROFILE.
+    MOVE "N" TO FOUND-FLAG
+    MOVE "N" TO EOF-FLAG
+    OPEN INPUT ProfileFile
+    PERFORM UNTIL EOF-FLAG = "Y" OR FOUND-FLAG = "Y"
+        READ ProfileFile
+            AT END
+                MOVE "Y" TO EOF-FLAG
+            NOT AT END
+                IF FUNCTION TRIM(Username)
+                   = FUNCTION TRIM(LNK-USER-NAME)
+                    MOVE "Y" TO FOUND-FLAG
+                    EXIT PERFORM
+                END-IF
+        END-READ
+    END-PERFORM
+    CLOSE ProfileFile
+
+    IF FOUND-FLAG = "N"
+        DISPLAY "Profile not found for: "
+                FUNCTION TRIM(LNK-USER-NAME)
+    END-IF
+    EXIT PARAGRAPH.
+
+WORK-EXPERIENCE.
+    DISPLAY "Experience:"
+    IF FUNCTION TRIM(JobTitle(1)) = SPACE
+       AND FUNCTION TRIM(JobTitle(2)) = SPACE
+       AND FUNCTION TRIM(JobTitle(3)) = SPACE
+        DISPLAY "No work experience found."
     ELSE
-        PERFORM VARYING I FROM 1 BY 1 UNTIL I > WorkCount
-            DISPLAY 'Title: ' FUNCTION TRIM(WorkExperience(I).JobTitle)
-            DISPLAY 'Company: ' FUNCTION TRIM(WorkExperience(I).Company)
-            DISPLAY 'Dates: ' FUNCTION TRIM(WorkExperience(I).Dates)
-            DISPLAY 'Description: ' FUNCTION TRIM(WorkExperience(I).Description)
+        PERFORM VARYING I FROM 1 BY 1
+            UNTIL I > 3 OR FUNCTION TRIM(JobTitle(I)) = SPACE
+            DISPLAY "Title: " FUNCTION TRIM(JobTitle(I))
+            DISPLAY "Company: " FUNCTION TRIM(Company(I))
+            DISPLAY "Dates: " FUNCTION TRIM(Dates(I))
+            DISPLAY "Description: " FUNCTION TRIM(Desc(I))
         END-PERFORM
     END-IF.
 
-DISPLAY-EDUCATION.
-    DISPLAY "Education:".
-    IF EduCount = 0 THEN
-        DISPLAY 'No education history.'
+EDUCATION.
+    DISPLAY "Education:"
+    IF FUNCTION TRIM(Degree(1)) = SPACE
+       AND FUNCTION TRIM(Degree(2)) = SPACE
+       AND FUNCTION TRIM(Degree(3)) = SPACE
+        DISPLAY "No education history found."
     ELSE
-        PERFORM VARYING I FROM 1 BY 1 UNTIL I > EduCount
-            DISPLAY 'Degree: ' FUNCTION TRIM(EducationHistory(I).Degree)
-            DISPLAY 'University: ' FUNCTION TRIM(EducationHistory(I).EduUniversity)
-            DISPLAY 'Years: ' FUNCTION TRIM(EducationHistory(I).Years)
+        PERFORM VARYING I FROM 1 BY 1
+            UNTIL I > 3 OR FUNCTION TRIM(Degree(I)) = SPACE
+            DISPLAY "Degree: " FUNCTION TRIM(Degree(I))
+            DISPLAY "University: " FUNCTION TRIM(Univ(I))
+            DISPLAY "Years: " FUNCTION TRIM(Years(I))
         END-PERFORM
     END-IF.
 
