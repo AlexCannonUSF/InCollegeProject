@@ -5,6 +5,8 @@ PROGRAM-ID. PersonalProfile.
 ENVIRONMENT DIVISION.
 DATA DIVISION.
 WORKING-STORAGE SECTION.
+01 WorkCount         PIC 9(2) VALUE 0.
+01 EduCount          PIC 9(2) VALUE 0.
 01 UserProfile.
    05 Name            PIC X(50).
    05 University       PIC X(50).
@@ -20,17 +22,15 @@ WORKING-STORAGE SECTION.
       10 Degree        PIC X(50).
       10 University PIC X(50).
       10 Years      PIC X(30).
-01 WorkCount         PIC 9(2) VALUE 0.
-01 EduCount          PIC 9(2) VALUE 0.
+77 I PIC 9(2) VALUE 0.
 PROCEDURE DIVISION.
 MAIN.
     DISPLAY 'Welcome to Your Personal Profile Page'.
-    DISPLAY 'Viewing Profile:'.
-    DISPLAY 'Name: ' Name.
-    DISPLAY 'University: ' University.
-    DISPLAY 'Major: ' Major.
-    DISPLAY 'Graduation Year: ' GraduationYear.
-    DISPLAY 'About Me: ' AboutMe.
+    DISPLAY 'Name: ' FUNCTION TRIM(Name).                                
+    DISPLAY 'University: ' FUNCTION TRIM(University).
+    DISPLAY 'Major: ' FUNCTION (Major).
+    DISPLAY 'Graduation Year: ' FUNCTION TRIM(GraduationYear).
+    DISPLAY 'About Me: ' FUNCTION TRIM(AboutMe).
     PERFORM DISPLAY-WORK-EXPERIENCE.
     PERFORM DISPLAY-EDUCATION.
     GOBACK.
@@ -41,10 +41,10 @@ DISPLAY-WORK-EXPERIENCE.
         DISPLAY 'No work experience.'
     ELSE
         PERFORM VARYING I FROM 1 BY 1 UNTIL I > WorkCount
-            DISPLAY 'Title: ' WorkExperience(I).JobTitle.
-            DISPLAY 'Company: ' WorkExperience(I).Company.
-            DISPLAY 'Dates: ' WorkExperience(I).Dates.
-            DISPLAY 'Description: ' WorkExperience(I).Description.
+            DISPLAY 'Title: ' FUNCTION TRIM(WorkExperience(I).JobTitle).
+            DISPLAY 'Company: ' FUNCTION TRIM(WorkExperience(I).Company).
+            DISPLAY 'Dates: ' FUNCTION TRIM(WorkExperience(I).Dates).
+            DISPLAY 'Description: ' FUNCTION TRIM(WorkExperience(I).Description).
         END-PERFORM.
     END-IF.
 
@@ -54,8 +54,8 @@ DISPLAY-EDUCATION.
         DISPLAY 'No education history.'
     ELSE
         PERFORM VARYING I FROM 1 BY 1 UNTIL I > EduCount
-            DISPLAY 'Degree: ' EducationHistory(I).Degree.
-            DISPLAY 'University: ' EducationHistory(I).University.
-            DISPLAY 'Years: ' EducationHistory(I).Years.
+            DISPLAY 'Degree: ' FUNCTION TRIM(EducationHistory(I).Degree).
+            DISPLAY 'University: ' FUNCTION TRIM(EducationHistory(I).University).
+            DISPLAY 'Years: ' FUNCTION TRIM(EducationHistory(I).Years).
         END-PERFORM.
     END-IF.
