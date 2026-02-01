@@ -28,7 +28,7 @@ FD ProfileFile.
 WORKING-STORAGE SECTION.
 77 EOF-FLAG    PIC X VALUE "N".
 77 FOUND-FLAG  PIC X VALUE "N".
-77 I           PIC 9(1) COMP VALUE 1.
+77 I           PIC 9(1) VALUE 1.
 
 LINKAGE SECTION.
 01 LNK-USER-NAME PIC X(20).
@@ -37,6 +37,11 @@ PROCEDURE DIVISION USING LNK-USER-NAME.
 
 MAIN.
     PERFORM SEARCH-PROFILE
+    IF FOUND-FLAG = "N"
+        DISPLAY "No profile exists for user: "
+                FUNCTION TRIM(LNK-USER-NAME)
+        GOBACK
+    END-IF
     DISPLAY "Welcome to Your Personal Profile Page"
     DISPLAY "Name: " FUNCTION TRIM(Name)
     DISPLAY "University: " FUNCTION TRIM(University)
