@@ -22,7 +22,7 @@ MAIN-LOGIC.
             WHEN 1
                 DISPLAY "Create/Edit is under construction."
             WHEN 2
-                CALL "PersonalProfile"
+                CALL "PersonalProfile" USING LNK-USER-NAME
             WHEN 3
                 DISPLAY "Job search/internship is under construction"
             WHEN 4
@@ -47,6 +47,6 @@ DISPLAY-MENU.
     DISPLAY "4. Find someone you know"
     DISPLAY "5. Learn a new skill"
     DISPLAY "6. Logout"
-    DISPLAY "Enter your choice:"
+    DISPLAY "Enter your choice:".
     
 END PROGRAM HomePage.
