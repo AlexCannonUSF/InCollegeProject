@@ -1,0 +1,7 @@
+Epic #1 Roles
+
+Scrum Master: Bolivar Mojica, Jorge
+Coder #1: Bui, Huy
+Coder #2: Cannon, Alexander
+Tester #1: Castillo, Raul
+Tester #2: Chen, Justin
