@@ -5,7 +5,7 @@ PROGRAM-ID. PersonalProfile.
 ENVIRONMENT DIVISION.
 INPUT-OUTPUT SECTION.
 FILE-CONTROL.
-    SELECT ProfileFile ASSIGN TO "data/profiles.dat"
+    SELECT ProfileFile ASSIGN TO "../data/profiles.dat"
         ORGANIZATION IS SEQUENTIAL.
 
 DATA DIVISION.
@@ -25,10 +25,10 @@ FD ProfileFile.
    05 Degree        OCCURS 3 TIMES PIC X(50).
    05 Univ          OCCURS 3 TIMES PIC X(50).
    05 Years         OCCURS 3 TIMES PIC X(30).
+
 WORKING-STORAGE SECTION.
-77 EOF-FLAG    PIC X VALUE "N".
-77 FOUND-FLAG  PIC X VALUE "N".
-77 I           PIC 9(1) VALUE 1.
+01 EOF-FLAG   PIC X VALUE 'N'.
+01 FOUND-FLAG PIC X VALUE 'N'.
 
 LINKAGE SECTION.
 01 LNK-USER-NAME PIC X(20).
@@ -37,74 +37,63 @@ PROCEDURE DIVISION USING LNK-USER-NAME.
 
 MAIN.
     PERFORM SEARCH-PROFILE
-    IF FOUND-FLAG = "N"
-        DISPLAY "No profile exists for user: "
-                FUNCTION TRIM(LNK-USER-NAME)
+
+    IF FOUND-FLAG = 'N'
+        DISPLAY "No profile exists for user: " FUNCTION TRIM(LNK-USER-NAME)
         GOBACK
     END-IF
-    DISPLAY "Welcome to Your Personal Profile Page"
+
+    DISPLAY "----------------------------------"
+    DISPLAY "Welcome to Your Personal Profile"
+    DISPLAY "----------------------------------"
     DISPLAY "Name: " FUNCTION TRIM(Name)
     DISPLAY "University: " FUNCTION TRIM(University)
     DISPLAY "Major: " FUNCTION TRIM(Major)
     DISPLAY "Graduation Year: " GradYear
     DISPLAY "About Me: " FUNCTION TRIM(About)
-    PERFORM WORK-EXPERIENCE
-    PERFORM EDUCATION
+
+    PERFORM DISPLAY-EXPERIENCE
+    PERFORM DISPLAY-EDUCATION
+
     GOBACK.
 
 SEARCH-PROFILE.
-    MOVE "N" TO FOUND-FLAG
-    MOVE "N" TO EOF-FLAG
+    MOVE 'N' TO FOUND-FLAG
+    MOVE 'N' TO EOF-FLAG
+
     OPEN INPUT ProfileFile
-    PERFORM UNTIL EOF-FLAG = "Y" OR FOUND-FLAG = "Y"
+    PERFORM UNTIL EOF-FLAG = 'Y' OR FOUND-FLAG = 'Y'
         READ ProfileFile
             AT END
-                MOVE "Y" TO EOF-FLAG
+                MOVE 'Y' TO EOF-FLAG
             NOT AT END
                 IF FUNCTION TRIM(Username)
                    = FUNCTION TRIM(LNK-USER-NAME)
-                    MOVE "Y" TO FOUND-FLAG
-                    EXIT PERFORM
+                    MOVE 'Y' TO FOUND-FLAG
                 END-IF
         END-READ
     END-PERFORM
-    CLOSE ProfileFile
+    CLOSE ProfileFile.
 
-    IF FOUND-FLAG = "N"
-        DISPLAY "Profile not found for: "
-                FUNCTION TRIM(LNK-USER-NAME)
-    END-IF
-    EXIT PARAGRAPH.
-
-WORK-EXPERIENCE.
+DISPLAY-EXPERIENCE.
     DISPLAY "Experience:"
-    IF FUNCTION TRIM(JobTitle(1)) = SPACE
-       AND FUNCTION TRIM(JobTitle(2)) = SPACE
-       AND FUNCTION TRIM(JobTitle(3)) = SPACE
+    IF FUNCTION TRIM(JobTitle(1)) = ""
         DISPLAY "No work experience found."
     ELSE
-        PERFORM VARYING I FROM 1 BY 1
-            UNTIL I > 3 OR FUNCTION TRIM(JobTitle(I)) = SPACE
-            DISPLAY "Title: " FUNCTION TRIM(JobTitle(I))
-            DISPLAY "Company: " FUNCTION TRIM(Company(I))
-            DISPLAY "Dates: " FUNCTION TRIM(Dates(I))
-            DISPLAY "Description: " FUNCTION TRIM(Desc(I))
-        END-PERFORM
+        DISPLAY "Title: " FUNCTION TRIM(JobTitle(1))
+        DISPLAY "Company: " FUNCTION TRIM(Company(1))
+        DISPLAY "Dates: " FUNCTION TRIM(Dates(1))
+        DISPLAY "Description: " FUNCTION TRIM(Desc(1))
     END-IF.
 
-EDUCATION.
+DISPLAY-EDUCATION.
     DISPLAY "Education:"
-    IF FUNCTION TRIM(Degree(1)) = SPACE
-       AND FUNCTION TRIM(Degree(2)) = SPACE
-       AND FUNCTION TRIM(Degree(3)) = SPACE
+    IF FUNCTION TRIM(Degree(1)) = ""
         DISPLAY "No education history found."
     ELSE
-        PERFORM VARYING I FROM 1 BY 1
-            UNTIL I > 3 OR FUNCTION TRIM(Degree(I)) = SPACE
-            DISPLAY "Degree: " FUNCTION TRIM(Degree(I))
-            DISPLAY "University: " FUNCTION TRIM(Univ(I))
-            DISPLAY "Years: " FUNCTION TRIM(Years(I))
-        END-PERFORM
+        DISPLAY "Degree: " FUNCTION TRIM(Degree(1))
+        DISPLAY "University: " FUNCTION TRIM(Univ(1))
+        DISPLAY "Years: " FUNCTION TRIM(Years(1))
     END-IF.
 
 END PROGRAM PersonalProfile.

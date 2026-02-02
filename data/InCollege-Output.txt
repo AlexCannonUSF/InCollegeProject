@@ -5,9 +5,9 @@ Welcome to InCollege!
 Choose an option: 
 2
 Enter a username: 
-alex                          
+alex                         
 Enter password: 
-Abcdef1!    
+Abcdef1!   
 Account created successfully!
 Welcome to InCollege!
 1) Log In
@@ -16,98 +16,121 @@ Welcome to InCollege!
 Choose an option: 
 1
 Enter username: 
-alex                          
+alex                         
 Enter password: 
-Abcdef1!    
+Abcdef1!   
 You have successfully logged in
-Welcome, alex!
-1. Search for a job
-2. Find someone you know
-3. Learn a new skill
-4. Logout
+Welcome, alex!
+1. Create My Profile
+2. Edit My Profile
+3. View My Profile
+4. Search for a job
+5. Find someone you know
+6. Learn a new skill
+7. Logout
 Enter your choice:
-1
-Job search/internship is under construction.
-1. Search for a job
-2. Find someone you know
-3. Learn a new skill
-4. Logout
+No profile exists for user: alex
+1. Create My Profile
+2. Edit My Profile
+3. View My Profile
+4. Search for a job
+5. Find someone you know
+6. Learn a new skill
+7. Logout
 Enter your choice:
-2
-Find someone you know is under construction.
-1. Search for a job
-2. Find someone you know
-3. Learn a new skill
-4. Logout
+Enter your full name:
+Enter your university:
+Enter your major:
+Enter your graduation year (YYYY):
+Enter About Me:
+Enter job title:
+Enter company:
+Enter dates:
+Enter description:
+Enter degree:
+Enter university:
+Enter years attended:
+Profile created successfully.
+1. Create My Profile
+2. Edit My Profile
+3. View My Profile
+4. Search for a job
+5. Find someone you know
+6. Learn a new skill
+7. Logout
 Enter your choice:
-3
-Learn a new skill is under construction.
-Learn a New Skill:
-Skill 1
-Skill 2
-Skill 3
-Skill 4
-Skill 5
-Go Back
+----------------------------------
+Welcome to Your Personal Profile
+----------------------------------
+Name: Alex Johnson
+University: University of South Florida
+Major: Computer Science
+Graduation Year: 2026
+About Me: I am a CS student interested in software engineering.
+Experience:
+Title: Software Intern
+Company: Tech Corp
+Dates: Summer 2024
+Description: Worked on backend APIs.
+Education:
+Degree: Bachelor of Science
+University: University of South Florida
+Years: 2022-2026
+1. Create My Profile
+2. Edit My Profile
+3. View My Profile
+4. Search for a job
+5. Find someone you know
+6. Learn a new skill
+7. Logout
 Enter your choice:
-1
-This skill is under construction.
-Learn a New Skill:
-Skill 1
-Skill 2
-Skill 3
-Skill 4
-Skill 5
-Go Back
+Editing profile...
+Enter full name:
+Enter university:
+Enter major:
+Enter graduation year (YYYY):
+Enter About Me:
+Enter job title:
+Enter company:
+Enter dates:
+Enter description:
+Enter degree:
+Enter university:
+Enter years attended:
+Profile updated successfully.
+1. Create My Profile
+2. Edit My Profile
+3. View My Profile
+4. Search for a job
+5. Find someone you know
+6. Learn a new skill
+7. Logout
 Enter your choice:
-2
-This skill is under construction.
-Learn a New Skill:
-Skill 1
-Skill 2
-Skill 3
-Skill 4
-Skill 5
-Go Back
+----------------------------------
+Welcome to Your Personal Profile
+----------------------------------
+Name: Alex Johnson
+University: University of South Florida
+Major: Computer Science
+Graduation Year: 2027
+About Me: Updated profile after internship.
+Experience:
+Title: Software Engineer Intern
+Company: New Tech Corp
+Dates: Summer 2025
+Description: Worked on cloud services.
+Education:
+Degree: Bachelor of Science
+University: University of South Florida
+Years: 2022-2027
+1. Create My Profile
+2. Edit My Profile
+3. View My Profile
+4. Search for a job
+5. Find someone you know
+6. Learn a new skill
+7. Logout
 Enter your choice:
-3
-This skill is under construction.
-Learn a New Skill:
-Skill 1
-Skill 2
-Skill 3
-Skill 4
-Skill 5
-Go Back
-Enter your choice:
-4
-This skill is under construction.
-Learn a New Skill:
-Skill 1
-Skill 2
-Skill 3
-Skill 4
-Skill 5
-Go Back
-Enter your choice:
-5
-This skill is under construction.
-Learn a New Skill:
-Skill 1
-Skill 2
-Skill 3
-Skill 4
-Skill 5
-Go Back
-Enter your choice:
-6
-1. Search for a job
-2. Find someone you know
-3. Learn a new skill
-4. Logout
-Enter your choice:
-4
-Logging out...
 Welcome to InCollege!
 1) Log In
 2) Create Account
