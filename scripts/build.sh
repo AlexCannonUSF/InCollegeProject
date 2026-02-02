@@ -2,16 +2,13 @@
 set -e
 
 mkdir -p bin
-
 cobc -x -free -o bin/InCollege \
-  ../src/InCollege.cob \
-  ../src/CreateAccount.cob \
-  ../src/LogIn.cob \
-  ../src/DataStore.cob \
-  ../src/HomePage.cob \
-  ../src/SkillMenu.cob \
-  ../src/PersonalProfile.cob \
-  ../src/ProfileCreate.cob \
-  ../src/ProfileEdit.cob
+  src/InCollege.cob \
+  src/CreateAccount.cob \
+  src/LogIn.cob \
+  src/DataStore.cob\
+  src/HomePage.cob \
+  src/SkillMenu.cob \
+  src/PersonalProfile.cob
 
 echo "Build complete: bin/InCollege"
