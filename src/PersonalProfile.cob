@@ -5,7 +5,7 @@ PROGRAM-ID. PersonalProfile.
 ENVIRONMENT DIVISION.
 INPUT-OUTPUT SECTION.
 FILE-CONTROL.
-    SELECT ProfileFile ASSIGN TO "../data/profiles.dat"
+    SELECT ProfileFile ASSIGN TO "data/profiles.dat"
         ORGANIZATION IS SEQUENTIAL.
 
 DATA DIVISION.
