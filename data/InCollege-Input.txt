@@ -4,34 +4,15 @@ Abcdef1!
 1
 alex
 Abcdef1!
+1
+2
 3
 1
-Alex Johnson
-University of South Florida
-Computer Science
-2026
-I am a CS student interested in software engineering.
-Software Intern
-Tech Corp
-Summer 2024
-Worked on backend APIs.
-Bachelor of Science
-University of South Florida
-2022-2026
-3
 2
-Alex Johnson
-University of South Florida
-Computer Science
-2027
-Updated profile after internship.
-Software Engineer Intern
-New Tech Corp
-Summer 2025
-Worked on cloud services.
-Bachelor of Science
-University of South Florida
-2022-2027
 3
-7
+4
+5
+6
+4
+3
 3
