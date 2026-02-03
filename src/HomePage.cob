@@ -1,55 +1,74 @@
->>SOURCE FORMAT FREE
-IDENTIFICATION DIVISION.
-PROGRAM-ID. HomePage.
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID. HomePage.
 
-DATA DIVISION.
-WORKING-STORAGE SECTION.
-01 USER-CHOICE PIC 9.
-01 EXIT-FLAG   PIC X VALUE 'N'.
+       DATA DIVISION.
+       WORKING-STORAGE SECTION.
+       01 USER-CHOICE PIC 9.
+       01 EXIT-FLAG   PIC X VALUE 'N'.
 
-LINKAGE SECTION.
-01 LNK-USER-NAME PIC X(20).
+       77 WS-PROFILE-COUNT PIC 9 VALUE 0.
+       01 WS-PROFILE-LIST.
+          05 WS-PROF-ROW OCCURS 5 TIMES.
+             10 WS-USERNAME    PIC X(30).
+             10 WS-NAME        PIC X(50).
+             10 WS-UNIVERSITY  PIC X(50).
+             10 WS-MAJOR       PIC X(50).
+             10 WS-GRADYEAR    PIC 9(4).
+             10 WS-ABOUT       PIC X(200).
+             10 WS-JOBTITLE    OCCURS 3 TIMES PIC X(50).
+             10 WS-COMPANY     OCCURS 3 TIMES PIC X(50).
+             10 WS-DATES       OCCURS 3 TIMES PIC X(30).
+             10 WS-DESC        OCCURS 3 TIMES PIC X(200).
+             10 WS-DEGREE      OCCURS 3 TIMES PIC X(50).
+             10 WS-UNIV        OCCURS 3 TIMES PIC X(50).
+             10 WS-YEARS       OCCURS 3 TIMES PIC X(30).
 
-PROCEDURE DIVISION USING LNK-USER-NAME.
+       LINKAGE SECTION.
+       01 LNK-USER-NAME PIC X(30).
 
-MAIN.
-    DISPLAY "Welcome, " FUNCTION TRIM(LNK-USER-NAME) "!"
-    PERFORM UNTIL EXIT-FLAG = 'Y'
-        PERFORM DISPLAY-MENU
-        ACCEPT USER-CHOICE
-        DISPLAY FUNCTION TRIM(USER-CHOICE)
+       PROCEDURE DIVISION USING LNK-USER-NAME.
 
-        IF USER-CHOICE = 0
-            MOVE 'Y' TO EXIT-FLAG
-            EXIT PERFORM
-        END-IF
+       MAIN.
+           CALL "ProfileStore" USING "L" WS-PROFILE-COUNT WS-PROFILE-LIST
 
-        EVALUATE USER-CHOICE
-            WHEN 1
-                CALL "ProfileEdit" USING LNK-USER-NAME
-            WHEN 2
-                CALL "PersonalProfile" USING LNK-USER-NAME
-            WHEN 3
-                DISPLAY "Search for a job is under construction."
-            WHEN 4
-                DISPLAY "Find someone you know is under construction."
-            WHEN 5
-                CALL "SkillMenu"
-            WHEN 6
-                MOVE 'Y' TO EXIT-FLAG
-            WHEN OTHER
-                DISPLAY "Invalid choice. Please try again."
-        END-EVALUATE
-    END-PERFORM
-    GOBACK.
+           DISPLAY "Welcome, " FUNCTION TRIM(LNK-USER-NAME) "!"
+           PERFORM UNTIL EXIT-FLAG = 'Y'
+               PERFORM DISPLAY-MENU
+               ACCEPT USER-CHOICE
+               DISPLAY FUNCTION TRIM(USER-CHOICE)
 
-DISPLAY-MENU.
-    DISPLAY "1. Create/Edit My Profile"
-    DISPLAY "2. View My Profile"
-    DISPLAY "3. Search for a job"
-    DISPLAY "4. Find someone you know"
-    DISPLAY "5. Learn a new skill"
-    DISPLAY "6. Logout"
-    DISPLAY "Enter your choice:".
+               IF USER-CHOICE = 0
+                   MOVE 'Y' TO EXIT-FLAG
+                   EXIT PERFORM
+               END-IF
 
-END PROGRAM HomePage.
+               EVALUATE USER-CHOICE
+                   WHEN 1
+                       CALL "ProfileEdit" USING LNK-USER-NAME WS-PROFILE-COUNT WS-PROFILE-LIST
+                       CALL "ProfileStore" USING "S" WS-PROFILE-COUNT WS-PROFILE-LIST
+                   WHEN 2
+                       CALL "PersonalProfile" USING LNK-USER-NAME WS-PROFILE-COUNT WS-PROFILE-LIST
+                   WHEN 3
+                       DISPLAY "Search for a job is under construction."
+                   WHEN 4
+                       DISPLAY "Find someone you know is under construction."
+                   WHEN 5
+                       CALL "SkillMenu"
+                   WHEN 6
+                       MOVE 'Y' TO EXIT-FLAG
+                   WHEN OTHER
+                       DISPLAY "Invalid choice. Please try again."
+               END-EVALUATE
+           END-PERFORM
+           GOBACK.
+
+       DISPLAY-MENU.
+           DISPLAY "1. Create/Edit My Profile"
+           DISPLAY "2. View My Profile"
+           DISPLAY "3. Search for a job"
+           DISPLAY "4. Find someone you know"
+           DISPLAY "5. Learn a new skill"
+           DISPLAY "6. Logout"
+           DISPLAY "Enter your choice:".
+
+       END PROGRAM HomePage.

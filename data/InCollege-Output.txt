@@ -29,7 +29,6 @@ Welcome, JorgeB!
 6. Logout
 Enter your choice:
 2
-Profile not found for: JorgeB
 No profile exists for user: JorgeB
 1. Create/Edit My Profile
 2. View My Profile
@@ -39,9 +38,6 @@ No profile exists for user: JorgeB
 6. Logout
 Enter your choice:
 1
-Profile not found for: JorgeB
-No profile exists for user: JorgeB
-Proceeding to Create/Edit Profile...
 --- Create/Edit Profile ---
 Enter first name:
 Jorge
