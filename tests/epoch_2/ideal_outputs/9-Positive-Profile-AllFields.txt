@@ -1,0 +1,139 @@
+Welcome to InCollege!
+1) Log In
+2) Create Account
+3) Exit
+Choose an option: 
+2
+Enter a username: 
+TestUser1
+Enter password: 
+Abcdef1!
+Account created successfully!
+Welcome to InCollege!
+1) Log In
+2) Create Account
+3) Exit
+Choose an option: 
+1
+Enter username: 
+TestUser1
+Enter password: 
+Abcdef1!
+You have successfully logged in
+Welcome, TestUser1!
+1. Create/Edit My Profile
+2. View My Profile
+3. Search for a job
+4. Find someone you know
+5. Learn a new skill
+6. Logout
+Enter your choice:
+1
+--- Create/Edit Profile ---
+Enter first name:
+Alex
+Enter last name:
+Cannon
+Enter university:
+USF
+Enter major:
+Computer Science
+Enter graduation year (YYYY):
+2025
+Enter About Me:
+I love coding.
+Experience #1 - Job Title (blank to skip):
+Software Intern
+Company:
+Google
+Dates:
+Summer 2024
+Description:
+Built software tools.
+Experience #2 - Job Title (blank to skip):
+Teaching Assistant
+Company:
+USF
+Dates:
+Fall 2024
+Description:
+Helped students in lab.
+Experience #3 - Job Title (blank to skip):
+Research Assistant
+Company:
+USF
+Dates:
+Spring 2025
+Description:
+Worked on ML project.
+Education #1 - Degree (blank to skip):
+B.S.
+University:
+USF
+Years attended:
+2021-2025
+Education #2 - Degree (blank to skip):
+A.S.
+University:
+HCC
+Years attended:
+2019-2021
+Education #3 - Degree (blank to skip):
+High School Diploma
+University:
+Some High School
+Years attended:
+2015-2019
+Profile created successfully.
+Profile saved successfully.
+1. Create/Edit My Profile
+2. View My Profile
+3. Search for a job
+4. Find someone you know
+5. Learn a new skill
+6. Logout
+Enter your choice:
+2
+--- Your Profile ---
+Name: Alex Cannon
+University: USF
+Major: Computer Science
+Graduation Year: 2025
+About Me: I love coding.
+Experience:
+Title: Software Intern
+Company: Google
+Dates: Summer 2024
+Description: Built software tools.
+Title: Teaching Assistant
+Company: USF
+Dates: Fall 2024
+Description: Helped students in lab.
+Title: Research Assistant
+Company: USF
+Dates: Spring 2025
+Description: Worked on ML project.
+Education:
+Degree: B.S.
+University: USF
+Years: 2021-2025
+Degree: A.S.
+University: HCC
+Years: 2019-2021
+Degree: High School Diploma
+University: Some High School
+Years: 2015-2019
+1. Create/Edit My Profile
+2. View My Profile
+3. Search for a job
+4. Find someone you know
+5. Learn a new skill
+6. Logout
+Enter your choice:
+6
+Welcome to InCollege!
+1) Log In
+2) Create Account
+3) Exit
+Choose an option: 
+3

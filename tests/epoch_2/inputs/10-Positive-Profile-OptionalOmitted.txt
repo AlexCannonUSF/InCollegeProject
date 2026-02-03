@@ -1,0 +1,35 @@
+2
+EditUser
+Abcdef1!
+1
+EditUser
+Abcdef1!
+1
+Alex
+Cannon
+USF
+IT
+2026
+About filled, but optional sections omitted.
+
+
+
+
+
+
+1
+Alex
+Cannon
+USF
+Computer Science
+2026
+Updated about, optional sections still omitted.
+
+
+
+
+
+
+2
+6
+3

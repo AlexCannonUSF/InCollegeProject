@@ -1,0 +1,125 @@
+Welcome to InCollege!
+1) Log In
+2) Create Account
+3) Exit
+Choose an option: 
+2
+Enter a username: 
+ViewUser
+Enter password: 
+Abcdef1!
+Account created successfully!
+Welcome to InCollege!
+1) Log In
+2) Create Account
+3) Exit
+Choose an option: 
+1
+Enter username: 
+ViewUser
+Enter password: 
+Abcdef1!
+You have successfully logged in
+Welcome, ViewUser!
+1. Create/Edit My Profile
+2. View My Profile
+3. Search for a job
+4. Find someone you know
+5. Learn a new skill
+6. Logout
+Enter your choice:
+1
+--- Create/Edit Profile ---
+Enter first name:
+Alex
+Enter last name:
+Cannon
+Enter university:
+USF
+Enter major:
+Cybersecurity
+Enter graduation year (YYYY):
+2027
+Enter About Me:
+Profile created for viewing test.
+Experience #1 - Job Title (blank to skip):
+Data Analyst Intern
+Company:
+Microsoft
+Dates:
+Fall 2024
+Description:
+Did data monitoring.
+Experience #2 - Job Title (blank to skip):
+
+Experience #3 - Job Title (blank to skip):
+
+Education #1 - Degree (blank to skip):
+B.S.
+University:
+USF
+Years attended:
+2023-2027
+Education #2 - Degree (blank to skip):
+
+Education #3 - Degree (blank to skip):
+
+Profile created successfully.
+Profile saved successfully.
+1. Create/Edit My Profile
+2. View My Profile
+3. Search for a job
+4. Find someone you know
+5. Learn a new skill
+6. Logout
+Enter your choice:
+6
+Welcome to InCollege!
+1) Log In
+2) Create Account
+3) Exit
+Choose an option: 
+1
+Enter username: 
+ViewUser
+Enter password: 
+Abcdef1!
+You have successfully logged in
+Welcome, ViewUser!
+1. Create/Edit My Profile
+2. View My Profile
+3. Search for a job
+4. Find someone you know
+5. Learn a new skill
+6. Logout
+Enter your choice:
+2
+--- Your Profile ---
+Name: Alex Cannon
+University: USF
+Major: Cybersecurity
+Graduation Year: 2027
+About Me: Profile created for viewing test.
+Experience:
+Title: Data Analyst Intern
+Company: Microsoft
+Dates: Fall 2024
+Description: Did data monitoring.
+Education:
+Degree: B.S.
+University: USF
+Years: 2023-2027
+1. Create/Edit My Profile
+2. View My Profile
+3. Search for a job
+4. Find someone you know
+5. Learn a new skill
+6. Logout
+Enter your choice:
+6
+Welcome to InCollege!
+1) Log In
+2) Create Account
+3) Exit
+Choose an option: 
+3
