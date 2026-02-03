@@ -40,6 +40,8 @@ MAIN.
     OPEN OUTPUT ProfileFile
     MOVE LNK-USER-NAME TO Username
 
+    DISPLAY "--- Create/Edit Profile ---"
+
     DISPLAY "Enter first name:"
     ACCEPT WS-FNAME
     DISPLAY FUNCTION TRIM(WS-FNAME)
