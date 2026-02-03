@@ -42,7 +42,7 @@ MAIN.
                 FUNCTION TRIM(LNK-USER-NAME)
         GOBACK
     END-IF
-    DISPLAY "Welcome to Your Personal Profile Page"
+    DISPLAY "--- Your Profile ---"
     DISPLAY "Name: " FUNCTION TRIM(Name)
     DISPLAY "University: " FUNCTION TRIM(University)
     DISPLAY "Major: " FUNCTION TRIM(Major)
