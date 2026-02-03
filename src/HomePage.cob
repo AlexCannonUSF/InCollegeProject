@@ -26,18 +26,16 @@ MAIN.
 
         EVALUATE USER-CHOICE
             WHEN 1
-                CALL "ProfileCreate" USING LNK-USER-NAME
-            WHEN 2
                 CALL "ProfileEdit" USING LNK-USER-NAME
-            WHEN 3
+            WHEN 2
                 CALL "PersonalProfile" USING LNK-USER-NAME
-            WHEN 4
+            WHEN 3
                 DISPLAY "Search for a job is under construction."
-            WHEN 5
+            WHEN 4
                 DISPLAY "Find someone you know is under construction."
-            WHEN 6
+            WHEN 5
                 CALL "SkillMenu"
-            WHEN 7
+            WHEN 6
                 MOVE 'Y' TO EXIT-FLAG
             WHEN OTHER
                 DISPLAY "Invalid choice. Please try again."
@@ -46,13 +44,12 @@ MAIN.
     GOBACK.
 
 DISPLAY-MENU.
-    DISPLAY "1. Create My Profile"
-    DISPLAY "2. Edit My Profile"
-    DISPLAY "3. View My Profile"
-    DISPLAY "4. Search for a job"
-    DISPLAY "5. Find someone you know"
-    DISPLAY "6. Learn a new skill"
-    DISPLAY "7. Logout"
+    DISPLAY "1. Create/Edit My Profile"
+    DISPLAY "2. View My Profile"
+    DISPLAY "3. Search for a job"
+    DISPLAY "4. Find someone you know"
+    DISPLAY "5. Learn a new skill"
+    DISPLAY "6. Logout"
     DISPLAY "Enter your choice:".
 
 END PROGRAM HomePage.

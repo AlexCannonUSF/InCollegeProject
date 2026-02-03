@@ -12,7 +12,7 @@ DATA DIVISION.
 FILE SECTION.
 FD ProfileFile.
 01 Profile-Record.
-   05 Username      PIC X(50) VALUE SPACES.
+   05 Username      PIC X(20) VALUE SPACES.
    05 Name          PIC X(50) VALUE SPACES.
    05 University    PIC X(50) VALUE SPACES.
    05 Major         PIC X(50) VALUE SPACES.

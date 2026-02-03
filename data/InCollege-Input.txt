@@ -4,7 +4,7 @@ Jeb123@!
 1
 JorgeB
 Jeb123@!
-3
+2
 1
 Jorge
 Bolivar
@@ -33,6 +33,6 @@ Marymount School
 Random College
 Random College
 2025-2027
-3
-7
+2
+6
 3
