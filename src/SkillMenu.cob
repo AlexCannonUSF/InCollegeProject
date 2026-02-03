@@ -13,7 +13,7 @@ MAIN-LOGIC.
     PERFORM UNTIL EXIT-FLAG = 'Y'
         PERFORM DISPLAY-MENU
         ACCEPT USER-CHOICE
-        DISPLAY USER-CHOICE                             
+        DISPLAY FUNCTION TRIM(USER-CHOICE)                            
         EVALUATE USER-CHOICE
             WHEN 1
                 DISPLAY "This skill is under construction."

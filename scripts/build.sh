@@ -11,6 +11,7 @@ cobc -x -free -o bin/InCollege \
   src/HomePage.cob \
   src/SkillMenu.cob \
   src/PersonalProfile.cob \
+  src/ProfileStore.cob \
   src/ProfileCreate.cob \
   src/ProfileEdit.cob
 
