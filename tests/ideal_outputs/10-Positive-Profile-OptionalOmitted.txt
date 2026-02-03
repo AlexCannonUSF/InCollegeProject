@@ -1,0 +1,199 @@
+Welcome to InCollege!
+1) Log In
+2) Create Account
+3) Exit
+Choose an option: 
+2
+Enter a username: 
+EditUser
+Enter password: 
+Abcdef1!
+Account created successfully!
+Welcome to InCollege!
+1) Log In
+2) Create Account
+3) Exit
+Choose an option: 
+1
+Enter username: 
+EditUser
+Enter password: 
+Abcdef1!
+You have successfully logged in
+Welcome, EditUser!
+1. Create/Edit My Profile
+2. View My Profile
+3. Search for a job
+4. Find someone you know
+5. Learn a new skill
+6. Logout
+Enter your choice:
+1
+Profile not found for: EditUser
+No profile exists for user: EditUser
+Proceeding to Create/Edit Profile...
+--- Create/Edit Profile ---
+Enter first name:
+Alex
+Enter last name:
+Cannon
+Enter university:
+USF
+Enter major:
+IT
+Enter graduation year (YYYY):
+2026
+Enter About Me:
+About filled, but optional sections omitted.
+Experience #1 - Job Title (blank to skip):
+
+Company:
+
+Dates:
+
+Description:
+
+Experience #2 - Job Title (blank to skip):
+
+Company:
+
+Dates:
+
+Description:
+
+Experience #3 - Job Title (blank to skip):
+
+Company:
+
+Dates:
+
+Description:
+
+Education #1 - Degree (blank to skip):
+
+University:
+
+Years attended:
+
+Education #2 - Degree (blank to skip):
+
+University:
+
+Years attended:
+
+Education #3 - Degree (blank to skip):
+
+University:
+
+Years attended:
+
+Profile created successfully.
+Profile saved successfully.
+1. Create/Edit My Profile
+2. View My Profile
+3. Search for a job
+4. Find someone you know
+5. Learn a new skill
+6. Logout
+Enter your choice:
+1
+--- Your Profile ---
+Name: Alex Cannon
+University: USF
+Major: IT
+Graduation Year: 2026
+About Me: About filled, but optional sections omitted.
+Experience:
+No work experience found.
+Education:
+No education history found.
+Proceeding to Create/Edit Profile...
+--- Create/Edit Profile ---
+Enter first name:
+Alex
+Enter last name:
+Cannon
+Enter university:
+USF
+Enter major:
+Computer Science
+Enter graduation year (YYYY):
+2026
+Enter About Me:
+Updated about, optional sections still omitted.
+Experience #1 - Job Title (blank to skip):
+
+Company:
+
+Dates:
+
+Description:
+
+Experience #2 - Job Title (blank to skip):
+
+Company:
+
+Dates:
+
+Description:
+
+Experience #3 - Job Title (blank to skip):
+
+Company:
+
+Dates:
+
+Description:
+
+Education #1 - Degree (blank to skip):
+
+University:
+
+Years attended:
+
+Education #2 - Degree (blank to skip):
+
+University:
+
+Years attended:
+
+Education #3 - Degree (blank to skip):
+
+University:
+
+Years attended:
+
+Profile created successfully.
+Profile saved successfully.
+1. Create/Edit My Profile
+2. View My Profile
+3. Search for a job
+4. Find someone you know
+5. Learn a new skill
+6. Logout
+Enter your choice:
+2
+--- Your Profile ---
+Name: Alex Cannon
+University: USF
+Major: Computer Science
+Graduation Year: 2026
+About Me: Updated about, optional sections still omitted.
+Experience:
+No work experience found.
+Education:
+No education history found.
+1. Create/Edit My Profile
+2. View My Profile
+3. Search for a job
+4. Find someone you know
+5. Learn a new skill
+6. Logout
+Enter your choice:
+6
+Welcome to InCollege!
+1) Log In
+2) Create Account
+3) Exit
+Choose an option: 
+3
