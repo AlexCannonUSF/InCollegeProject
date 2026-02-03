@@ -4,21 +4,11 @@ Welcome to InCollege!
 3) Exit
 Choose an option: 
 2
-All permitted accounts have been created, please come back later
-Welcome to InCollege!
-1) Log In
-2) Create Account
-3) Exit
-Choose an option: 
-J
-Invalid option. Try again.
-Welcome to InCollege!
-1) Log In
-2) Create Account
-3) Exit
-Choose an option: 
-J
-Invalid option. Try again.
+Enter a username: 
+JorgeB
+Enter password: 
+Jeb123@!
+Account created successfully!
 Welcome to InCollege!
 1) Log In
 2) Create Account
@@ -29,214 +19,131 @@ Enter username:
 JorgeB
 Enter password: 
 Jeb123@!
-Incorrect username/password, please try again
-Welcome to InCollege!
-1) Log In
-2) Create Account
-3) Exit
-Choose an option: 
+You have successfully logged in
+Welcome, JorgeB!
+1. Create/Edit My Profile
+2. View My Profile
+3. Search for a job
+4. Find someone you know
+5. Learn a new skill
+6. Logout
+Enter your choice:
 2
-All permitted accounts have been created, please come back later
-Welcome to InCollege!
-1) Log In
-2) Create Account
-3) Exit
-Choose an option: 
+Profile not found for: JorgeB
+No profile exists for user: JorgeB
+1. Create/Edit My Profile
+2. View My Profile
+3. Search for a job
+4. Find someone you know
+5. Learn a new skill
+6. Logout
+Enter your choice:
 1
-Enter username: 
+Profile not found for: JorgeB
+No profile exists for user: JorgeB
+Proceeding to Create/Edit Profile...
+--- Create/Edit Profile ---
+Enter first name:
 Jorge
-Enter password: 
+Enter last name:
 Bolivar
-Incorrect username/password, please try again
-Welcome to InCollege!
-1) Log In
-2) Create Account
-3) Exit
-Choose an option: 
-U
-Invalid option. Try again.
-Welcome to InCollege!
-1) Log In
-2) Create Account
-3) Exit
-Choose an option: 
-C
-Invalid option. Try again.
-Welcome to InCollege!
-1) Log In
-2) Create Account
-3) Exit
-Choose an option: 
+Enter university:
+USF
+Enter major:
+CS
+Enter graduation year (YYYY):
+2026
+Enter About Me:
+dsinjdsf
+Experience #1 - Job Title (blank to skip):
+AI
+Company:
+OPENAI
+Dates:
+2025-2026
+Description:
+dfmksdmfds
+Experience #2 - Job Title (blank to skip):
+Random job
+Company:
+random company
+Dates:
+random dates
+Description:
+mfdskmfdsf
+Experience #3 - Job Title (blank to skip):
+Random job 2
+Company:
+random company 2
+Dates:
+randomDates2
+Description:
+dsnjfnsdjfds
+Education #1 - Degree (blank to skip):
+USF
+University:
+USF
+Years attended:
+2021-2026
+Education #2 - Degree (blank to skip):
+Highschool degree
+University:
+Marymount School
+Years attended:
+2015-2021
+Education #3 - Degree (blank to skip):
+Random College
+University:
+Random College
+Years attended:
+2025-2027
+Profile created successfully.
+Profile saved successfully.
+1. Create/Edit My Profile
+2. View My Profile
+3. Search for a job
+4. Find someone you know
+5. Learn a new skill
+6. Logout
+Enter your choice:
 2
-All permitted accounts have been created, please come back later
-Welcome to InCollege!
-1) Log In
-2) Create Account
-3) Exit
-Choose an option: 
-d
-Invalid option. Try again.
-Welcome to InCollege!
-1) Log In
-2) Create Account
-3) Exit
-Choose an option: 
-A
-Invalid option. Try again.
-Welcome to InCollege!
-1) Log In
-2) Create Account
-3) Exit
-Choose an option: 
-O
-Invalid option. Try again.
-Welcome to InCollege!
-1) Log In
-2) Create Account
-3) Exit
-Choose an option: 
-2
-All permitted accounts have been created, please come back later
-Welcome to InCollege!
-1) Log In
-2) Create Account
-3) Exit
-Choose an option: 
-d
-Invalid option. Try again.
-Welcome to InCollege!
-1) Log In
-2) Create Account
-3) Exit
-Choose an option: 
-R
-Invalid option. Try again.
-Welcome to InCollege!
-1) Log In
-2) Create Account
-3) Exit
-Choose an option: 
-r
-Invalid option. Try again.
-Welcome to InCollege!
-1) Log In
-2) Create Account
-3) Exit
-Choose an option: 
-r
-Invalid option. Try again.
-Welcome to InCollege!
-1) Log In
-2) Create Account
-3) Exit
-Choose an option: 
-m
-Invalid option. Try again.
-Welcome to InCollege!
-1) Log In
-2) Create Account
-3) Exit
-Choose an option: 
-R
-Invalid option. Try again.
-Welcome to InCollege!
-1) Log In
-2) Create Account
-3) Exit
-Choose an option: 
-r
-Invalid option. Try again.
-Welcome to InCollege!
-1) Log In
-2) Create Account
-3) Exit
-Choose an option: 
-r
-Invalid option. Try again.
-Welcome to InCollege!
-1) Log In
-2) Create Account
-3) Exit
-Choose an option: 
-d
-Invalid option. Try again.
-Welcome to InCollege!
-1) Log In
-2) Create Account
-3) Exit
-Choose an option: 
-U
-Invalid option. Try again.
-Welcome to InCollege!
-1) Log In
-2) Create Account
-3) Exit
-Choose an option: 
-U
-Invalid option. Try again.
-Welcome to InCollege!
-1) Log In
-2) Create Account
-3) Exit
-Choose an option: 
-2
-All permitted accounts have been created, please come back later
-Welcome to InCollege!
-1) Log In
-2) Create Account
-3) Exit
-Choose an option: 
-H
-Invalid option. Try again.
-Welcome to InCollege!
-1) Log In
-2) Create Account
-3) Exit
-Choose an option: 
-M
-Invalid option. Try again.
-Welcome to InCollege!
-1) Log In
-2) Create Account
-3) Exit
-Choose an option: 
-2
-All permitted accounts have been created, please come back later
-Welcome to InCollege!
-1) Log In
-2) Create Account
-3) Exit
-Choose an option: 
-R
-Invalid option. Try again.
-Welcome to InCollege!
-1) Log In
-2) Create Account
-3) Exit
-Choose an option: 
-R
-Invalid option. Try again.
-Welcome to InCollege!
-1) Log In
-2) Create Account
-3) Exit
-Choose an option: 
-2
-All permitted accounts have been created, please come back later
-Welcome to InCollege!
-1) Log In
-2) Create Account
-3) Exit
-Choose an option: 
-2
-All permitted accounts have been created, please come back later
-Welcome to InCollege!
-1) Log In
-2) Create Account
-3) Exit
-Choose an option: 
+--- Your Profile ---
+Name: Jorge Bolivar
+University: USF
+Major: CS
+Graduation Year: 2026
+About Me: dsinjdsf
+Experience:
+Title: AI
+Company: OPENAI
+Dates: 2025-2026
+Description: dfmksdmfds
+Title: Random job
+Company: random company
+Dates: random dates
+Description: mfdskmfdsf
+Title: Random job 2
+Company: random company 2
+Dates: randomDates2
+Description: dsnjfnsdjfds
+Education:
+Degree: USF
+University: USF
+Years: 2021-2026
+Degree: Highschool degree
+University: Marymount School
+Years: 2015-2021
+Degree: Random College
+University: Random College
+Years: 2025-2027
+1. Create/Edit My Profile
+2. View My Profile
+3. Search for a job
+4. Find someone you know
+5. Learn a new skill
+6. Logout
+Enter your choice:
 6
-Invalid option. Try again.
 Welcome to InCollege!
 1) Log In
 2) Create Account
