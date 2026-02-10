@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+set -euo pipefail
+DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+"$DIR/InCollege.bin" < "$DIR/data/InCollege-Input.txt" | tee "$DIR/data/InCollege-Output.txt"
