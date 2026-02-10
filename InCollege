@@ -2,12 +2,12 @@
 set -euo pipefail
 DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-# Build binary if it doesn't exist
 if [[ ! -x "$DIR/InCollege.bin" ]]; then
   (cd "$DIR/src" && cobc -x -free -o "$DIR/InCollege.bin" \
     InCollege.cob CreateAccount.cob DataStore.cob HomePage.cob LogIn.cob \
     PersonalProfile.cob ProfileCreate.cob ProfileEdit.cob ProfileStore.cob SkillMenu.cob)
 fi
 
-# Run using file-based I/O
-"$DIR/InCollege.bin" < "$DIR/data/InCollege-Input.txt" > "$DIR/data/InCollege-Output.txt"
+: > "$DIR/data/InCollege-Output.txt"
+
+"$DIR/InCollege.bin" < "$DIR/data/InCollege-Input.txt" | tee "$DIR/data/InCollege-Output.txt"

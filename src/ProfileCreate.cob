@@ -1,202 +1,91 @@
+>>SOURCE FORMAT FREE
 IDENTIFICATION DIVISION.
 PROGRAM-ID. ProfileCreate.
 
 DATA DIVISION.
 WORKING-STORAGE SECTION.
-01 I           PIC 9 VALUE 1.
-01 WS-FNAME    PIC X(25) VALUE SPACES.
-01 WS-LNAME    PIC X(25) VALUE SPACES.
-01 WS-FOUND    PIC X VALUE "N".
-01 WS-INDEX    PIC 9 VALUE 0.
-01 WS-GRAD-RAW PIC X(10) VALUE SPACES.
-01 WS-GRAD-NUM PIC 9(4) VALUE 0.
 
-01 PROFILE-RECORD.
-    05 Username      PIC X(30) VALUE SPACES.
-    05 Name          PIC X(50) VALUE SPACES.
-    05 University    PIC X(50) VALUE SPACES.
-    05 Major         PIC X(50) VALUE SPACES.
-    05 GradYear      PIC 9(4)  VALUE 0.
-    05 About         PIC X(200) VALUE SPACES.
-    05 JobTitle      OCCURS 3 TIMES PIC X(50) VALUE SPACES.
-    05 Company       OCCURS 3 TIMES PIC X(50) VALUE SPACES.
-    05 Dates         OCCURS 3 TIMES PIC X(30) VALUE SPACES.
-    05 Desc          OCCURS 3 TIMES PIC X(200) VALUE SPACES.
-    05 Degree        OCCURS 3 TIMES PIC X(50) VALUE SPACES.
-    05 Univ          OCCURS 3 TIMES PIC X(50) VALUE SPACES.
-    05 Years         OCCURS 3 TIMES PIC X(30) VALUE SPACES.
+77 WS-INDEX PIC 9(2) VALUE 1.
+77 WS-FOUND PIC X VALUE "N".
+77 WS-GRAD-RAW PIC X(10) VALUE SPACES.
+77 WS-GRAD-NUM PIC 9(4) VALUE 0.
 
 LINKAGE SECTION.
-01 LNK-USER-NAME     PIC X(30).
-77 LK-PROFILE-COUNT  PIC 9.
-01 LK-PROFILE-LIST.
-    05 LK-PROF-ROW OCCURS 5 TIMES.
-        10 LK-USERNAME    PIC X(30).
-        10 LK-NAME        PIC X(50).
-        10 LK-UNIVERSITY  PIC X(50).
-        10 LK-MAJOR       PIC X(50).
-        10 LK-GRADYEAR    PIC 9(4).
-        10 LK-ABOUT       PIC X(200).
-        10 LK-JOBTITLE    OCCURS 3 TIMES PIC X(50).
-        10 LK-COMPANY     OCCURS 3 TIMES PIC X(50).
-        10 LK-DATES       OCCURS 3 TIMES PIC X(30).
-        10 LK-DESC        OCCURS 3 TIMES PIC X(200).
-        10 LK-DEGREE      OCCURS 3 TIMES PIC X(50).
-        10 LK-UNIV        OCCURS 3 TIMES PIC X(50).
-        10 LK-YEARS       OCCURS 3 TIMES PIC X(30).
+01 PROFILE-RECORD.
+   05 LK-PROF-ROW OCCURS 10 TIMES.
+      10 Username PIC X(10).
+      10 Name PIC X(25).
+      10 University PIC X(25).
+      10 Major PIC X(25).
+      10 GradYear PIC X(4).
+      10 About PIC X(200).
+      10 JobTitle PIC X(25).
+      10 Company PIC X(25).
+      10 Dates PIC X(15).
+      10 Desc PIC X(100).
+      10 Degree PIC X(25).
+      10 Univ PIC X(25).
+      10 Years PIC X(15).
+01 LK-PROFILE-COUNT PIC 9(2).
+01 LK-USERNAME PIC X(10).
 
-PROCEDURE DIVISION USING LNK-USER-NAME LK-PROFILE-COUNT LK-PROFILE-LIST.
-
+PROCEDURE DIVISION USING PROFILE-RECORD LK-PROFILE-COUNT LK-USERNAME.
 MAIN.
-    *> FIX #1: Properly initialize record each run
-    MOVE SPACES TO PROFILE-RECORD
-    MOVE 0 TO GradYear
-
-    MOVE LNK-USER-NAME TO Username
-
-    DISPLAY "--- Create/Edit Profile ---"
-
-    DISPLAY "Enter first name:"
-    ACCEPT WS-FNAME
-    INSPECT WS-FNAME REPLACING ALL X"0D" BY SPACE
-    INSPECT WS-FNAME REPLACING ALL X"0A" BY SPACE
-    DISPLAY FUNCTION TRIM(WS-FNAME)
-
-    DISPLAY "Enter last name:"
-    ACCEPT WS-LNAME
-    INSPECT WS-LNAME REPLACING ALL X"0D" BY SPACE
-    INSPECT WS-LNAME REPLACING ALL X"0A" BY SPACE
-    DISPLAY FUNCTION TRIM(WS-LNAME)
-
-    MOVE SPACES TO Name
-    STRING
-        FUNCTION TRIM(WS-FNAME)
-        SPACE
-        FUNCTION TRIM(WS-LNAME)
-        INTO Name
-    END-STRING
-
-    DISPLAY "Enter university:"
-    ACCEPT University
-    INSPECT University REPLACING ALL X"0D" BY SPACE
-    INSPECT University REPLACING ALL X"0A" BY SPACE
-    DISPLAY FUNCTION TRIM(University)
-
-    DISPLAY "Enter major:"
-    ACCEPT Major
-    INSPECT Major REPLACING ALL X"0D" BY SPACE
-    INSPECT Major REPLACING ALL X"0A" BY SPACE
-    DISPLAY FUNCTION TRIM(Major)
-
-    PERFORM UNTIL 1 = 2
-        DISPLAY "Enter graduation year (YYYY):"
-        ACCEPT WS-GRAD-RAW
-        INSPECT WS-GRAD-RAW REPLACING ALL X"0D" BY SPACE
-        INSPECT WS-GRAD-RAW REPLACING ALL X"0A" BY SPACE
-        DISPLAY FUNCTION TRIM(WS-GRAD-RAW)
-
-        IF FUNCTION LENGTH(FUNCTION TRIM(WS-GRAD-RAW)) = 4
-            AND FUNCTION TRIM(WS-GRAD-RAW) IS NUMERIC
-            MOVE FUNCTION TRIM(WS-GRAD-RAW) TO WS-GRAD-NUM
-            MOVE WS-GRAD-NUM TO GradYear
-            EXIT PERFORM
-        ELSE
-            DISPLAY "Invalid year. Please enter 4 digits."
-        END-IF
-    END-PERFORM
-
-    DISPLAY "Enter About Me:"
-    ACCEPT About
-    INSPECT About REPLACING ALL X"0D" BY SPACE
-    INSPECT About REPLACING ALL X"0A" BY SPACE
-    DISPLAY FUNCTION TRIM(About)
-
-    *> FIX #2: "blank to skip" truly skips the rest of that experience
-    PERFORM VARYING I FROM 1 BY 1 UNTIL I > 3
-        DISPLAY "Experience #" I " - Job Title (blank to skip):"
-        ACCEPT JobTitle(I)
-        INSPECT JobTitle(I) REPLACING ALL X"0D" BY SPACE
-        INSPECT JobTitle(I) REPLACING ALL X"0A" BY SPACE
-        DISPLAY FUNCTION TRIM(JobTitle(I))
-
-        IF FUNCTION TRIM(JobTitle(I)) = ""
-            MOVE SPACES TO Company(I)
-            MOVE SPACES TO Dates(I)
-            MOVE SPACES TO Desc(I)
-        ELSE
-            DISPLAY "Company:"
-            ACCEPT Company(I)
-            INSPECT Company(I) REPLACING ALL X"0D" BY SPACE
-            INSPECT Company(I) REPLACING ALL X"0A" BY SPACE
-            DISPLAY FUNCTION TRIM(Company(I))
-
-            DISPLAY "Dates:"
-            ACCEPT Dates(I)
-            INSPECT Dates(I) REPLACING ALL X"0D" BY SPACE
-            INSPECT Dates(I) REPLACING ALL X"0A" BY SPACE
-            DISPLAY FUNCTION TRIM(Dates(I))
-
-            DISPLAY "Description:"
-            ACCEPT Desc(I)
-            INSPECT Desc(I) REPLACING ALL X"0D" BY SPACE
-            INSPECT Desc(I) REPLACING ALL X"0A" BY SPACE
-            DISPLAY FUNCTION TRIM(Desc(I))
-        END-IF
-    END-PERFORM
-
-    *> FIX #2: "blank to skip" truly skips the rest of that education
-    PERFORM VARYING I FROM 1 BY 1 UNTIL I > 3
-        DISPLAY "Education #" I " - Degree (blank to skip):"
-        ACCEPT Degree(I)
-        INSPECT Degree(I) REPLACING ALL X"0D" BY SPACE
-        INSPECT Degree(I) REPLACING ALL X"0A" BY SPACE
-        DISPLAY FUNCTION TRIM(Degree(I))
-
-        IF FUNCTION TRIM(Degree(I)) = ""
-            MOVE SPACES TO Univ(I)
-            MOVE SPACES TO Years(I)
-        ELSE
-            DISPLAY "University:"
-            ACCEPT Univ(I)
-            INSPECT Univ(I) REPLACING ALL X"0D" BY SPACE
-            INSPECT Univ(I) REPLACING ALL X"0A" BY SPACE
-            DISPLAY FUNCTION TRIM(Univ(I))
-
-            DISPLAY "Years attended:"
-            ACCEPT Years(I)
-            INSPECT Years(I) REPLACING ALL X"0D" BY SPACE
-            INSPECT Years(I) REPLACING ALL X"0A" BY SPACE
-            DISPLAY FUNCTION TRIM(Years(I))
-        END-IF
-    END-PERFORM
-
-    PERFORM UPDATE-IN-MEMORY
-    DISPLAY "Profile created successfully."
-    GOBACK.
-
-UPDATE-IN-MEMORY.
     MOVE "N" TO WS-FOUND
-    MOVE 0 TO WS-INDEX
-
-    IF LK-PROFILE-COUNT > 0
-        PERFORM VARYING I FROM 1 BY 1 UNTIL I > LK-PROFILE-COUNT
-            IF FUNCTION TRIM(LK-USERNAME(I)) = FUNCTION TRIM(Username)
-                MOVE "Y" TO WS-FOUND
-                MOVE I TO WS-INDEX
-                EXIT PERFORM
-            END-IF
-        END-PERFORM
-    END-IF
-
-    IF WS-FOUND = "N"
-        IF LK-PROFILE-COUNT = 5
-            DISPLAY "Cannot create profile. Profile limit reached."
-            EXIT PARAGRAPH
+    PERFORM VARYING WS-INDEX FROM 1 BY 1 UNTIL WS-INDEX > LK-PROFILE-COUNT OR WS-FOUND = "Y"
+        IF FUNCTION TRIM(LK-PROF-ROW(WS-INDEX).Username) = FUNCTION TRIM(LK-USERNAME)
+            MOVE "Y" TO WS-FOUND
         END-IF
-        ADD 1 TO LK-PROFILE-COUNT
-        MOVE LK-PROFILE-COUNT TO WS-INDEX
+    END-PERFORM
+
+    IF WS-FOUND = "Y"
+        DISPLAY "A profile already exists for this user."
+        GOBACK
     END-IF
 
-    MOVE PROFILE-RECORD TO LK-PROF-ROW(WS-INDEX).
+    ADD 1 TO LK-PROFILE-COUNT
+    MOVE LK-USERNAME TO LK-PROF-ROW(LK-PROFILE-COUNT).Username
 
-END PROGRAM ProfileCreate.
+    DISPLAY "Enter your name: "
+    ACCEPT LK-PROF-ROW(LK-PROFILE-COUNT).Name
+
+    DISPLAY "Enter your university: "
+    ACCEPT LK-PROF-ROW(LK-PROFILE-COUNT).University
+
+    DISPLAY "Enter your major: "
+    ACCEPT LK-PROF-ROW(LK-PROFILE-COUNT).Major
+
+    DISPLAY "Enter your graduation year: "
+    ACCEPT WS-GRAD-RAW
+
+    INSPECT WS-GRAD-RAW REPLACING ALL SPACE BY ""
+    INSPECT WS-GRAD-RAW REPLACING ALL "-" BY ""
+    MOVE FUNCTION NUMVAL(WS-GRAD-RAW) TO WS-GRAD-NUM
+    IF WS-GRAD-NUM < 2020 OR WS-GRAD-NUM > 2030
+        DISPLAY "Invalid graduation year."
+        SUBTRACT 1 FROM LK-PROFILE-COUNT
+        GOBACK
+    END-IF
+    MOVE WS-GRAD-RAW(1:4) TO LK-PROF-ROW(LK-PROFILE-COUNT).GradYear
+
+    DISPLAY "Enter a short 'About' section: "
+    ACCEPT LK-PROF-ROW(LK-PROFILE-COUNT).About
+
+    DISPLAY "Enter your job title: "
+    ACCEPT LK-PROF-ROW(LK-PROFILE-COUNT).JobTitle
+    DISPLAY "Enter your company: "
+    ACCEPT LK-PROF-ROW(LK-PROFILE-COUNT).Company
+    DISPLAY "Enter your dates of employment: "
+    ACCEPT LK-PROF-ROW(LK-PROFILE-COUNT).Dates
+    DISPLAY "Enter a short description of your job: "
+    ACCEPT LK-PROF-ROW(LK-PROFILE-COUNT).Desc
+
+    DISPLAY "Enter your degree: "
+    ACCEPT LK-PROF-ROW(LK-PROFILE-COUNT).Degree
+    DISPLAY "Enter your university for education: "
+    ACCEPT LK-PROF-ROW(LK-PROFILE-COUNT).Univ
+    DISPLAY "Enter your years attended: "
+    ACCEPT LK-PROF-ROW(LK-PROFILE-COUNT).Years
+
+    DISPLAY "Profile created successfully!"
+    GOBACK.
