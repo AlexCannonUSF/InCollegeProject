@@ -422,3 +422,4 @@ FodyWeavers.xsd
 *.so
 InCollege.bin
 data/InCollege-Output.txt
+data/accounts.dat
