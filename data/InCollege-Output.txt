@@ -3,17 +3,6 @@ Welcome to InCollege!
 2) Create Account
 3) Exit
 Choose an option: 
-2
-Enter a username: 
-JorgeB
-Enter password: 
-Jeb123@!
-Account created successfully!
-Welcome to InCollege!
-1) Log In
-2) Create Account
-3) Exit
-Choose an option: 
 1
 Enter username: 
 JorgeB
@@ -28,82 +17,11 @@ Welcome, JorgeB!
 5. Learn a new skill
 6. Logout
 Enter your choice:
-2
-No profile exists for user: JorgeB
-1. Create/Edit My Profile
-2. View My Profile
-3. Search for a job
-4. Find someone you know
-5. Learn a new skill
-6. Logout
-Enter your choice:
-1
---- Create/Edit Profile ---
-Enter first name:
-Jorge
-Enter last name:
-Bolivar
-Enter university:
-USF
-Enter major:
-CS
-Enter graduation year (YYYY):
-2026
-Enter About Me:
-dsinjdsf
-Experience #1 - Job Title (blank to skip):
-AI
-Company:
-OPENAI
-Dates:
-2025-2026
-Description:
-dfmksdmfds
-Experience #2 - Job Title (blank to skip):
-Random job
-Company:
-random company
-Dates:
-random dates
-Description:
-mfdskmfdsf
-Experience #3 - Job Title (blank to skip):
-Random job 2
-Company:
-random company 2
-Dates:
-randomDates2
-Description:
-dsnjfnsdjfds
-Education #1 - Degree (blank to skip):
-USF
-University:
-USF
-Years attended:
-2021-2026
-Education #2 - Degree (blank to skip):
-Highschool degree
-University:
-Marymount School
-Years attended:
-2015-2021
-Education #3 - Degree (blank to skip):
-Random College
-University:
-Random College
-Years attended:
-2025-2027
-Profile created successfully.
-Profile saved successfully.
-1. Create/Edit My Profile
-2. View My Profile
-3. Search for a job
-4. Find someone you know
-5. Learn a new skill
-6. Logout
-Enter your choice:
-2
---- Your Profile ---
+4
+DEBUG: Searching for [Jorge Bolivar]
+Enter the full name of the person you are looking for:
+
+--- Found User Profile ---
 Name: Jorge Bolivar
 University: USF
 Major: CS
@@ -132,6 +50,8 @@ Years: 2015-2021
 Degree: Random College
 University: Random College
 Years: 2025-2027
+-------------------------
+
 1. Create/Edit My Profile
 2. View My Profile
 3. Search for a job

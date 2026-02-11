@@ -55,7 +55,7 @@ MAIN.
             WHEN 3
                 DISPLAY "Search for a job is under construction."
             WHEN 4
-                DISPLAY "Find someone you know is under construction."
+                Call "Search"
             WHEN 5
                 CALL "SkillMenu"
             WHEN 6
