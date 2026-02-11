@@ -109,29 +109,38 @@ University: USF
 Major: CS
 Graduation Year: 2026
 About Me: dsinjdsf
+---------------------------------
 Experience:
-Title: AI
-Company: OPENAI
-Dates: 2025-2026
-Description: dfmksdmfds
-Title: Random job
-Company: random company
-Dates: random dates
-Description: mfdskmfdsf
-Title: Random job 2
-Company: random company 2
-Dates: randomDates2
-Description: dsnjfnsdjfds
+---------------------------------
+  Title: AI
+  Company: OPENAI
+  Dates: 2025-2026
+  Description: dfmksdmfds
+---------------------------------
+  Title: Random job
+  Company: random company
+  Dates: random dates
+  Description: mfdskmfdsf
+---------------------------------
+  Title: Random job 2
+  Company: random company 2
+  Dates: randomDates2
+  Description: dsnjfnsdjfds
+---------------------------------
 Education:
-Degree: USF
-University: USF
-Years: 2021-2026
-Degree: Highschool degree
-University: Marymount School
-Years: 2015-2021
-Degree: Random College
-University: Random College
-Years: 2025-2027
+---------------------------------
+  Degree: USF
+  University: USF
+  Years: 2021-2026
+---------------------------------
+  Degree: Highschool degree
+  University: Marymount School
+  Years: 2015-2021
+---------------------------------
+  Degree: Random College
+  University: Random College
+  Years: 2025-2027
+---------------------------------
 1. Create/Edit My Profile
 2. View My Profile
 3. Search for a job

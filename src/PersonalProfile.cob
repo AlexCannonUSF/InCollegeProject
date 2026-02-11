@@ -80,7 +80,9 @@ SEARCH-PROFILE.
     END-IF.
 
 WORK-EXPERIENCE.
+    DISPLAY "---------------------------------"
     DISPLAY "Experience:"
+    DISPLAY "---------------------------------"
     IF FUNCTION TRIM(JobTitle(1)) = SPACE
         AND FUNCTION TRIM(JobTitle(2)) = SPACE
         AND FUNCTION TRIM(JobTitle(3)) = SPACE
@@ -88,15 +90,17 @@ WORK-EXPERIENCE.
     ELSE
         PERFORM VARYING I FROM 1 BY 1
             UNTIL I > 3 OR FUNCTION TRIM(JobTitle(I)) = SPACE
-            DISPLAY "Title: " FUNCTION TRIM(JobTitle(I))
-            DISPLAY "Company: " FUNCTION TRIM(Company(I))
-            DISPLAY "Dates: " FUNCTION TRIM(Dates(I))
-            DISPLAY "Description: " FUNCTION TRIM(Desc(I))
+            DISPLAY "  Title: " FUNCTION TRIM(JobTitle(I))
+            DISPLAY "  Company: " FUNCTION TRIM(Company(I))
+            DISPLAY "  Dates: " FUNCTION TRIM(Dates(I))
+            DISPLAY "  Description: " FUNCTION TRIM(Desc(I))
+            DISPLAY "---------------------------------"
         END-PERFORM
     END-IF.
 
 EDUCATION.
     DISPLAY "Education:"
+    DISPLAY "---------------------------------"
     IF FUNCTION TRIM(Degree(1)) = SPACE
         AND FUNCTION TRIM(Degree(2)) = SPACE
         AND FUNCTION TRIM(Degree(3)) = SPACE
@@ -104,9 +108,10 @@ EDUCATION.
     ELSE
         PERFORM VARYING I FROM 1 BY 1
             UNTIL I > 3 OR FUNCTION TRIM(Degree(I)) = SPACE
-            DISPLAY "Degree: " FUNCTION TRIM(Degree(I))
-            DISPLAY "University: " FUNCTION TRIM(Univ(I))
-            DISPLAY "Years: " FUNCTION TRIM(Years(I))
+            DISPLAY "  Degree: " FUNCTION TRIM(Degree(I))
+            DISPLAY "  University: " FUNCTION TRIM(Univ(I))
+            DISPLAY "  Years: " FUNCTION TRIM(Years(I))
+            DISPLAY "---------------------------------"
         END-PERFORM
     END-IF.
 
