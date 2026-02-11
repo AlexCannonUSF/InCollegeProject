@@ -45,17 +45,16 @@ PROCEDURE DIVISION.
 MAIN-LOGIC.
        OPEN INPUT PROFILE-FILE
        OPEN EXTEND OUTPUT-FILE
-
+       DISPLAY "Enter the full name of the person you are looking for:"
        ACCEPT WS-SEARCH-QUERY
 
        INSPECT WS-SEARCH-QUERY REPLACING ALL X'0D' BY SPACE
        INSPECT WS-SEARCH-QUERY REPLACING ALL X'0A' BY SPACE
 
-       DISPLAY "DEBUG: Searching for [" FUNCTION TRIM(WS-SEARCH-QUERY) "]"
 
-       MOVE "Enter the full name of the person you are looking for:"
-           TO OUT-RECORD
-       PERFORM DISPLAY-AND-WRITE
+       *>MOVE "Enter the full name of the person you are looking for:"
+           *>TO OUT-RECORD
+       *>PERFORM DISPLAY-AND-WRITE
 
        MOVE 'N' TO WS-EOF-PROFILE
        MOVE 'N' TO WS-FOUND-FLAG
@@ -73,7 +72,7 @@ MAIN-LOGIC.
        END-PERFORM
 
        IF WS-FOUND-FLAG = 'N'
-           DISPLAY "No one by that name could be found."
+           MOVE "No one by that name could be found." TO OUT-RECORD
            PERFORM DISPLAY-AND-WRITE
        END-IF
 
@@ -137,6 +136,5 @@ DISPLAY-PROFILE.
        PERFORM DISPLAY-AND-WRITE.
 
 DISPLAY-AND-WRITE.
-       DISPLAY FUNCTION TRIM(OUT-RECORD).
-       WRITE OUT-RECORD.
+       DISPLAY FUNCTION TRIM(OUT-RECORD)
        MOVE SPACES TO OUT-RECORD.

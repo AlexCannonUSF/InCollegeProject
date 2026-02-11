@@ -1,0 +1,212 @@
+Welcome to InCollege!
+1) Log In
+2) Create Account
+3) Exit
+Choose an option: 
+2
+Enter a username: 
+AlexUser1
+Enter password: 
+Abcdef1!
+Account created successfully!
+Welcome to InCollege!
+1) Log In
+2) Create Account
+3) Exit
+Choose an option: 
+2
+Enter a username: 
+AlexUser2
+Enter password: 
+Abcdef1!
+Account created successfully!
+Welcome to InCollege!
+1) Log In
+2) Create Account
+3) Exit
+Choose an option: 
+1
+Enter username: 
+AlexUser1
+Enter password: 
+Abcdef1!
+You have successfully logged in
+Welcome, AlexUser1!
+1. Create/Edit My Profile
+2. View My Profile
+3. Search for a job
+4. Find someone you know
+5. Learn a new skill
+6. Logout
+Enter your choice:
+1
+--- Create/Edit Profile ---
+Enter first name:
+Alex
+Enter last name:
+Cannon1
+Enter university:
+USF
+Enter major:
+Computer Science
+Enter graduation year (YYYY):
+2027
+Enter About Me:
+Profile for Alex Cannon1.
+Experience #1 - Job Title (blank to skip):
+
+Experience #2 - Job Title (blank to skip):
+
+Experience #3 - Job Title (blank to skip):
+
+Education #1 - Degree (blank to skip):
+B.S. Computer Science
+University:
+University of South Florida
+Years attended:
+2023-2027
+Education #2 - Degree (blank to skip):
+
+Education #3 - Degree (blank to skip):
+
+Profile created successfully.
+Profile saved successfully.
+1. Create/Edit My Profile
+2. View My Profile
+3. Search for a job
+4. Find someone you know
+5. Learn a new skill
+6. Logout
+Enter your choice:
+6
+Welcome to InCollege!
+1) Log In
+2) Create Account
+3) Exit
+Choose an option: 
+1
+Enter username: 
+AlexUser2
+Enter password: 
+Abcdef1!
+You have successfully logged in
+Welcome, AlexUser2!
+1. Create/Edit My Profile
+2. View My Profile
+3. Search for a job
+4. Find someone you know
+5. Learn a new skill
+6. Logout
+Enter your choice:
+1
+--- Create/Edit Profile ---
+Enter first name:
+Alex
+Enter last name:
+Cannon2
+Enter university:
+USF
+Enter major:
+Computer Science
+Enter graduation year (YYYY):
+2027
+Enter About Me:
+Profile for Alex Cannon2.
+Experience #1 - Job Title (blank to skip):
+
+Experience #2 - Job Title (blank to skip):
+
+Experience #3 - Job Title (blank to skip):
+
+Education #1 - Degree (blank to skip):
+B.S. Computer Science
+University:
+University of South Florida
+Years attended:
+2023-2027
+Education #2 - Degree (blank to skip):
+
+Education #3 - Degree (blank to skip):
+
+Profile created successfully.
+Profile saved successfully.
+1. Create/Edit My Profile
+2. View My Profile
+3. Search for a job
+4. Find someone you know
+5. Learn a new skill
+6. Logout
+Enter your choice:
+6
+Welcome to InCollege!
+1) Log In
+2) Create Account
+3) Exit
+Choose an option: 
+1
+Enter username: 
+AlexUser1
+Enter password: 
+Abcdef1!
+You have successfully logged in
+Welcome, AlexUser1!
+1. Create/Edit My Profile
+2. View My Profile
+3. Search for a job
+4. Find someone you know
+5. Learn a new skill
+6. Logout
+Enter your choice:
+4
+Enter the full name of the person you are looking for:
+
+--- Found User Profile ---
+Name: Alex Cannon2
+University: USF
+Major: Computer Science
+Graduation Year: 2027
+About Me: Profile for Alex Cannon2.
+Experience:
+Education:
+Degree: B.S. Computer Science
+University: University of South Florida
+Years: 2023-2027
+-------------------------
+
+1. Create/Edit My Profile
+2. View My Profile
+3. Search for a job
+4. Find someone you know
+5. Learn a new skill
+6. Logout
+Enter your choice:
+4
+Enter the full name of the person you are looking for:
+
+--- Found User Profile ---
+Name: Alex Cannon1
+University: USF
+Major: Computer Science
+Graduation Year: 2027
+About Me: Profile for Alex Cannon1.
+Experience:
+Education:
+Degree: B.S. Computer Science
+University: University of South Florida
+Years: 2023-2027
+-------------------------
+
+1. Create/Edit My Profile
+2. View My Profile
+3. Search for a job
+4. Find someone you know
+5. Learn a new skill
+6. Logout
+Enter your choice:
+6
+Welcome to InCollege!
+1) Log In
+2) Create Account
+3) Exit
+Choose an option: 
+3
