@@ -39,13 +39,13 @@ No profile exists for user: JorgeB
 Enter your choice:
 1
 --- Create/Edit Profile ---
-Enter first name:
+Enter first name (required):
 Jorge
-Enter last name:
+Enter last name (required):
 Bolivar
-Enter university:
+Enter university (required):
 USF
-Enter major:
+Enter major (required):
 CS
 Enter graduation year (YYYY):
 2026

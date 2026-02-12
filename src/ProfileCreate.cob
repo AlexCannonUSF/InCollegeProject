@@ -56,18 +56,30 @@ MAIN.
 
     DISPLAY "--- Create/Edit Profile ---"
 
-    DISPLAY "Enter first name:"
-    ACCEPT WS-FNAME
-    INSPECT WS-FNAME REPLACING ALL X"0D" BY SPACE
-    INSPECT WS-FNAME REPLACING ALL X"0A" BY SPACE
+    PERFORM UNTIL FUNCTION TRIM(WS-FNAME) NOT = ""
+        DISPLAY "Enter first name (required):"
+        ACCEPT WS-FNAME
+        INSPECT WS-FNAME REPLACING ALL X"0D" BY SPACE
+        INSPECT WS-FNAME REPLACING ALL X"0A" BY SPACE
+
+        IF FUNCTION TRIM(WS-FNAME) = ""
+            DISPLAY "First name cannot be blank."
+        END-IF
+    END-PERFORM
     DISPLAY FUNCTION TRIM(WS-FNAME)
 
-    DISPLAY "Enter last name:"
-    ACCEPT WS-LNAME
-    INSPECT WS-LNAME REPLACING ALL X"0D" BY SPACE
-    INSPECT WS-LNAME REPLACING ALL X"0A" BY SPACE
-    DISPLAY FUNCTION TRIM(WS-LNAME)
+    PERFORM UNTIL FUNCTION TRIM(WS-LNAME) NOT = ""
+        DISPLAY "Enter last name (required):"
+        ACCEPT WS-LNAME
+        INSPECT WS-LNAME REPLACING ALL X"0D" BY SPACE
+        INSPECT WS-LNAME REPLACING ALL X"0A" BY SPACE
 
+        IF FUNCTION TRIM(WS-LNAME) = ""
+            DISPLAY "Last name cannot be blank."
+        END-IF
+    END-PERFORM
+    DISPLAY FUNCTION TRIM(WS-LNAME)
+    
     MOVE SPACES TO Name
     STRING
         FUNCTION TRIM(WS-FNAME)
@@ -76,16 +88,28 @@ MAIN.
         INTO Name
     END-STRING
 
-    DISPLAY "Enter university:"
-    ACCEPT University
-    INSPECT University REPLACING ALL X"0D" BY SPACE
-    INSPECT University REPLACING ALL X"0A" BY SPACE
+    PERFORM UNTIL FUNCTION TRIM(University) NOT = ""
+        DISPLAY "Enter university (required):"
+        ACCEPT University
+        INSPECT University REPLACING ALL X"0D" BY SPACE
+        INSPECT University REPLACING ALL X"0A" BY SPACE
+
+        IF FUNCTION TRIM(University) = ""
+            DISPLAY "University cannot be blank."
+        END-IF
+    END-PERFORM
     DISPLAY FUNCTION TRIM(University)
 
-    DISPLAY "Enter major:"
-    ACCEPT Major
-    INSPECT Major REPLACING ALL X"0D" BY SPACE
-    INSPECT Major REPLACING ALL X"0A" BY SPACE
+    PERFORM UNTIL FUNCTION TRIM(Major) NOT = ""
+        DISPLAY "Enter major (required):"
+        ACCEPT Major
+        INSPECT Major REPLACING ALL X"0D" BY SPACE
+        INSPECT Major REPLACING ALL X"0A" BY SPACE
+
+        IF FUNCTION TRIM(Major) = ""
+            DISPLAY "Major cannot be blank."
+        END-IF
+    END-PERFORM
     DISPLAY FUNCTION TRIM(Major)
 
     PERFORM UNTIL 1 = 2
