@@ -13,6 +13,7 @@ cobc -x -free -o bin/InCollege \
   src/PersonalProfile.cob \
   src/ProfileStore.cob \
   src/ProfileCreate.cob \
-  src/ProfileEdit.cob
+  src/ProfileEdit.cob \
+  src/Search.cob
 
 echo "Build complete: bin/InCollege"
