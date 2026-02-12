@@ -5,9 +5,9 @@ Welcome to InCollege!
 Choose an option: 
 2
 Enter a username: 
-alex                          
+JorgeB
 Enter password: 
-Abcdef1!    
+Jeb123@!
 Account created successfully!
 Welcome to InCollege!
 1) Log In
@@ -16,98 +16,139 @@ Welcome to InCollege!
 Choose an option: 
 1
 Enter username: 
-alex                          
+JorgeB
 Enter password: 
-Abcdef1!    
+Jeb123@!
 You have successfully logged in
-Welcome, alex!
-1. Search for a job
-2. Find someone you know
-3. Learn a new skill
-4. Logout
-Enter your choice:
-1
-Job search/internship is under construction.
-1. Search for a job
-2. Find someone you know
-3. Learn a new skill
-4. Logout
+Welcome, JorgeB!
+1. Create/Edit My Profile
+2. View My Profile
+3. Search for a job
+4. Find someone you know
+5. Learn a new skill
+6. Logout
 Enter your choice:
 2
-Find someone you know is under construction.
-1. Search for a job
-2. Find someone you know
-3. Learn a new skill
-4. Logout
-Enter your choice:
-3
-Learn a new skill is under construction.
-Learn a New Skill:
-Skill 1
-Skill 2
-Skill 3
-Skill 4
-Skill 5
-Go Back
+No profile exists for user: JorgeB
+1. Create/Edit My Profile
+2. View My Profile
+3. Search for a job
+4. Find someone you know
+5. Learn a new skill
+6. Logout
 Enter your choice:
 1
-This skill is under construction.
-Learn a New Skill:
-Skill 1
-Skill 2
-Skill 3
-Skill 4
-Skill 5
-Go Back
+--- Create/Edit Profile ---
+Enter first name (required):
+Jorge
+Enter last name (required):
+Bolivar
+Enter university (required):
+USF
+Enter major (required):
+CS
+Enter graduation year (YYYY):
+2026
+Enter About Me:
+dsinjdsf
+Experience #1 - Job Title (blank to skip):
+AI
+Company:
+OPENAI
+Dates:
+2025-2026
+Description:
+dfmksdmfds
+Experience #2 - Job Title (blank to skip):
+Random job
+Company:
+random company
+Dates:
+random dates
+Description:
+mfdskmfdsf
+Experience #3 - Job Title (blank to skip):
+Random job 2
+Company:
+random company 2
+Dates:
+randomDates2
+Description:
+dsnjfnsdjfds
+Education #1 - Degree (blank to skip):
+USF
+University:
+USF
+Years attended:
+2021-2026
+Education #2 - Degree (blank to skip):
+Highschool degree
+University:
+Marymount School
+Years attended:
+2015-2021
+Education #3 - Degree (blank to skip):
+Random College
+University:
+Random College
+Years attended:
+2025-2027
+Profile created successfully.
+Profile saved successfully.
+1. Create/Edit My Profile
+2. View My Profile
+3. Search for a job
+4. Find someone you know
+5. Learn a new skill
+6. Logout
 Enter your choice:
 2
-This skill is under construction.
-Learn a New Skill:
-Skill 1
-Skill 2
-Skill 3
-Skill 4
-Skill 5
-Go Back
-Enter your choice:
-3
-This skill is under construction.
-Learn a New Skill:
-Skill 1
-Skill 2
-Skill 3
-Skill 4
-Skill 5
-Go Back
-Enter your choice:
-4
-This skill is under construction.
-Learn a New Skill:
-Skill 1
-Skill 2
-Skill 3
-Skill 4
-Skill 5
-Go Back
-Enter your choice:
-5
-This skill is under construction.
-Learn a New Skill:
-Skill 1
-Skill 2
-Skill 3
-Skill 4
-Skill 5
-Go Back
+--- Your Profile ---
+Name: Jorge Bolivar
+University: USF
+Major: CS
+Graduation Year: 2026
+About Me: dsinjdsf
+---------------------------------
+Experience:
+---------------------------------
+  Title: AI
+  Company: OPENAI
+  Dates: 2025-2026
+  Description: dfmksdmfds
+---------------------------------
+  Title: Random job
+  Company: random company
+  Dates: random dates
+  Description: mfdskmfdsf
+---------------------------------
+  Title: Random job 2
+  Company: random company 2
+  Dates: randomDates2
+  Description: dsnjfnsdjfds
+---------------------------------
+Education:
+---------------------------------
+  Degree: USF
+  University: USF
+  Years: 2021-2026
+---------------------------------
+  Degree: Highschool degree
+  University: Marymount School
+  Years: 2015-2021
+---------------------------------
+  Degree: Random College
+  University: Random College
+  Years: 2025-2027
+---------------------------------
+1. Create/Edit My Profile
+2. View My Profile
+3. Search for a job
+4. Find someone you know
+5. Learn a new skill
+6. Logout
 Enter your choice:
 6
-1. Search for a job
-2. Find someone you know
-3. Learn a new skill
-4. Logout
-Enter your choice:
-4
-Logging out...
 Welcome to InCollege!
 1) Log In
 2) Create Account

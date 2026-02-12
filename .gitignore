@@ -416,3 +416,10 @@ FodyWeavers.xsd
 *.msix
 *.msm
 *.msp
+
+# build artifacts
+*.o
+*.so
+InCollege.bin
+data/InCollege-Output.txt
+data/accounts.dat

@@ -1,0 +1,95 @@
+Welcome to InCollege!
+1) Log In
+2) Create Account
+3) Exit
+Choose an option: 
+2
+Enter a username: 
+AlexCannon
+Enter password: 
+Abcdef1!
+Account created successfully!
+Welcome to InCollege!
+1) Log In
+2) Create Account
+3) Exit
+Choose an option: 
+1
+Enter username: 
+AlexCannon
+Enter password: 
+Abcdef1!
+You have successfully logged in
+Welcome, AlexCannon!
+1. Create/Edit My Profile
+2. View My Profile
+3. Search for a job
+4. Find someone you know
+5. Learn a new skill
+6. Logout
+Enter your choice:
+1
+--- Create/Edit Profile ---
+Enter first name (required):
+Alex
+Enter last name (required):
+Cannon
+Enter university (required):
+USF
+Enter major (required):
+Major cannot be blank.
+Enter major (required):
+Computer Science
+Enter graduation year (YYYY):
+2027
+Enter About Me:
+CS student at USF.
+Experience #1 - Job Title (blank to skip):
+
+Experience #2 - Job Title (blank to skip):
+
+Experience #3 - Job Title (blank to skip):
+
+Education #1 - Degree (blank to skip):
+
+Education #2 - Degree (blank to skip):
+
+Education #3 - Degree (blank to skip):
+
+Profile created successfully.
+Profile saved successfully.
+1. Create/Edit My Profile
+2. View My Profile
+3. Search for a job
+4. Find someone you know
+5. Learn a new skill
+6. Logout
+Enter your choice:
+2
+--- Your Profile ---
+Name: Alex Cannon
+University: USF
+Major: Computer Science
+Graduation Year: 2027
+About Me: CS student at USF.
+---------------------------------
+Experience:
+---------------------------------
+No work experience found.
+Education:
+---------------------------------
+No education history found.
+1. Create/Edit My Profile
+2. View My Profile
+3. Search for a job
+4. Find someone you know
+5. Learn a new skill
+6. Logout
+Enter your choice:
+6
+Welcome to InCollege!
+1) Log In
+2) Create Account
+3) Exit
+Choose an option: 
+3

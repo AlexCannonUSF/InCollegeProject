@@ -1,0 +1,148 @@
+Welcome to InCollege!
+1) Log In
+2) Create Account
+3) Exit
+Choose an option: 
+2
+Enter a username: 
+AlexCannon
+Enter password: 
+Abcdef1!
+Account created successfully!
+Welcome to InCollege!
+1) Log In
+2) Create Account
+3) Exit
+Choose an option: 
+1
+Enter username: 
+AlexCannon
+Enter password: 
+Abcdef1!
+You have successfully logged in
+Welcome, AlexCannon!
+1. Create/Edit My Profile
+2. View My Profile
+3. Search for a job
+4. Find someone you know
+5. Learn a new skill
+6. Logout
+Enter your choice:
+1
+--- Create/Edit Profile ---
+Enter first name (required):
+Alex
+Enter last name (required):
+Cannon
+Enter university (required):
+USF
+Enter major (required):
+Computer Science
+Enter graduation year (YYYY):
+2027
+Enter About Me:
+CS student at USF interested in AI and software engineering.
+Experience #1 - Job Title (blank to skip):
+Software Intern
+Company:
+OpenAI
+Dates:
+Summer 2025
+Description:
+Built tooling and automation scripts.
+Experience #2 - Job Title (blank to skip):
+Teaching Assistant
+Company:
+USF
+Dates:
+Fall 2025
+Description:
+Helped students with programming labs.
+Experience #3 - Job Title (blank to skip):
+Research Assistant
+Company:
+USF AI Lab
+Dates:
+2026-2027
+Description:
+Worked on NLP experiments.
+Education #1 - Degree (blank to skip):
+B.S. Computer Science
+University:
+University of South Florida
+Years attended:
+2023-2027
+Education #2 - Degree (blank to skip):
+High School Diploma
+University:
+Some High School
+Years attended:
+2019-2023
+Education #3 - Degree (blank to skip):
+A.A. General Studies
+University:
+Hillsborough Community College
+Years attended:
+2022-2023
+Profile created successfully.
+Profile saved successfully.
+1. Create/Edit My Profile
+2. View My Profile
+3. Search for a job
+4. Find someone you know
+5. Learn a new skill
+6. Logout
+Enter your choice:
+2
+--- Your Profile ---
+Name: Alex Cannon
+University: USF
+Major: Computer Science
+Graduation Year: 2027
+About Me: CS student at USF interested in AI and software engineering.
+---------------------------------
+Experience:
+---------------------------------
+  Title: Software Intern
+  Company: OpenAI
+  Dates: Summer 2025
+  Description: Built tooling and automation scripts.
+---------------------------------
+  Title: Teaching Assistant
+  Company: USF
+  Dates: Fall 2025
+  Description: Helped students with programming labs.
+---------------------------------
+  Title: Research Assistant
+  Company: USF AI Lab
+  Dates: 2026-2027
+  Description: Worked on NLP experiments.
+---------------------------------
+Education:
+---------------------------------
+  Degree: B.S. Computer Science
+  University: University of South Florida
+  Years: 2023-2027
+---------------------------------
+  Degree: High School Diploma
+  University: Some High School
+  Years: 2019-2023
+---------------------------------
+  Degree: A.A. General Studies
+  University: Hillsborough Community College
+  Years: 2022-2023
+---------------------------------
+1. Create/Edit My Profile
+2. View My Profile
+3. Search for a job
+4. Find someone you know
+5. Learn a new skill
+6. Logout
+Enter your choice:
+6
+Welcome to InCollege!
+1) Log In
+2) Create Account
+3) Exit
+Choose an option: 
+3

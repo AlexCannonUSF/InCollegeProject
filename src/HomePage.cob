@@ -1,60 +1,78 @@
->>SOURCE FORMAT FREE
 IDENTIFICATION DIVISION.
 PROGRAM-ID. HomePage.
 
 DATA DIVISION.
 WORKING-STORAGE SECTION.
-01 USER-CHOICE      PIC 9.
-01 EXIT-FLAG        PIC X VALUE 'N'.
+01 USER-CHOICE PIC 9 VALUE 0.
+01 EXIT-FLAG   PIC X VALUE 'N'.
+
+77 WS-PROFILE-COUNT PIC 9 VALUE 0.
+01 WS-PROFILE-LIST.
+    05 WS-PROF-ROW OCCURS 5 TIMES.
+        10 WS-USERNAME    PIC X(30).
+        10 WS-NAME        PIC X(50).
+        10 WS-UNIVERSITY  PIC X(50).
+        10 WS-MAJOR       PIC X(50).
+        10 WS-GRADYEAR    PIC 9(4).
+        10 WS-ABOUT       PIC X(200).
+        10 WS-JOBTITLE    OCCURS 3 TIMES PIC X(50).
+        10 WS-COMPANY     OCCURS 3 TIMES PIC X(50).
+        10 WS-DATES       OCCURS 3 TIMES PIC X(30).
+        10 WS-DESC        OCCURS 3 TIMES PIC X(200).
+        10 WS-DEGREE      OCCURS 3 TIMES PIC X(50).
+        10 WS-UNIV        OCCURS 3 TIMES PIC X(50).
+        10 WS-YEARS       OCCURS 3 TIMES PIC X(30).
 
 LINKAGE SECTION.
-01 LNK-USER-NAME    PIC X(20).
+01 LNK-USER-NAME PIC X(30).
 
 PROCEDURE DIVISION USING LNK-USER-NAME.
 
-MAIN-LOGIC.
-    PERFORM DISPLAY-WELCOME.
+MAIN.
+    MOVE 'N' TO EXIT-FLAG
+    MOVE 0   TO USER-CHOICE
+
+    CALL "ProfileStore" USING "L" WS-PROFILE-COUNT WS-PROFILE-LIST
+
+    DISPLAY "Welcome, " FUNCTION TRIM(LNK-USER-NAME) "!"
     PERFORM UNTIL EXIT-FLAG = 'Y'
         PERFORM DISPLAY-MENU
         ACCEPT USER-CHOICE
         DISPLAY USER-CHOICE
+
         EVALUATE USER-CHOICE
             WHEN 1
-                PERFORM JOB-SEARCH
+                CALL "ProfileEdit" USING LNK-USER-NAME
+                                        WS-PROFILE-COUNT
+                                        WS-PROFILE-LIST
+                CALL "ProfileStore" USING "S"
+                                        WS-PROFILE-COUNT
+                                        WS-PROFILE-LIST
             WHEN 2
-                PERFORM FIND-SOMEONE
+                CALL "PersonalProfile" USING LNK-USER-NAME
+                                            WS-PROFILE-COUNT
+                                            WS-PROFILE-LIST
             WHEN 3
-                PERFORM LEARN-SKILL
-                CALL 'SkillMenu' 
+                DISPLAY "Search for a job is under construction."
             WHEN 4
-                PERFORM LOGOUT
+                Call "Search"
+            WHEN 5
+                CALL "SkillMenu"
+            WHEN 6
+                MOVE 'Y' TO EXIT-FLAG
             WHEN OTHER
                 DISPLAY "Invalid choice. Please try again."
         END-EVALUATE
     END-PERFORM
     GOBACK.
 
-DISPLAY-WELCOME.
-    DISPLAY "Welcome, " FUNCTION TRIM(LNK-USER-NAME) "!".
-
 DISPLAY-MENU.
-    DISPLAY "1. Search for a job".
-    DISPLAY "2. Find someone you know".
-    DISPLAY "3. Learn a new skill".
-    DISPLAY "4. Logout".
+    DISPLAY "1. Create/Edit My Profile"
+    DISPLAY "2. View My Profile"
+    DISPLAY "3. Search for a job"
+    DISPLAY "4. Find someone you know"
+    DISPLAY "5. Learn a new skill"
+    DISPLAY "6. Logout"
     DISPLAY "Enter your choice:".
-
-JOB-SEARCH.
-    DISPLAY "Job search/internship is under construction.".
-
-FIND-SOMEONE.
-    DISPLAY "Find someone you know is under construction.".
-
-LEARN-SKILL.
-    DISPLAY "Learn a new skill is under construction.".
-
-LOGOUT.
-    DISPLAY "Logging out...".
-    MOVE 'Y' TO EXIT-FLAG.
 
 END PROGRAM HomePage.

@@ -1,0 +1,68 @@
+Welcome to InCollege!
+1) Log In
+2) Create Account
+3) Exit
+Choose an option: 
+2
+Enter a username: 
+Abraham Lincoln               
+Enter password: 
+####n7Years 
+Account created successfully!
+Welcome to InCollege!
+1) Log In
+2) Create Account
+3) Exit
+Choose an option: 
+2
+Enter a username: 
+George Washington             
+Enter password: 
+1776AmEr!ca 
+Account created successfully!
+Welcome to InCollege!
+1) Log In
+2) Create Account
+3) Exit
+Choose an option: 
+2
+Enter a username: 
+Thomas Jefferson              
+Enter password: 
+Dec!ar8ti0n 
+Account created successfully!
+Welcome to InCollege!
+1) Log In
+2) Create Account
+3) Exit
+Choose an option: 
+2
+Enter a username: 
+FDR                           
+Enter password: 
+AN3wDea!    
+Account created successfully!
+Welcome to InCollege!
+1) Log In
+2) Create Account
+3) Exit
+Choose an option: 
+2
+Enter a username: 
+Theodore Roosevelt            
+Enter password: 
+Riders4Lf!  
+Account created successfully!
+Welcome to InCollege!
+1) Log In
+2) Create Account
+3) Exit
+Choose an option: 
+2
+All permitted accounts have been created, please come back later
+Welcome to InCollege!
+1) Log In
+2) Create Account
+3) Exit
+Choose an option: 
+3

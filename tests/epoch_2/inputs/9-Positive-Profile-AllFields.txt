@@ -1,0 +1,37 @@
+2
+TestUser1
+Abcdef1!
+1
+TestUser1
+Abcdef1!
+1
+Alex
+Cannon
+USF
+Computer Science
+2025
+I love coding.
+Software Intern
+Google
+Summer 2024
+Built software tools.
+Teaching Assistant
+USF
+Fall 2024
+Helped students in lab.
+Research Assistant
+USF
+Spring 2025
+Worked on ML project.
+B.S.
+USF
+2021-2025
+A.S.
+HCC
+2019-2021
+High School Diploma
+Some High School
+2015-2019
+2
+6
+3

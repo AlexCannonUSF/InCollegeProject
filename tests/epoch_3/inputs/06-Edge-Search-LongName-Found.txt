@@ -1,0 +1,29 @@
+2
+LongNameUser1
+Abcdef1!
+1
+LongNameUser1
+Abcdef1!
+1
+Alexanderthegreatlongfirstname
+Cannonwithanextralonglastnamehere
+USF
+Computer Science
+2027
+Testing long full-name exact match.
+
+
+
+B.S. Computer Science
+University of South Florida
+2023-2027
+
+
+6
+1
+LongNameUser1
+Abcdef1!
+4
+Alexanderthegreatlongfirs Cannonwithanextralonglas
+6
+3

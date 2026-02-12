@@ -1,0 +1,35 @@
+2
+AlexCannon
+Abcdef1!
+2
+SamUser1
+Abcdef1!
+1
+SamUser1
+Abcdef1!
+1
+Sam
+Student
+City College
+Electrical Engineering
+2026
+Robotics enthusiast.
+Intern
+Tech Solutions
+Summer 2024
+Assisted with prototyping.
+
+
+B.S. Electrical Engineering
+City College
+2022-2026
+
+
+6
+1
+AlexCannon
+Abcdef1!
+4
+Sam Student
+6
+3
