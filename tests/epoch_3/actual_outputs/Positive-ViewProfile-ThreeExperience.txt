@@ -41,13 +41,31 @@ Computer Science
 Enter graduation year (YYYY):
 2027
 Enter About Me:
-CS student at USF.
+CS student at USF interested in AI and software engineering.
 Experience #1 - Job Title (blank to skip):
-
+Software Intern
+Company:
+OpenAI
+Dates:
+Summer 2025
+Description:
+Built tooling and automation scripts.
 Experience #2 - Job Title (blank to skip):
-
+Teaching Assistant
+Company:
+USF
+Dates:
+Fall 2025
+Description:
+Helped students with programming labs.
 Experience #3 - Job Title (blank to skip):
-
+Research Assistant
+Company:
+USF AI Lab
+Dates:
+2026-2027
+Description:
+Worked on NLP experiments.
 Education #1 - Degree (blank to skip):
 
 Education #2 - Degree (blank to skip):
@@ -69,11 +87,25 @@ Name: Alex Cannon
 University: USF
 Major: Computer Science
 Graduation Year: 2027
-About Me: CS student at USF.
+About Me: CS student at USF interested in AI and software engineering.
 ---------------------------------
 Experience:
 ---------------------------------
-No work experience found.
+  Title: Software Intern
+  Company: OpenAI
+  Dates: Summer 2025
+  Description: Built tooling and automation scripts.
+---------------------------------
+  Title: Teaching Assistant
+  Company: USF
+  Dates: Fall 2025
+  Description: Helped students with programming labs.
+---------------------------------
+  Title: Research Assistant
+  Company: USF AI Lab
+  Dates: 2026-2027
+  Description: Worked on NLP experiments.
+---------------------------------
 Education:
 ---------------------------------
 No education history found.

@@ -35,6 +35,8 @@ Alex
 Enter last name (required):
 Cannon
 Enter university (required):
+University cannot be blank.
+Enter university (required):
 USF
 Enter major (required):
 Computer Science

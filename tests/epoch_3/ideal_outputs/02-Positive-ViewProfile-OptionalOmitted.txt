@@ -30,13 +30,13 @@ Welcome, AlexCannon!
 Enter your choice:
 1
 --- Create/Edit Profile ---
-Enter first name:
+Enter first name (required):
 Alex
-Enter last name:
+Enter last name (required):
 Cannon
-Enter university:
+Enter university (required):
 USF
-Enter major:
+Enter major (required):
 Computer Science
 Enter graduation year (YYYY):
 2027
@@ -70,9 +70,12 @@ University: USF
 Major: Computer Science
 Graduation Year: 2027
 About Me: CS student at USF.
+---------------------------------
 Experience:
+---------------------------------
 No work experience found.
 Education:
+---------------------------------
 No education history found.
 1. Create/Edit My Profile
 2. View My Profile

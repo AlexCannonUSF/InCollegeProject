@@ -39,6 +39,9 @@ USF
 Enter major (required):
 Computer Science
 Enter graduation year (YYYY):
+
+Invalid year. Please enter 4 digits.
+Enter graduation year (YYYY):
 2027
 Enter About Me:
 CS student at USF.

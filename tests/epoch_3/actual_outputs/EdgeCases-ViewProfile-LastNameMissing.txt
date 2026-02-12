@@ -33,6 +33,8 @@ Enter your choice:
 Enter first name (required):
 Alex
 Enter last name (required):
+Last name cannot be blank.
+Enter last name (required):
 Cannon
 Enter university (required):
 USF
