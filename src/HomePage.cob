@@ -57,7 +57,7 @@ MAIN.
             WHEN 4
                 Call "Search"
             WHEN 5
-                DISPLAY "Pending connection requests is under construction."
+                CALL "ViewRequests" USING LNK-USER-NAME
             WHEN 6
                 CALL "SkillMenu"
             WHEN 7
