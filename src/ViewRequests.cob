@@ -46,7 +46,7 @@ MAIN.
                    IF LNK-USER-NAME = RECIPIENT-USERNAME
                        ADD 1 TO LS-REQUEST-COUNT
                        MOVE SENDER-USERNAME TO RECEIVED-REQUESTS(LS-REQUEST-COUNT)
-                       DELETE PENDING-REQUESTS-FILE
+      *>                 DELETE PENDING-REQUESTS-FILE
                    END-IF 
            END-READ
        END-PERFORM
