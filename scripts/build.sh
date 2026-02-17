@@ -3,7 +3,7 @@ set -e
 
 mkdir -p bin
 
-cobc -x -free -o bin/InCollege \
+cobc -x -free -I src -o bin/InCollege \
   src/InCollege.cob \
   src/CreateAccount.cob \
   src/LogIn.cob \

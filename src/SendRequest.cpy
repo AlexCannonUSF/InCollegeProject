@@ -34,4 +34,4 @@
 
                MOVE "Connection request sent successfully." TO OUT-RECORD
                PERFORM DISPLAY-AND-WRITE
-           END-IF
+           END-IF.
