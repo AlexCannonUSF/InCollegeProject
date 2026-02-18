@@ -55,7 +55,7 @@ MAIN.
             WHEN 3
                 DISPLAY "Search for a job is under construction."
             WHEN 4
-                Call "Search"
+                Call "Search" USING LNK-USER-NAME
             WHEN 5
                 CALL "ViewRequests" USING LNK-USER-NAME
             WHEN 6

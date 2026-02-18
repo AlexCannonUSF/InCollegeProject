@@ -12,6 +12,11 @@ FILE-CONTROL.
        SELECT OUTPUT-FILE ASSIGN TO "data/InCollege-Output.txt"
            ORGANIZATION IS LINE SEQUENTIAL.
 
+       SELECT PENDING-REQUESTS-FILE ASSIGN TO "data/PendingRequests.dat"
+           ORGANIZATION IS SEQUENTIAL
+           ACCESS MODE IS SEQUENTIAL
+           FILE STATUS IS LS-PENDING-STAT.
+
 DATA DIVISION.
 FILE SECTION.
 FD     PROFILE-FILE.
@@ -35,13 +40,26 @@ FD  INPUT-FILE.
 FD  OUTPUT-FILE.
 01  OUT-RECORD             PIC X(255).
 
+FD PENDING-REQUESTS-FILE.
+01 PENDING-REQUESTS-RECORD.
+       05 SENDER-USERNAME      PIC X(30).
+       05 RECIPIENT-USERNAME   PIC X(30).
+
 WORKING-STORAGE SECTION.
 01     WS-SEARCH-QUERY     PIC X(50).
-01     WS-EOF-PROFILE              PIC X VALUE 'N'.
+01     WS-EOF-PROFILE      PIC X VALUE 'N'.
+01     WS-EOF-REQ          PIC X VALUE 'N'.
 01     WS-FOUND-FLAG       PIC X VALUE 'N'.
 01     I                   PIC 9 VALUE 1.
+01     WS-CONN-CHOICE      PIC X.
+01     WS-RECIPIENT-USER   PIC X(30).
+01     LS-PENDING-STAT     PIC XX.
+01     WS-DUPLICATE-FOUND  PIC X VALUE 'N'.
 
-PROCEDURE DIVISION.
+LINKAGE SECTION.
+01     LNK-USER-NAME       PIC X(30).
+
+PROCEDURE DIVISION USING LNK-USER-NAME.
 MAIN-LOGIC.
        OPEN INPUT PROFILE-FILE
        OPEN EXTEND OUTPUT-FILE
@@ -67,6 +85,26 @@ MAIN-LOGIC.
                    IF FUNCTION TRIM(PR-NAME) = FUNCTION TRIM(WS-SEARCH-QUERY)
                        MOVE 'Y' TO WS-FOUND-FLAG
                        PERFORM DISPLAY-PROFILE
+
+                       *> Hide the menu to send a request if user searches themself
+                       IF FUNCTION TRIM(PR-USERNAME) NOT = FUNCTION TRIM(LNK-USER-NAME)
+                           MOVE "1. Send Connection Request" TO OUT-RECORD
+                           PERFORM DISPLAY-AND-WRITE
+                           MOVE "2. Back to Main Menu" TO OUT-RECORD
+                           PERFORM DISPLAY-AND-WRITE
+
+                           ACCEPT WS-CONN-CHOICE
+
+                           IF WS-CONN-CHOICE = '1'
+                               PERFORM SEND-CONNECTION-LOGIC
+                           END-IF
+                       ELSE
+                           MOVE "This is your own profile." TO OUT-RECORD
+                           PERFORM DISPLAY-AND-WRITE
+                           *> potential bug fix if program doesn't wait and displays too quickly (uncomment lines below)
+                           *> DISPLAY "Press Enter to return to menu..."
+                           *> ACCEPT WS-CONN-CHOICE
+                       END-IF
                    END-IF
            END-READ
        END-PERFORM
@@ -74,12 +112,17 @@ MAIN-LOGIC.
        IF WS-FOUND-FLAG = 'N'
            MOVE "No one by that name could be found." TO OUT-RECORD
            PERFORM DISPLAY-AND-WRITE
+           *> potential bug fix if program doesn't wait and displays too quickly (uncomment lines below)
+           *> DISPLAY "Press Enter to return to menu..."
+           *> ACCEPT WS-CONN-CHOICE
        END-IF
 
        CLOSE PROFILE-FILE
        CLOSE OUTPUT-FILE
 
        EXIT PROGRAM.
+
+COPY "SendRequest.cpy".
 
 DISPLAY-PROFILE.
        MOVE " " TO OUT-RECORD.
@@ -137,4 +180,6 @@ DISPLAY-PROFILE.
 
 DISPLAY-AND-WRITE.
        DISPLAY FUNCTION TRIM(OUT-RECORD)
+       *> uncomment the line below if output is not being written to InCollege-Output
+       *> WRITE OUT-RECORD
        MOVE SPACES TO OUT-RECORD.
