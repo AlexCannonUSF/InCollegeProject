@@ -63,14 +63,16 @@ PROCEDURE DIVISION USING LNK-USER-NAME.
 MAIN-LOGIC.
        OPEN INPUT PROFILE-FILE
        OPEN EXTEND OUTPUT-FILE
-       DISPLAY "Enter the full name of the person you are looking for:"
-       ACCEPT WS-SEARCH-QUERY
+       MOVE "Enter the full name of the person you are looking for:" TO OUT-RECORD
+       PERFORM DISPLAY-AND-WRITE
 
+       ACCEPT WS-SEARCH-QUERY
        INSPECT WS-SEARCH-QUERY REPLACING ALL X'0D' BY SPACE
        INSPECT WS-SEARCH-QUERY REPLACING ALL X'0A' BY SPACE
 
+       MOVE SPACES TO OUT-RECORD
        MOVE WS-SEARCH-QUERY TO OUT-RECORD
-       WRITE OUT-RECORD
+       PERFORM DISPLAY-AND-WRITE
 
        *>MOVE "Enter the full name of the person you are looking for:"
            *>TO OUT-RECORD
@@ -101,7 +103,7 @@ MAIN-LOGIC.
                                ACCEPT WS-CONN-CHOICE
 
                                MOVE WS-CONN-CHOICE TO OUT-RECORD
-                               WRITE OUT-RECORD
+                               PERFORM DISPLAY-AND-WRITE
 
                                IF WS-CONN-CHOICE = '1'
                                    PERFORM SEND-CONNECTION-LOGIC
