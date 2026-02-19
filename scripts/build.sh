@@ -15,6 +15,6 @@ cobc -x -free -I src -o bin/InCollege \
   src/ProfileCreate.cob \
   src/ProfileEdit.cob \
   src/Search.cob \
-  src/ViewRequests.cob
+  src/ViewRequests.cob \
 
 echo "Build complete: bin/InCollege"

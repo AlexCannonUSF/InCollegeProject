@@ -348,59 +348,6 @@ People who want to connect:
 6. Learn a new skill
 7. Logout
 Enter your choice:
-2
---- Your Profile ---
-Name: Receiver User
-University: USF
-Major: Computer Science
-Graduation Year: 2027
-About Me: Profile for Receiver User.
----------------------------------
-Experience:
----------------------------------
-No work experience found.
-Education:
----------------------------------
-  Degree: B.S. Computer Science
-  University: University of South Florida
-  Years: 2023-2027
----------------------------------
-1. Create/Edit My Profile
-2. View My Profile
-3. Search for a job
-4. Find someone you know
-5. View my pending connection requests
-6. Learn a new skill
-7. Logout
-Enter your choice:
-3
-Search for a job is under construction.
-1. Create/Edit My Profile
-2. View My Profile
-3. Search for a job
-4. Find someone you know
-5. View my pending connection requests
-6. Learn a new skill
-7. Logout
-Enter your choice:
-6
-Learn a New Skill:
-Skill 1
-Skill 2
-Skill 3
-Skill 4
-Skill 5
-Go Back
-Enter your choice:
-6
-1. Create/Edit My Profile
-2. View My Profile
-3. Search for a job
-4. Find someone you know
-5. View my pending connection requests
-6. Learn a new skill
-7. Logout
-Enter your choice:
 7
 Welcome to InCollege!
 1) Log In

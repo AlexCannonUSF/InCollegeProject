@@ -71,7 +71,8 @@ LOAD-PROFILES.
     END-IF
     PERFORM UNTIL WS-EOF = "Y" OR LK-PROFILE-COUNT = WS-MAX
         READ PROFILE-FILE
-            AT END MOVE "Y" TO WS-EOF
+            AT END
+                MOVE "Y" TO WS-EOF
             NOT AT END
                 ADD 1 TO LK-PROFILE-COUNT
                 MOVE PF-REC TO LK-PROF-ROW(LK-PROFILE-COUNT)
