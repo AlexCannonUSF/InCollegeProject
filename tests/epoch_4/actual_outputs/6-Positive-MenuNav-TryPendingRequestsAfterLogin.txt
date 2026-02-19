@@ -1,0 +1,118 @@
+Welcome to InCollege!
+1) Log In
+2) Create Account
+3) Exit
+Choose an option: 
+2
+Enter a username: 
+AlexCannon
+Enter password: 
+Abcdef1!
+Account created successfully!
+Welcome to InCollege!
+1) Log In
+2) Create Account
+3) Exit
+Choose an option: 
+1
+Enter username: 
+AlexCannon
+Enter password: 
+Abcdef1!
+You have successfully logged in
+Welcome, AlexCannon!
+1. Create/Edit My Profile
+2. View My Profile
+3. Search for a job
+4. Find someone you know
+5. View my pending connection requests
+6. Learn a new skill
+7. Logout
+Enter your choice:
+1
+--- Create/Edit Profile ---
+Enter first name (required):
+Alex
+Enter last name (required):
+Cannon
+Enter university (required):
+USF
+Enter major (required):
+Computer Science
+Enter graduation year (YYYY):
+2027
+Enter About Me:
+CS student at USF.
+Experience #1 - Job Title (blank to skip):
+
+Experience #2 - Job Title (blank to skip):
+
+Experience #3 - Job Title (blank to skip):
+
+Education #1 - Degree (blank to skip):
+B.S. Computer Science
+University:
+University of South Florida
+Years attended:
+2023-2027
+Education #2 - Degree (blank to skip):
+
+Education #3 - Degree (blank to skip):
+
+Profile created successfully.
+Profile saved successfully.
+1. Create/Edit My Profile
+2. View My Profile
+3. Search for a job
+4. Find someone you know
+5. View my pending connection requests
+6. Learn a new skill
+7. Logout
+Enter your choice:
+7
+Welcome to InCollege!
+1) Log In
+2) Create Account
+3) Exit
+Choose an option: 
+4
+Invalid option. Try again.
+Welcome to InCollege!
+1) Log In
+2) Create Account
+3) Exit
+Choose an option: 
+1
+Enter username: 
+AlexCannon
+Enter password: 
+Abcdef1!
+You have successfully logged in
+Welcome, AlexCannon!
+1. Create/Edit My Profile
+2. View My Profile
+3. Search for a job
+4. Find someone you know
+5. View my pending connection requests
+6. Learn a new skill
+7. Logout
+Enter your choice:
+5
+--- Pending Connection Requests ---
+You have no pending connection requests at this time.
+-----------------------------------
+1. Create/Edit My Profile
+2. View My Profile
+3. Search for a job
+4. Find someone you know
+5. View my pending connection requests
+6. Learn a new skill
+7. Logout
+Enter your choice:
+7
+Welcome to InCollege!
+1) Log In
+2) Create Account
+3) Exit
+Choose an option: 
+3

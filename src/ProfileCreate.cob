@@ -51,6 +51,8 @@ MAIN.
     *> FIX #1: Properly initialize record each run
     MOVE SPACES TO PROFILE-RECORD
     MOVE 0 TO GradYear
+    MOVE SPACES TO WS-FNAME
+    MOVE SPACES TO WS-LNAME
 
     MOVE LNK-USER-NAME TO Username
 

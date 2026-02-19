@@ -1,22 +1,16 @@
 2
-Sender1
-Abcdef1!
-2
-Sender2
-Abcdef1!
-2
-ReceiverUser
+SenderUser
 Abcdef1!
 1
-Sender1
+SenderUser
 Abcdef1!
 1
 Sender
-One
+User
 USF
 Computer Science
 2027
-Profile for Sender One.
+Profile for Sender User.
 
 
 
@@ -26,28 +20,13 @@ University of South Florida
 
 
 7
-1
-Sender2
+2
+ReceiverUser
 Abcdef1!
-1
-Sender
-Two
-USF
-Computer Science
-2027
-Profile for Sender Two.
-
-
-
-B.S. Computer Science
-University of South Florida
-2023-2027
-
-
-7
 1
 ReceiverUser
 Abcdef1!
+2
 1
 Receiver
 User
@@ -65,14 +44,7 @@ University of South Florida
 
 7
 1
-Sender1
-Abcdef1!
-4
-Receiver User
-1
-7
-1
-Sender2
+SenderUser
 Abcdef1!
 4
 Receiver User
@@ -82,9 +54,5 @@ Receiver User
 ReceiverUser
 Abcdef1!
 5
-2
-3
-6
-6
 7
 3
