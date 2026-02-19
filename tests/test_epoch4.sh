@@ -11,8 +11,18 @@ mkdir -p "$OUT_DIR"
 for input in "$IN_DIR"/*.txt; do
   name="$(basename "$input")"
   echo "=== Running $EPOCH: $name ==="
-  rm -f "$ROOT/data/accounts.dat" "$ROOT/data/profiles.dat" "$ROOT/data/pendingRequests.dat"|| true
+
+  # always ensure data dir + required files exist (case-sensitive)
+  mkdir -p "$ROOT/data"
+  : > "$ROOT/data/accounts.dat"
+  : > "$ROOT/data/profiles.dat"
+  : > "$ROOT/data/PendingRequests.dat"
+  : > "$ROOT/data/InCollege-Output.txt"
+
   (cd "$ROOT" && "$ROOT/bin/InCollege" < "$input") > "$OUT_DIR/$name"
+
+  # ensure output ends with newline (prevents "\ No newline at end of file" diffs)
+  printf '\n' >> "$OUT_DIR/$name"
 done
 
 echo "Done. Actual outputs in: $OUT_DIR"
