@@ -1,0 +1,147 @@
+Welcome to InCollege!
+1) Log In
+2) Create Account
+3) Exit
+Choose an option: 
+2
+Enter a username: 
+AlexCannon
+Enter password: 
+Abcdef1!
+Account created successfully!
+Welcome to InCollege!
+1) Log In
+2) Create Account
+3) Exit
+Choose an option: 
+2
+Enter a username: 
+SamUser1
+Enter password: 
+Abcdef1!
+Account created successfully!
+Welcome to InCollege!
+1) Log In
+2) Create Account
+3) Exit
+Choose an option: 
+1
+Enter username: 
+SamUser1
+Enter password: 
+Abcdef1!
+You have successfully logged in
+Welcome, SamUser1!
+1. Create/Edit My Profile
+2. View My Profile
+3. Search for a job
+4. Find someone you know
+5. View my pending connection requests
+6. Learn a new skill
+7. Logout
+Enter your choice:
+1
+--- Create/Edit Profile ---
+Enter first name (required):
+Sam
+Enter last name (required):
+Student
+Enter university (required):
+City College
+Enter major (required):
+Electrical Engineering
+Enter graduation year (YYYY):
+2026
+Enter About Me:
+Robotics enthusiast.
+Experience #1 - Job Title (blank to skip):
+Intern
+Company:
+Tech Solutions
+Dates:
+Summer 2024
+Description:
+Assisted with prototyping.
+Experience #2 - Job Title (blank to skip):
+
+Experience #3 - Job Title (blank to skip):
+
+Education #1 - Degree (blank to skip):
+B.S. Electrical Engineering
+University:
+City College
+Years attended:
+2022-2026
+Education #2 - Degree (blank to skip):
+
+Education #3 - Degree (blank to skip):
+
+Profile created successfully.
+Profile saved successfully.
+1. Create/Edit My Profile
+2. View My Profile
+3. Search for a job
+4. Find someone you know
+5. View my pending connection requests
+6. Learn a new skill
+7. Logout
+Enter your choice:
+7
+Welcome to InCollege!
+1) Log In
+2) Create Account
+3) Exit
+Choose an option: 
+1
+Enter username: 
+AlexCannon
+Enter password: 
+Abcdef1!
+You have successfully logged in
+Welcome, AlexCannon!
+1. Create/Edit My Profile
+2. View My Profile
+3. Search for a job
+4. Find someone you know
+5. View my pending connection requests
+6. Learn a new skill
+7. Logout
+Enter your choice:
+4
+Enter the full name of the person you are looking for:
+
+--- Found User Profile ---
+Name: Sam Student
+University: City College
+Major: Electrical Engineering
+Graduation Year: 2026
+About Me: Robotics enthusiast.
+Experience:
+Title: Intern
+Company: Tech Solutions
+Dates: Summer 2024
+Description: Assisted with prototyping.
+Education:
+Degree: B.S. Electrical Engineering
+University: City College
+Years: 2022-2026
+-------------------------
+
+1. Send Connection Request
+2. Back to Main Menu
+You already have a pending connection with this user.
+1. Create/Edit My Profile
+2. View My Profile
+3. Search for a job
+4. Find someone you know
+5. View my pending connection requests
+6. Learn a new skill
+7. Logout
+Enter your choice:
+7
+Welcome to InCollege!
+1) Log In
+2) Create Account
+3) Exit
+Choose an option: 
+3
