@@ -11,7 +11,7 @@ mkdir -p "$OUT_DIR"
 for input in "$IN_DIR"/*.txt; do
   name="$(basename "$input")"
   echo "=== Running $EPOCH: $name ==="
-  rm -f "$ROOT/data/accounts.dat" "$ROOT/data/profiles.dat" || true
+  rm -f "$ROOT/data/accounts.dat" "$ROOT/data/profiles.dat" "$ROOT/data/pendingRequests.dat"|| true
   (cd "$ROOT" && "$ROOT/bin/InCollege" < "$input") > "$OUT_DIR/$name"
 done
 
