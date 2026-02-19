@@ -51,7 +51,7 @@ WORKING-STORAGE SECTION.
 01     WS-EOF-REQ          PIC X VALUE 'N'.
 01     WS-FOUND-FLAG       PIC X VALUE 'N'.
 01     I                   PIC 9 VALUE 1.
-01     WS-CONN-CHOICE      PIC X.
+01     WS-CONN-CHOICE      PIC X VALUE SPACES.
 01     WS-RECIPIENT-USER   PIC X(30).
 01     LS-PENDING-STAT     PIC XX.
 01     WS-DUPLICATE-FOUND  PIC X VALUE 'N'.
@@ -69,6 +69,8 @@ MAIN-LOGIC.
        INSPECT WS-SEARCH-QUERY REPLACING ALL X'0D' BY SPACE
        INSPECT WS-SEARCH-QUERY REPLACING ALL X'0A' BY SPACE
 
+       MOVE WS-SEARCH-QUERY TO OUT-RECORD
+       WRITE OUT-RECORD
 
        *>MOVE "Enter the full name of the person you are looking for:"
            *>TO OUT-RECORD
@@ -88,21 +90,34 @@ MAIN-LOGIC.
 
                        *> Hide the menu to send a request if user searches themself
                        IF FUNCTION TRIM(PR-USERNAME) NOT = FUNCTION TRIM(LNK-USER-NAME)
-                           MOVE "1. Send Connection Request" TO OUT-RECORD
-                           PERFORM DISPLAY-AND-WRITE
-                           MOVE "2. Back to Main Menu" TO OUT-RECORD
-                           PERFORM DISPLAY-AND-WRITE
 
-                           ACCEPT WS-CONN-CHOICE
+                           MOVE SPACES TO WS-CONN-CHOICE
+                           PERFORM UNTIL WS-CONN-CHOICE = '1' OR WS-CONN-CHOICE = '2'
+                               MOVE "1. Send Connection Request" TO OUT-RECORD
+                               PERFORM DISPLAY-AND-WRITE
+                               MOVE "2. Back to Main Menu" TO OUT-RECORD
+                               PERFORM DISPLAY-AND-WRITE
 
-                           IF WS-CONN-CHOICE = '1'
-                               PERFORM SEND-CONNECTION-LOGIC
-                           END-IF
+                               ACCEPT WS-CONN-CHOICE
+
+                               MOVE WS-CONN-CHOICE TO OUT-RECORD
+                               WRITE OUT-RECORD
+
+                               IF WS-CONN-CHOICE = '1'
+                                   PERFORM SEND-CONNECTION-LOGIC
+                               ELSE IF WS-CONN-CHOICE = '2'
+                                   CONTINUE
+                               ELSE
+                                   MOVE "Invalid input. Please enter 1 or 2." TO OUT-RECORD
+                                   PERFORM DISPLAY-AND-WRITE
+                               END-IF
+                           END-PERFORM
                        ELSE
                            MOVE "This is your own profile." TO OUT-RECORD
                            PERFORM DISPLAY-AND-WRITE
                            *> potential bug fix if program doesn't wait and displays too quickly (uncomment lines below)
-                           *> DISPLAY "Press Enter to return to menu..."
+                           *> MOVE "Press Enter to return to menu..." TO OUT-RECORD
+                           *> PERFORM DISPLAY-AND-WRITE
                            *> ACCEPT WS-CONN-CHOICE
                        END-IF
                    END-IF
@@ -113,7 +128,8 @@ MAIN-LOGIC.
            MOVE "No one by that name could be found." TO OUT-RECORD
            PERFORM DISPLAY-AND-WRITE
            *> potential bug fix if program doesn't wait and displays too quickly (uncomment lines below)
-           *> DISPLAY "Press Enter to return to menu..."
+           *> MOVE "Press Enter to return to menu..." TO OUT-RECORD
+           *> PERFORM DISPLAY-AND-WRITE
            *> ACCEPT WS-CONN-CHOICE
        END-IF
 
@@ -121,8 +137,6 @@ MAIN-LOGIC.
        CLOSE OUTPUT-FILE
 
        EXIT PROGRAM.
-
-COPY "SendRequest.cpy".
 
 DISPLAY-PROFILE.
        MOVE " " TO OUT-RECORD.
@@ -181,5 +195,9 @@ DISPLAY-PROFILE.
 DISPLAY-AND-WRITE.
        DISPLAY FUNCTION TRIM(OUT-RECORD)
        *> uncomment the line below if output is not being written to InCollege-Output
-       *> WRITE OUT-RECORD
+       WRITE OUT-RECORD
        MOVE SPACES TO OUT-RECORD.
+
+COPY "SendRequest.cpy".
+
+END PROGRAM Search.
