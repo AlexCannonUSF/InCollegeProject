@@ -34,10 +34,20 @@ PROCEDURE DIVISION USING LNK-USER-NAME.
 MAIN.
        DISPLAY "--- Pending Connection Requests ---"
        OPEN I-O PENDING-REQUESTS-FILE
-       IF LS-STAT NOT = "00"
-           DISPLAY "Error Opening PendingRequests.dat: " LS-STAT
-           GOBACK
-       END-IF
+
+       EVALUATE LS-STAT
+           WHEN "00"
+               CONTINUE
+           WHEN "35"
+               CLOSE PENDING-REQUESTS-FILE
+               OPEN OUTPUT PENDING-REQUESTS-FILE
+               CLOSE PENDING-REQUESTS-FILE
+               OPEN I-O PENDING-REQUESTS-FILE
+           WHEN OTHER
+               DISPLAY "Error Opening PendingRequests.dat: " LS-STAT
+               CLOSE PENDING-REQUESTS-FILE
+               GOBACK
+       END-EVALUATE
 
        PERFORM UNTIL LS-EOF = "Y" OR LS-REQUEST-COUNT >= LS-MAX_REQUESTS
            READ PENDING-REQUESTS-FILE
