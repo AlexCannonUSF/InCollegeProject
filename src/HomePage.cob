@@ -59,8 +59,10 @@ MAIN.
             WHEN 5
                 CALL "ViewRequests" USING LNK-USER-NAME
             WHEN 6
-                CALL "SkillMenu"
+                CALL "ViewNetwork" USING LNK-USER-NAME
             WHEN 7
+                CALL "SkillMenu"
+            WHEN 8
                 MOVE 'Y' TO EXIT-FLAG
             WHEN OTHER
                 DISPLAY "Invalid choice. Please try again."
@@ -74,8 +76,9 @@ DISPLAY-MENU.
     DISPLAY "3. Search for a job"
     DISPLAY "4. Find someone you know"
     DISPLAY "5. View my pending connection requests"
-    DISPLAY "6. Learn a new skill"
-    DISPLAY "7. Logout"
+    DISPLAY "6. View my network"
+    DISPLAY "7. Learn a new skill"
+    DISPLAY "8. Logout"
     DISPLAY "Enter your choice:".
 
 END PROGRAM HomePage.
