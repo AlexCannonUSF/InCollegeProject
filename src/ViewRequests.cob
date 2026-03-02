@@ -57,7 +57,6 @@ LOCAL-STORAGE SECTION.
 01 LS-EOF                          PIC X  VALUE "N".
 01 LS-FOUND-INFO                   PIC X  VALUE "N".
 *> Request Count
-01 LS-MIN-REQUESTS                 PIC 99 VALUE 0.
 01 LS-MAX_REQUESTS                 PIC 99 VALUE 25.
 01 LS-REQUEST-COUNT                PIC 99 VALUE 0.
 *> Request Array
@@ -93,10 +92,9 @@ MAIN.
        END-EVALUATE
 
       *> Get lowest key
-       MOVE LS-MIN-REQUESTS TO REQUEST-ID
+       MOVE 0 TO REQUEST-ID
        START PENDING-REQUESTS-FILE KEY >= REQUEST-ID
            INVALID KEY
-      *>         DISPLAY "Empty File"
                MOVE "Y" TO LS-EOF
        END-START
 
@@ -131,16 +129,19 @@ MAIN.
 PULL-PROFILE-DATA.
        MOVE "N" TO LS-EOF
        MOVE "N" TO LS-FOUND-INFO
+       OPEN INPUT PROFILE-FILE
        PERFORM UNTIL LS-EOF = "Y" OR LS-FOUND-INFO = "Y"
            READ PROFILE-FILE
                AT END
                    MOVE "Y" TO LS-EOF
                NOT AT END
-                   IF LS-NAME-TO-LOOKUP IS EQUAL TO PROFILE-USERNAME
+                   IF FUNCTION TRIM(LS-NAME-TO-LOOKUP) IS EQUAL TO FUNCTION TRIM(PROFILE-USERNAME)
                        MOVE "Y" TO LS-FOUND-INFO
                    END-IF
            END-READ
        END-PERFORM
+
+       CLOSE PROFILE-FILE
 
        IF LS-EOF = "Y" AND LS-FOUND-INFO = "N"
            DISPLAY "Could not retrieve sender data"
@@ -156,11 +157,11 @@ PULL-PROFILE-DATA.
 
        PERFORM WITH TEST BEFORE UNTIL LS-OPTION-SELECTION = 1 OR LS-OPTION-SELECTION = 2
            DISPLAY "Invalid Choice"
-           DISPLAY "Request from:" FUNCTION TRIM(PROFILE-NAME)
+           DISPLAY "Request from: " FUNCTION TRIM(PROFILE-NAME)
            DISPLAY "1. Accept"
            DISPLAY "2. Reject"
            ACCEPT LS-OPTION-SELECTION
-           DISPLAY "Enter your choice for " FUNCTION TRIM(PROFILE-NAME) ":"
+           DISPLAY "Enter your choice for " FUNCTION TRIM(PROFILE-NAME) ": "
        END-PERFORM
        
        IF LS-OPTION-SELECTION = 1

@@ -39,7 +39,7 @@
            ELSE
                PERFORM FIND-POSSIBLE-INDEX
                
-               OPEN OUTPUT PENDING-REQUESTS-FILE
+               OPEN I-O PENDING-REQUESTS-FILE
                MOVE SPACES TO PENDING-REQUESTS-RECORD
                MOVE LS-MIN-AVAILABLE-INDEX TO REQUEST-ID
                MOVE LNK-USER-NAME TO SENDER-USERNAME
@@ -49,6 +49,9 @@
                    INVALID KEY
                        DISPLAY "Write Failed: " LS-PENDING-STAT
                END-WRITE
+           
+      *>         DISPLAY REQUEST-ID " | " SENDER-USERNAME " | " RECIPIENT-USERNAME
+
                CLOSE PENDING-REQUESTS-FILE
 
                MOVE "Connection request sent successfully." TO OUT-RECORD
