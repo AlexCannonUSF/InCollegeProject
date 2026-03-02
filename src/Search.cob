@@ -13,8 +13,9 @@ FILE-CONTROL.
            ORGANIZATION IS LINE SEQUENTIAL.
 
        SELECT PENDING-REQUESTS-FILE ASSIGN TO "data/PendingRequests.dat"
-           ORGANIZATION IS SEQUENTIAL
-           ACCESS MODE IS SEQUENTIAL
+           ORGANIZATION IS INDEXED
+           ACCESS MODE IS DYNAMIC
+           RECORD KEY IS REQUEST-ID
            FILE STATUS IS LS-PENDING-STAT.
 
 DATA DIVISION.
@@ -42,6 +43,7 @@ FD  OUTPUT-FILE.
 
 FD PENDING-REQUESTS-FILE.
 01 PENDING-REQUESTS-RECORD.
+       05 REQUEST-ID PIC 99.
        05 SENDER-USERNAME      PIC X(30).
        05 RECIPIENT-USERNAME   PIC X(30).
 
@@ -56,6 +58,11 @@ WORKING-STORAGE SECTION.
 01     LS-PENDING-STAT     PIC XX.
 01     WS-DUPLICATE-FOUND  PIC X VALUE 'N'.
 
+LOCAL-STORAGE SECTION.
+01     LS-MIN-AVAILABLE-INDEX     PIC 99 VALUE 99.
+01     LS-POSSIBLE-REQUESTS-INDEX PIC 99 VALUE 0.
+01     LS-FOUND-AVAILABLE-INDEX   PIC X VALUE 'N'.
+
 LINKAGE SECTION.
 01     LNK-USER-NAME       PIC X(30).
 
@@ -63,6 +70,29 @@ PROCEDURE DIVISION USING LNK-USER-NAME.
 MAIN-LOGIC.
        OPEN INPUT PROFILE-FILE
        OPEN EXTEND OUTPUT-FILE
+       
+       MOVE 'N' TO WS-EOF-PROFILE
+       MOVE 'N' TO WS-FOUND-FLAG
+
+       PERFORM UNTIL WS-EOF-PROFILE = 'Y' OR WS-FOUND-FLAG = 'Y'
+           READ PROFILE-FILE
+               AT END
+                   MOVE 'Y' TO WS-EOF-PROFILE
+               NOT AT END
+                  IF FUNCTION TRIM(PR-USERNAME) = FUNCTION TRIM(LNK-USER-NAME)
+                       MOVE 'Y' TO WS-FOUND-FLAG
+                  END-IF
+           END-READ
+       END-PERFORM
+
+       IF WS-FOUND-FLAG = 'N'
+           MOVE "Please create your own profile first." TO OUT-RECORD
+           PERFORM DISPLAY-AND-WRITE
+           CLOSE PROFILE-FILE
+           CLOSE OUTPUT-FILE
+           EXIT PROGRAM
+       END-IF
+
        MOVE "Enter the full name of the person you are looking for:" TO OUT-RECORD
        PERFORM DISPLAY-AND-WRITE
 
@@ -77,6 +107,8 @@ MAIN-LOGIC.
        *>MOVE "Enter the full name of the person you are looking for:"
            *>TO OUT-RECORD
        *>PERFORM DISPLAY-AND-WRITE
+       CLOSE PROFILE-FILE
+       OPEN INPUT PROFILE-FILE
 
        MOVE 'N' TO WS-EOF-PROFILE
        MOVE 'N' TO WS-FOUND-FLAG
@@ -193,11 +225,10 @@ DISPLAY-PROFILE.
        PERFORM DISPLAY-AND-WRITE.
        MOVE " " TO OUT-RECORD.
        PERFORM DISPLAY-AND-WRITE.
-
 DISPLAY-AND-WRITE.
        DISPLAY FUNCTION TRIM(OUT-RECORD)
        *> uncomment the line below if output is not being written to InCollege-Output
-       WRITE OUT-RECORD
+      *> WRITE OUT-RECORD
        MOVE SPACES TO OUT-RECORD.
 
 COPY "SendRequest.cpy".
