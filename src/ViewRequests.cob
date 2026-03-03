@@ -93,11 +93,9 @@ MAIN.
 
       *> Get lowest key
        MOVE 0 TO REQUEST-ID
-       START PENDING-REQUESTS-FILE KEY >= REQUEST-ID
-           INVALID KEY
-               MOVE "Y" TO LS-EOF
-       END-START
-
+       READ PENDING-REQUESTS-FILE NEXT RECORD
+               AT END MOVE "Y" TO LS-EOF
+       END-READ
       *> Iterate through file to get
        PERFORM UNTIL LS-EOF = "Y"
            IF LNK-USER-NAME = RECIPIENT-USERNAME
@@ -148,7 +146,7 @@ PULL-PROFILE-DATA.
            GOBACK
        END-IF
 
-       DISPLAY "Request from:" FUNCTION TRIM(PROFILE-NAME)
+       DISPLAY "Request from: " FUNCTION TRIM(PROFILE-NAME)
        DISPLAY "1. Accept"
        DISPLAY "2. Reject"
        DISPLAY "Enter your choice for " FUNCTION TRIM(PROFILE-NAME) ":"
@@ -160,8 +158,8 @@ PULL-PROFILE-DATA.
            DISPLAY "Request from: " FUNCTION TRIM(PROFILE-NAME)
            DISPLAY "1. Accept"
            DISPLAY "2. Reject"
+           DISPLAY "Enter your choice for " FUNCTION TRIM(PROFILE-NAME) ":"
            ACCEPT LS-OPTION-SELECTION
-           DISPLAY "Enter your choice for " FUNCTION TRIM(PROFILE-NAME) ": "
        END-PERFORM
        
        IF LS-OPTION-SELECTION = 1
