@@ -1,0 +1,39 @@
+1
+TesterA
+Password1!
+4
+Justin Chen
+1
+8
+1
+TesterB
+Password1!
+4
+Justin Chen
+1
+8
+1
+AnotherGuy
+Password1!
+4
+Justin Chen
+1
+8
+1
+LastGuy
+Password1!
+4
+Justin Chen
+1
+8
+1
+JustinC
+Password1!
+5
+1
+2
+2
+2
+5
+8
+3
