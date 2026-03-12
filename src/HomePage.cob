@@ -53,7 +53,7 @@ MAIN.
                                             WS-PROFILE-COUNT
                                             WS-PROFILE-LIST
             WHEN 3
-                DISPLAY "Search for a job is under construction."
+                CALL "Jobs" USING LNK-USER-NAME
             WHEN 4
                 Call "Search" USING LNK-USER-NAME
             WHEN 5
@@ -73,7 +73,7 @@ MAIN.
 DISPLAY-MENU.
     DISPLAY "1. Create/Edit My Profile"
     DISPLAY "2. View My Profile"
-    DISPLAY "3. Search for a job"
+    DISPLAY "3. Job search/internship"
     DISPLAY "4. Find someone you know"
     DISPLAY "5. View my pending connection requests"
     DISPLAY "6. View my network"
