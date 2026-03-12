@@ -36,8 +36,19 @@ Enter your choice:
 2. Browse Jobs/Internships
 3. Back to Main Menu
 Enter your choice:
-2
-Browse Jobs/Internships is under construction.
+1
+--- Post a New Job/Internship ---
+Enter Job Title:
+Call Assistant
+Enter Description (max 200 chars):
+Help everybody even if they don't need it. Answer every single call.
+Enter Employer Name:
+Walmart
+Enter Location:
+Remote
+Enter Salary (Optional):
+Not specified
+Job posted successfully!
 --- Job Search/Internship Menu ---
 1. Post a Job/Internship
 2. Browse Jobs/Internships
