@@ -37,11 +37,11 @@ WORKING-STORAGE SECTION.
 LINKAGE SECTION.
 01 LNK-USER-NAME PIC X(30).
 
-PROCEDURE DIVISION USING LNK-USER-NAME.
+PROCEDURE DIVISION USING LNK-USER-NAME.                                 
 
 MAIN.
-    MOVE "N" TO WS-EXIT-MENU
-    PERFORM UNTIL WS-EXIT-MENU = "Y"
+    MOVE "N" TO WS-EXIT-MENU                                            
+    PERFORM UNTIL WS-EXIT-MENU = "Y"                                    
         DISPLAY "--- Job Search/Internship Menu ---"
         DISPLAY "1. Post a Job/Internship"
         DISPLAY "2. Browse Jobs/Internships"
@@ -59,7 +59,7 @@ MAIN.
                 WHEN "1"
                     PERFORM POST-JOB-LISTING
                 WHEN "2"
-                    DISPLAY "Browse Jobs/Internships is under construction."
+                    CALL "ViewJobs" USING LNK-USER-NAME
                 WHEN "3"
                     MOVE "Y" TO WS-EXIT-MENU
                 WHEN OTHER
