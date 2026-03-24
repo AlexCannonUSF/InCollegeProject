@@ -1,0 +1,85 @@
+Welcome to InCollege!
+1) Log In
+2) Create Account
+3) Exit
+Choose an option: 
+2
+Enter a username: 
+Raul
+Enter password: 
+Casti!!0
+Account created successfully!
+Welcome to InCollege!
+1) Log In
+2) Create Account
+3) Exit
+Choose an option: 
+1
+Enter username: 
+Raul
+Enter password: 
+Casti!!0
+You have successfully logged in
+Welcome, Raul!
+1. Create/Edit My Profile
+2. View My Profile
+3. Job search/internship
+4. Find someone you know
+5. View my pending connection requests
+6. View my network
+7. Learn a new skill
+8. Logout
+Enter your choice:
+3
+--- Job Search/Internship Menu ---
+1. Post a Job/Internship
+2. Browse Jobs/Internships
+3. Back to Main Menu
+Enter your choice:
+1
+--- Post a New Job/Internship ---
+Enter Job Title:
+
+Job title is required.
+Enter Job Title:
+Financial Advisor
+Enter Description (max 200 chars):
+
+Description is required.
+Enter Description (max 200 chars):
+Diversify Bonds
+Enter Employer Name:
+
+Employer is required.
+Enter Employer Name:
+Goldman Sachs
+Enter Location:
+
+Location is required.
+Enter Location:
+Salt Lake City, UT
+Enter Salary (Optional):
+Not specified
+Job posted successfully!
+--- Job Search/Internship Menu ---
+1. Post a Job/Internship
+2. Browse Jobs/Internships
+3. Back to Main Menu
+Enter your choice:
+3
+1. Create/Edit My Profile
+2. View My Profile
+3. Job search/internship
+4. Find someone you know
+5. View my pending connection requests
+6. View my network
+7. Learn a new skill
+8. Logout
+Enter your choice:
+8
+Welcome to InCollege!
+1) Log In
+2) Create Account
+3) Exit
+Choose an option: 
+3

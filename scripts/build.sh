@@ -3,7 +3,7 @@ set -e
 
 mkdir -p bin
 
-cobc -x -free -o bin/InCollege \
+cobc -x -free -I src -o bin/InCollege \
   src/InCollege.cob \
   src/CreateAccount.cob \
   src/LogIn.cob \
@@ -14,6 +14,9 @@ cobc -x -free -o bin/InCollege \
   src/ProfileStore.cob \
   src/ProfileCreate.cob \
   src/ProfileEdit.cob \
-  src/Search.cob
+  src/Search.cob \
+  src/ViewRequests.cob \
+  src/ViewNetwork.cob \
+  src/Jobs.cob
 
 echo "Build complete: bin/InCollege"

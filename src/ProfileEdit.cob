@@ -27,6 +27,7 @@ LINKAGE SECTION.
 PROCEDURE DIVISION USING LNK-USER-NAME LK-PROFILE-COUNT LK-PROFILE-LIST.
 
 MAIN.
+    *> Call ProfileCreate to initialize the profile for the logged-in user
     CALL "ProfileCreate" USING LNK-USER-NAME LK-PROFILE-COUNT LK-PROFILE-LIST
     DISPLAY "Profile saved successfully."
     GOBACK.

@@ -1,0 +1,12 @@
+Welcome to InCollege!
+1) Log In
+2) Create Account
+3) Exit
+Choose an option: 
+4
+Invalid option. Try again.
+Welcome to InCollege!
+1) Log In
+2) Create Account
+3) Exit
+Choose an option: 

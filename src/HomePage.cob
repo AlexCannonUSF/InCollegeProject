@@ -53,12 +53,16 @@ MAIN.
                                             WS-PROFILE-COUNT
                                             WS-PROFILE-LIST
             WHEN 3
-                DISPLAY "Search for a job is under construction."
+                CALL "Jobs" USING LNK-USER-NAME
             WHEN 4
-                Call "Search"
+                Call "Search" USING LNK-USER-NAME
             WHEN 5
-                CALL "SkillMenu"
+                CALL "ViewRequests" USING LNK-USER-NAME
             WHEN 6
+                CALL "ViewNetwork" USING LNK-USER-NAME
+            WHEN 7
+                CALL "SkillMenu"
+            WHEN 8
                 MOVE 'Y' TO EXIT-FLAG
             WHEN OTHER
                 DISPLAY "Invalid choice. Please try again."
@@ -69,10 +73,12 @@ MAIN.
 DISPLAY-MENU.
     DISPLAY "1. Create/Edit My Profile"
     DISPLAY "2. View My Profile"
-    DISPLAY "3. Search for a job"
+    DISPLAY "3. Job search/internship"
     DISPLAY "4. Find someone you know"
-    DISPLAY "5. Learn a new skill"
-    DISPLAY "6. Logout"
+    DISPLAY "5. View my pending connection requests"
+    DISPLAY "6. View my network"
+    DISPLAY "7. Learn a new skill"
+    DISPLAY "8. Logout"
     DISPLAY "Enter your choice:".
 
 END PROGRAM HomePage.

@@ -1,0 +1,274 @@
+Welcome to InCollege!
+1) Log In
+2) Create Account
+3) Exit
+Choose an option: 
+1
+Enter username: 
+TesterA
+Enter password: 
+Password1!
+You have successfully logged in
+Welcome, TesterA!
+1. Create/Edit My Profile
+2. View My Profile
+3. Search for a job
+4. Find someone you know
+5. View my pending connection requests
+6. View my network
+7. Learn a new skill
+8. Logout
+Enter your choice:
+4
+Enter the full name of the person you are looking for:
+Justin Chen
+
+--- Found User Profile ---
+Name: Justin Chen
+University: University of South Florida
+Major: Computer Science
+Graduation Year: 2026
+About Me:
+Experience:
+Education:
+-------------------------
+
+1. Send Connection Request
+2. Back to Main Menu
+1
+Connection request sent successfully.
+1. Create/Edit My Profile
+2. View My Profile
+3. Search for a job
+4. Find someone you know
+5. View my pending connection requests
+6. View my network
+7. Learn a new skill
+8. Logout
+Enter your choice:
+8
+Welcome to InCollege!
+1) Log In
+2) Create Account
+3) Exit
+Choose an option: 
+1
+Enter username: 
+TesterB
+Enter password: 
+Password1!
+You have successfully logged in
+Welcome, TesterB!
+1. Create/Edit My Profile
+2. View My Profile
+3. Search for a job
+4. Find someone you know
+5. View my pending connection requests
+6. View my network
+7. Learn a new skill
+8. Logout
+Enter your choice:
+4
+Enter the full name of the person you are looking for:
+Justin Chen
+
+--- Found User Profile ---
+Name: Justin Chen
+University: University of South Florida
+Major: Computer Science
+Graduation Year: 2026
+About Me:
+Experience:
+Education:
+-------------------------
+
+1. Send Connection Request
+2. Back to Main Menu
+1
+Connection request sent successfully.
+1. Create/Edit My Profile
+2. View My Profile
+3. Search for a job
+4. Find someone you know
+5. View my pending connection requests
+6. View my network
+7. Learn a new skill
+8. Logout
+Enter your choice:
+8
+Welcome to InCollege!
+1) Log In
+2) Create Account
+3) Exit
+Choose an option: 
+1
+Enter username: 
+AnotherGuy
+Enter password: 
+Password1!
+You have successfully logged in
+Welcome, AnotherGuy!
+1. Create/Edit My Profile
+2. View My Profile
+3. Search for a job
+4. Find someone you know
+5. View my pending connection requests
+6. View my network
+7. Learn a new skill
+8. Logout
+Enter your choice:
+4
+Enter the full name of the person you are looking for:
+Justin Chen
+
+--- Found User Profile ---
+Name: Justin Chen
+University: University of South Florida
+Major: Computer Science
+Graduation Year: 2026
+About Me:
+Experience:
+Education:
+-------------------------
+
+1. Send Connection Request
+2. Back to Main Menu
+1
+Connection request sent successfully.
+1. Create/Edit My Profile
+2. View My Profile
+3. Search for a job
+4. Find someone you know
+5. View my pending connection requests
+6. View my network
+7. Learn a new skill
+8. Logout
+Enter your choice:
+8
+Welcome to InCollege!
+1) Log In
+2) Create Account
+3) Exit
+Choose an option: 
+1
+Enter username: 
+LastGuy
+Enter password: 
+Password1!
+You have successfully logged in
+Welcome, LastGuy!
+1. Create/Edit My Profile
+2. View My Profile
+3. Search for a job
+4. Find someone you know
+5. View my pending connection requests
+6. View my network
+7. Learn a new skill
+8. Logout
+Enter your choice:
+4
+Enter the full name of the person you are looking for:
+Justin Chen
+
+--- Found User Profile ---
+Name: Justin Chen
+University: University of South Florida
+Major: Computer Science
+Graduation Year: 2026
+About Me:
+Experience:
+Education:
+-------------------------
+
+1. Send Connection Request
+2. Back to Main Menu
+1
+Connection request sent successfully.
+1. Create/Edit My Profile
+2. View My Profile
+3. Search for a job
+4. Find someone you know
+5. View my pending connection requests
+6. View my network
+7. Learn a new skill
+8. Logout
+Enter your choice:
+8
+Welcome to InCollege!
+1) Log In
+2) Create Account
+3) Exit
+Choose an option: 
+1
+Enter username: 
+JustinC
+Enter password: 
+Password1!
+You have successfully logged in
+Welcome, JustinC!
+1. Create/Edit My Profile
+2. View My Profile
+3. Search for a job
+4. Find someone you know
+5. View my pending connection requests
+6. View my network
+7. Learn a new skill
+8. Logout
+Enter your choice:
+5
+--- Pending Connection Requests ---
+People who want to connect:
+Request from: Tester Alpha
+1. Accept
+2. Reject
+Enter your choice for Tester Alpha:
+1
+Connection request from Tester Alpha accepted!
+Request from: Tester Beta
+1. Accept
+2. Reject
+Enter your choice for Tester Beta:
+2
+Connection request from Tester Beta rejected!
+Request from: Another Tester
+1. Accept
+2. Reject
+Enter your choice for Another Tester:
+2
+Connection request from Another Tester rejected!
+Request from: Last Tester
+1. Accept
+2. Reject
+Enter your choice for Last Tester:
+2
+Connection request from Last Tester rejected!
+-----------------------------------
+1. Create/Edit My Profile
+2. View My Profile
+3. Search for a job
+4. Find someone you know
+5. View my pending connection requests
+6. View my network
+7. Learn a new skill
+8. Logout
+Enter your choice:
+5
+--- Pending Connection Requests ---
+You have no pending connection requests at this time.
+-----------------------------------
+1. Create/Edit My Profile
+2. View My Profile
+3. Search for a job
+4. Find someone you know
+5. View my pending connection requests
+6. View my network
+7. Learn a new skill
+8. Logout
+Enter your choice:
+8
+Welcome to InCollege!
+1) Log In
+2) Create Account
+3) Exit
+Choose an option: 
+3
