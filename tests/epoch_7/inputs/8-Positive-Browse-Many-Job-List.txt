@@ -1,0 +1,39 @@
+2
+Raul
+Casti!!0
+2
+Felix
+Casti!!0
+1
+Felix
+Casti!!0
+3
+1
+Electrician
+We need you to put wires together
+Hollywood Construction
+Saint Petersburg, FL
+$60,000-$80,000
+1
+Tile Worker
+We need you to put tiles on the floor
+Hollywood Construction
+Tampa, FL
+$50,000-$60,000
+1
+Plumber
+We need you to flush out some pipes
+Hollywood Construction
+Sarasota, FL
+$80,000-$100,000
+4
+8
+1
+Raul
+Casti!!0
+3
+2
+R
+4
+8
+3

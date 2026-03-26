@@ -1,0 +1,191 @@
+Welcome to InCollege!
+1) Log In
+2) Create Account
+3) Exit
+Choose an option: 
+2
+Enter a username: 
+Raul
+Enter password: 
+Casti!!0
+Account created successfully!
+Welcome to InCollege!
+1) Log In
+2) Create Account
+3) Exit
+Choose an option: 
+2
+Enter a username: 
+Felix
+Enter password: 
+Casti!!0
+Account created successfully!
+Welcome to InCollege!
+1) Log In
+2) Create Account
+3) Exit
+Choose an option: 
+1
+Enter username: 
+Felix
+Enter password: 
+Casti!!0
+You have successfully logged in
+Welcome, Felix!
+1. Create/Edit My Profile
+2. View My Profile
+3. Job search/internship
+4. Find someone you know
+5. View my pending connection requests
+6. View my network
+7. Learn a new skill
+8. Logout
+Enter your choice:
+3
+--- Job Search/Internship Menu ---
+1. Post a Job/Internship
+2. Browse Jobs/Internships
+3. View My Applications
+4. Back to Main Menu
+Enter your choice:
+1
+--- Post a New Job/Internship ---
+Enter Job Title:
+Electrician
+Enter Description (max 200 chars):
+We need you to put wires together
+Enter Employer Name:
+Hollywood Construction
+Enter Location:
+Saint Petersburg, FL
+Enter Salary (Optional):
+$60,000-$80,000
+Job posted successfully!
+--- Job Search/Internship Menu ---
+1. Post a Job/Internship
+2. Browse Jobs/Internships
+3. View My Applications
+4. Back to Main Menu
+Enter your choice:
+1
+--- Post a New Job/Internship ---
+Enter Job Title:
+Tile Worker
+Enter Description (max 200 chars):
+We need you to put tiles on the floor
+Enter Employer Name:
+Hollywood Construction
+Enter Location:
+Tampa, FL
+Enter Salary (Optional):
+$50,000-$60,000
+Job posted successfully!
+--- Job Search/Internship Menu ---
+1. Post a Job/Internship
+2. Browse Jobs/Internships
+3. View My Applications
+4. Back to Main Menu
+Enter your choice:
+1
+--- Post a New Job/Internship ---
+Enter Job Title:
+Plumber
+Enter Description (max 200 chars):
+We need you to flush out some pipes
+Enter Employer Name:
+Hollywood Construction
+Enter Location:
+Sarasota, FL
+Enter Salary (Optional):
+$80,000-$100,00
+Job posted successfully!
+--- Job Search/Internship Menu ---
+1. Post a Job/Internship
+2. Browse Jobs/Internships
+3. View My Applications
+4. Back to Main Menu
+Enter your choice:
+4
+1. Create/Edit My Profile
+2. View My Profile
+3. Job search/internship
+4. Find someone you know
+5. View my pending connection requests
+6. View my network
+7. Learn a new skill
+8. Logout
+Enter your choice:
+8
+Welcome to InCollege!
+1) Log In
+2) Create Account
+3) Exit
+Choose an option: 
+1
+Enter username: 
+Raul
+Enter password: 
+Casti!!0
+You have successfully logged in
+Welcome, Raul!
+1. Create/Edit My Profile
+2. View My Profile
+3. Job search/internship
+4. Find someone you know
+5. View my pending connection requests
+6. View my network
+7. Learn a new skill
+8. Logout
+Enter your choice:
+3
+--- Job Search/Internship Menu ---
+1. Post a Job/Internship
+2. Browse Jobs/Internships
+3. View My Applications
+4. Back to Main Menu
+Enter your choice:
+2
+Available Job/Internship Postings:
+--------------------------------------------
+ID: 0001
+Title: Electrician                                       
+Employer: Hollywood Construction                            
+Location: Saint Petersburg, FL                              
+--------------------------------------------
+--------------------------------------------
+ID: 0002
+Title: Tile Worker                                       
+Employer: Hollywood Construction                            
+Location: Tampa, FL                                         
+--------------------------------------------
+--------------------------------------------
+ID: 0003
+Title: Plumber                                           
+Employer: Hollywood Construction                            
+Location: Sarasota, FL                                      
+--------------------------------------------
+Enter job ID to view details or R to return to menu:
+You entered: R
+--- Job Search/Internship Menu ---
+1. Post a Job/Internship
+2. Browse Jobs/Internships
+3. View My Applications
+4. Back to Main Menu
+Enter your choice:
+4
+1. Create/Edit My Profile
+2. View My Profile
+3. Job search/internship
+4. Find someone you know
+5. View my pending connection requests
+6. View my network
+7. Learn a new skill
+8. Logout
+Enter your choice:
+8
+Welcome to InCollege!
+1) Log In
+2) Create Account
+3) Exit
+Choose an option: 
+3
