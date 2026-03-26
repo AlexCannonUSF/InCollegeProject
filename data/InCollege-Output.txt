@@ -3,21 +3,74 @@ Welcome to InCollege!
 2) Create Account
 3) Exit
 Choose an option: 
-2
-Enter a username: 
-Raul
-That username is already taken.
-Enter a username: 
-Casti!!0
-Enter password: 
 1
-Password does not meet requirements.
-Enter password: 
+Enter username: 
 Raul
-Password does not meet requirements.
 Enter password: 
 Casti!!0
-Account created successfully!
+You have successfully logged in
+Welcome, Raul!
+1. Create/Edit My Profile
+2. View My Profile
+3. Job search/internship
+4. Find someone you know
+5. View my pending connection requests
+6. View my network
+7. Learn a new skill
+8. Logout
+Enter your choice:
+3
+--- Job Search/Internship Menu ---
+1. Post a Job/Internship
+2. Browse Jobs/Internships
+3. View My Applications
+4. Back to Main Menu
+Enter your choice:
+2
+Available Job/Internship Postings:
+--------------------------------------------
+ID: 0001
+Title: Frontend dev Jr                                   
+Employer: Google                                            
+Location: Tampa, FL                                         
+--------------------------------------------
+--------------------------------------------
+ID: 0002
+Title: Financial Analyst                                 
+Employer: Goldman Sachs                                     
+Location: New York City, NY                                 
+--------------------------------------------
+Enter job ID to view details or R to return to menu:
+You entered: 0002
+--------------------------------------------
+Job title: Financial Analyst                                 
+Description: Diversify Bonds                                                                                                                                                                                         
+Employer: Goldman Sachs                                     
+Location: New York City, NY                                 
+Salary: $80,000-$100,00
+--------------------------------------------
+Choose your options:
+1. Apply for this job/internship
+2. Return to main menu
+You entered: 1
+Successfully applied to job ID: 0002
+--- Job Search/Internship Menu ---
+1. Post a Job/Internship
+2. Browse Jobs/Internships
+3. View My Applications
+4. Back to Main Menu
+Enter your choice:
+4
+1. Create/Edit My Profile
+2. View My Profile
+3. Job search/internship
+4. Find someone you know
+5. View my pending connection requests
+6. View my network
+7. Learn a new skill
+8. Logout
+Enter your choice:
+8
 Welcome to InCollege!
 1) Log In
 2) Create Account
