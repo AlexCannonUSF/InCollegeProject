@@ -1,10 +1,20 @@
-1
-Raul
-Casti!!0
-3
 2
-0002
+AlexCannon
+Abcdef1!
 1
+AlexCannon
+Abcdef1!
+3
+1
+Software Engineering Intern
+Build AI tooling for USF computer science students
+OpenAI
+Tampa, FL
+25/hour
+2
+1
+1
+3
 4
 8
 3
