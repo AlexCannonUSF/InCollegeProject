@@ -23,10 +23,8 @@ for input in "$IN_DIR"/*.txt; do
   : > "$ROOT/data/JobApplications.dat"
 
   (cd "$ROOT" && "$ROOT/bin/InCollege" < "$input") > "$ACTUAL_OUT_DIR/$name"
-
-  if [ -f "$CORRECT_OUT_DIR/$base_name-Persistence.txt" ]; then
-    cat "$ROOT/data/JobApplications.dat" > "$ACTUAL_OUT_DIR/$base_name-Persistence.txt"
-  fi
+  cat "$ROOT/data/JobApplications.dat" > "$ACTUAL_OUT_DIR/$base_name-JobApplicationsPersistence.txt"
+  cat "$ROOT/data/JobPostings.dat" > "$ACTUAL_OUT_DIR/$base_name-JobPostingsPersistence.txt"
 
   echo "Running Output Tests"
   DIFF=$(diff "$ACTUAL_OUT_DIR/$name" "$CORRECT_OUT_DIR/$name")
@@ -37,15 +35,20 @@ for input in "$IN_DIR"/*.txt; do
     echo "$DIFF"
   fi
 
-  if [ -f "$CORRECT_OUT_DIR/$base_name-Persistence.txt" ]; then
-    echo "Running Persistence Tests"
-    DIFF=$(diff "$ACTUAL_OUT_DIR/$base_name-Persistence.txt" "$CORRECT_OUT_DIR/$base_name-Persistence.txt")
-    if [ ! "$DIFF" ]; then
-      echo "Pass Persistence Tests"
-    else
-      echo "Failed Persistence Tests"
-      echo "$DIFF"
-    fi
+  DIFF=$(diff "$ACTUAL_OUT_DIR/$base_name-JobApplicationsPersistence.txt" "$CORRECT_OUT_DIR/$base_name-JobApplicationsPersistence.txt")
+  if [ ! "$DIFF" ]; then
+    echo "JobApplications.txt file is correct"
+  else
+    echo "JobApplications.txt file is incorrect"
+    echo "$DIFF"
+  fi
+
+  DIFF=$(diff "$ACTUAL_OUT_DIR/$base_name-JobPostingsPersistence.txt" "$CORRECT_OUT_DIR/$base_name-JobPostingsPersistence.txt")
+  if [ ! "$DIFF" ]; then
+    echo "JobPostings.txt file is correct"
+  else
+    echo "JobPostings.txt is incorrect"
+    echo "$DIFF"
   fi
 done
 
