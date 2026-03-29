@@ -63,6 +63,8 @@ MAIN.
             WHEN 7
                 CALL "SkillMenu"
             WHEN 8
+                CALL "Messages" USING LNK-USER-NAME
+            WHEN 9
                 MOVE 'Y' TO EXIT-FLAG
             WHEN OTHER
                 DISPLAY "Invalid choice. Please try again."
@@ -78,7 +80,8 @@ DISPLAY-MENU.
     DISPLAY "5. View my pending connection requests"
     DISPLAY "6. View my network"
     DISPLAY "7. Learn a new skill"
-    DISPLAY "8. Logout"
+    DISPLAY "8. Messages"
+    DISPLAY "9. Logout"
     DISPLAY "Enter your choice:".
 
 END PROGRAM HomePage.
