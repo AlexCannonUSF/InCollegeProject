@@ -39,6 +39,7 @@ WORKING-STORAGE SECTION.
 77 WS-FOUND-ANY           PIC X VALUE "N".
 77 WS-JOB-FOUND           PIC X VALUE "N".
 77 WS-CURRENT-APP-JOB-ID  PIC 9(4) VALUE 0.
+77 WS-LOG-TEXT            PIC X(300) VALUE SPACES.
 
 LINKAGE SECTION.
 01 LNK-USERNAME PIC X(30).
@@ -47,12 +48,19 @@ PROCEDURE DIVISION USING LNK-USERNAME.
 
 MAIN.
     DISPLAY "--- Your Job Applications ---"
+    MOVE "--- Your Job Applications ---" TO WS-LOG-TEXT
+    CALL "TestOutput" USING "A" WS-LOG-TEXT
     DISPLAY "Application Summary for " FUNCTION TRIM(LNK-USERNAME)
+    MOVE SPACES TO WS-LOG-TEXT
+    STRING "Application Summary for " DELIMITED BY SIZE FUNCTION TRIM(LNK-USERNAME) DELIMITED BY SIZE INTO WS-LOG-TEXT END-STRING
+    CALL "TestOutput" USING "A" WS-LOG-TEXT
 
     OPEN INPUT JOB-APP-FILE
 
     IF WS-APP-FILE-STATUS NOT = "00"
         DISPLAY "No applications found."
+        MOVE "No applications found." TO WS-LOG-TEXT
+        CALL "TestOutput" USING "A" WS-LOG-TEXT
         GOBACK
     END-IF
 
@@ -76,6 +84,8 @@ MAIN.
 
     IF WS-FOUND-ANY = "N"
         DISPLAY "You have not applied to any jobs yet."
+        MOVE "You have not applied to any jobs yet." TO WS-LOG-TEXT
+        CALL "TestOutput" USING "A" WS-LOG-TEXT
     END-IF
 
     GOBACK.
@@ -88,7 +98,12 @@ DISPLAY-APPLIED-JOB-DETAILS.
 
     IF WS-JOB-FILE-STATUS NOT = "00"
         DISPLAY "Applied Job ID: " WS-CURRENT-APP-JOB-ID
+        MOVE SPACES TO WS-LOG-TEXT
+        STRING "Applied Job ID: " DELIMITED BY SIZE WS-CURRENT-APP-JOB-ID DELIMITED BY SIZE INTO WS-LOG-TEXT END-STRING
+        CALL "TestOutput" USING "A" WS-LOG-TEXT
         DISPLAY "Job details file could not be opened."
+        MOVE "Job details file could not be opened." TO WS-LOG-TEXT
+        CALL "TestOutput" USING "A" WS-LOG-TEXT
         EXIT PARAGRAPH
     END-IF
 
@@ -99,11 +114,27 @@ DISPLAY-APPLIED-JOB-DETAILS.
             NOT AT END
                 IF JOB-ID = WS-CURRENT-APP-JOB-ID
                     DISPLAY "--------------------------------------------"
+                    MOVE "--------------------------------------------" TO WS-LOG-TEXT
+                    CALL "TestOutput" USING "A" WS-LOG-TEXT
                     DISPLAY "Job ID: " JOB-ID
+                    MOVE SPACES TO WS-LOG-TEXT
+                    STRING "Job ID: " DELIMITED BY SIZE JOB-ID DELIMITED BY SIZE INTO WS-LOG-TEXT END-STRING
+                    CALL "TestOutput" USING "A" WS-LOG-TEXT
                     DISPLAY "Title: " JOB-TITLE
+                    MOVE SPACES TO WS-LOG-TEXT
+                    STRING "Title: " DELIMITED BY SIZE JOB-TITLE DELIMITED BY SIZE INTO WS-LOG-TEXT END-STRING
+                    CALL "TestOutput" USING "A" WS-LOG-TEXT
                     DISPLAY "Employer: " JOB-EMPLOYER
+                    MOVE SPACES TO WS-LOG-TEXT
+                    STRING "Employer: " DELIMITED BY SIZE JOB-EMPLOYER DELIMITED BY SIZE INTO WS-LOG-TEXT END-STRING
+                    CALL "TestOutput" USING "A" WS-LOG-TEXT
                     DISPLAY "Location: " JOB-LOCATION
+                    MOVE SPACES TO WS-LOG-TEXT
+                    STRING "Location: " DELIMITED BY SIZE JOB-LOCATION DELIMITED BY SIZE INTO WS-LOG-TEXT END-STRING
+                    CALL "TestOutput" USING "A" WS-LOG-TEXT
                     DISPLAY "--------------------------------------------"
+                    MOVE "--------------------------------------------" TO WS-LOG-TEXT
+                    CALL "TestOutput" USING "A" WS-LOG-TEXT
                     MOVE "Y" TO WS-JOB-FOUND
                     MOVE "Y" TO WS-JOB-EOF
                 END-IF
@@ -114,9 +145,18 @@ DISPLAY-APPLIED-JOB-DETAILS.
 
     IF WS-JOB-FOUND = "N"
         DISPLAY "--------------------------------------------"
+        MOVE "--------------------------------------------" TO WS-LOG-TEXT
+        CALL "TestOutput" USING "A" WS-LOG-TEXT
         DISPLAY "Job ID: " WS-CURRENT-APP-JOB-ID
+        MOVE SPACES TO WS-LOG-TEXT
+        STRING "Job ID: " DELIMITED BY SIZE WS-CURRENT-APP-JOB-ID DELIMITED BY SIZE INTO WS-LOG-TEXT END-STRING
+        CALL "TestOutput" USING "A" WS-LOG-TEXT
         DISPLAY "This job is no longer available in JobPostings.dat"
+        MOVE "This job is no longer available in JobPostings.dat" TO WS-LOG-TEXT
+        CALL "TestOutput" USING "A" WS-LOG-TEXT
         DISPLAY "--------------------------------------------"
+        MOVE "--------------------------------------------" TO WS-LOG-TEXT
+        CALL "TestOutput" USING "A" WS-LOG-TEXT
     END-IF.
 
 END PROGRAM MyApplications.

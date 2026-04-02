@@ -4,6 +4,7 @@ PROGRAM-ID. ProfileEdit.
 DATA DIVISION.
 WORKING-STORAGE SECTION.
 77 DUMMY PIC X VALUE 'N'.
+77 WS-LOG-TEXT PIC X(300) VALUE SPACES.
 
 LINKAGE SECTION.
 01 LNK-USER-NAME PIC X(30).
@@ -30,6 +31,8 @@ MAIN.
     *> Call ProfileCreate to initialize the profile for the logged-in user
     CALL "ProfileCreate" USING LNK-USER-NAME LK-PROFILE-COUNT LK-PROFILE-LIST
     DISPLAY "Profile saved successfully."
+    MOVE "Profile saved successfully." TO WS-LOG-TEXT
+    CALL "TestOutput" USING "A" WS-LOG-TEXT
     GOBACK.
 
 END PROGRAM ProfileEdit.

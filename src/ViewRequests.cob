@@ -66,6 +66,8 @@ LOCAL-STORAGE SECTION.
 01 LS-NO-LEADING-ZEROS             PIC ZZ.
 01 LS-NAME-TO-LOOKUP               PIC X(30).
 01 LS-OPTION-SELECTION             PIC 9.
+01 LS-LOG-TEXT                     PIC X(300).
+01 LS-OPTION-LENGTH                PIC 9(4) VALUE 1.
 
 LINKAGE SECTION.
 01 LNK-USER-NAME                   PIC X(30).
@@ -74,6 +76,8 @@ PROCEDURE DIVISION USING LNK-USER-NAME.
 
 MAIN.
        DISPLAY "--- Pending Connection Requests ---"
+    MOVE "--- Pending Connection Requests ---" TO LS-LOG-TEXT
+    CALL "TestOutput" USING "A" LS-LOG-TEXT
        OPEN I-O PENDING-REQUESTS-FILE
 
       *> Open File
@@ -87,6 +91,12 @@ MAIN.
                OPEN I-O PENDING-REQUESTS-FILE
            WHEN OTHER
                DISPLAY "Error Opening PendingRequests.dat: " LS-PENDING-REQUESTS-STAT
+                             MOVE SPACES TO LS-LOG-TEXT
+                             STRING "Error Opening PendingRequests.dat: " DELIMITED BY SIZE
+                                            LS-PENDING-REQUESTS-STAT DELIMITED BY SIZE
+                                 INTO LS-LOG-TEXT
+                             END-STRING
+                             CALL "TestOutput" USING "A" LS-LOG-TEXT
                CLOSE PENDING-REQUESTS-FILE
                GOBACK
        END-EVALUATE
@@ -112,16 +122,24 @@ MAIN.
        
        IF LS-REQUEST-COUNT = 0
            DISPLAY "You have no pending connection requests at this time."
+           MOVE "You have no pending connection requests at this time." TO LS-LOG-TEXT
+           CALL "TestOutput" USING "A" LS-LOG-TEXT
            DISPLAY "-----------------------------------"
+           MOVE "-----------------------------------" TO LS-LOG-TEXT
+           CALL "TestOutput" USING "A" LS-LOG-TEXT
            GOBACK
        END-IF
        
        DISPLAY "People who want to connect:"
+       MOVE "People who want to connect:" TO LS-LOG-TEXT
+       CALL "TestOutput" USING "A" LS-LOG-TEXT
        PERFORM VARYING REQUEST-INDEX FROM 1 BY 1 UNTIL REQUEST-INDEX > LS-REQUEST-COUNT
            MOVE RECEIVED-REQUESTS(REQUEST-INDEX) TO LS-NAME-TO-LOOKUP
            PERFORM PULL-PROFILE-DATA
        END-PERFORM
        DISPLAY "-----------------------------------"
+    MOVE "-----------------------------------" TO LS-LOG-TEXT
+    CALL "TestOutput" USING "A" LS-LOG-TEXT
        GOBACK.
 
 PULL-PROFILE-DATA.
@@ -143,27 +161,57 @@ PULL-PROFILE-DATA.
 
        IF LS-EOF = "Y" AND LS-FOUND-INFO = "N"
            DISPLAY "Could not retrieve sender data"
+           MOVE "Could not retrieve sender data" TO LS-LOG-TEXT
+           CALL "TestOutput" USING "A" LS-LOG-TEXT
            GOBACK
        END-IF
 
        DISPLAY "Request from: " FUNCTION TRIM(PROFILE-NAME)
+       MOVE SPACES TO LS-LOG-TEXT
+       STRING "Request from: " DELIMITED BY SIZE FUNCTION TRIM(PROFILE-NAME) DELIMITED BY SIZE INTO LS-LOG-TEXT END-STRING
+       CALL "TestOutput" USING "A" LS-LOG-TEXT
        DISPLAY "1. Accept"
+       MOVE "1. Accept" TO LS-LOG-TEXT
+       CALL "TestOutput" USING "A" LS-LOG-TEXT
        DISPLAY "2. Reject"
+       MOVE "2. Reject" TO LS-LOG-TEXT
+       CALL "TestOutput" USING "A" LS-LOG-TEXT
        DISPLAY "Enter your choice for " FUNCTION TRIM(PROFILE-NAME) ":"
-       ACCEPT LS-OPTION-SELECTION
+       MOVE SPACES TO LS-LOG-TEXT
+       STRING "Enter your choice for " DELIMITED BY SIZE FUNCTION TRIM(PROFILE-NAME) DELIMITED BY SIZE ":" DELIMITED BY SIZE INTO LS-LOG-TEXT END-STRING
+       CALL "TestOutput" USING "A" LS-LOG-TEXT
+       CALL "TestInput" USING LS-OPTION-LENGTH LS-OPTION-SELECTION
        DISPLAY FUNCTION TRIM(LS-OPTION-SELECTION)
+       MOVE SPACES TO LS-LOG-TEXT
+       STRING FUNCTION TRIM(LS-OPTION-SELECTION) DELIMITED BY SIZE INTO LS-LOG-TEXT END-STRING
+       CALL "TestOutput" USING "A" LS-LOG-TEXT
 
        PERFORM WITH TEST BEFORE UNTIL LS-OPTION-SELECTION = 1 OR LS-OPTION-SELECTION = 2
            DISPLAY "Invalid Choice"
+           MOVE "Invalid Choice" TO LS-LOG-TEXT
+           CALL "TestOutput" USING "A" LS-LOG-TEXT
            DISPLAY "Request from: " FUNCTION TRIM(PROFILE-NAME)
+           MOVE SPACES TO LS-LOG-TEXT
+           STRING "Request from: " DELIMITED BY SIZE FUNCTION TRIM(PROFILE-NAME) DELIMITED BY SIZE INTO LS-LOG-TEXT END-STRING
+           CALL "TestOutput" USING "A" LS-LOG-TEXT
            DISPLAY "1. Accept"
+           MOVE "1. Accept" TO LS-LOG-TEXT
+           CALL "TestOutput" USING "A" LS-LOG-TEXT
            DISPLAY "2. Reject"
+           MOVE "2. Reject" TO LS-LOG-TEXT
+           CALL "TestOutput" USING "A" LS-LOG-TEXT
            DISPLAY "Enter your choice for " FUNCTION TRIM(PROFILE-NAME) ":"
-           ACCEPT LS-OPTION-SELECTION
+           MOVE SPACES TO LS-LOG-TEXT
+           STRING "Enter your choice for " DELIMITED BY SIZE FUNCTION TRIM(PROFILE-NAME) DELIMITED BY SIZE ":" DELIMITED BY SIZE INTO LS-LOG-TEXT END-STRING
+           CALL "TestOutput" USING "A" LS-LOG-TEXT
+           CALL "TestInput" USING LS-OPTION-LENGTH LS-OPTION-SELECTION
        END-PERFORM
        
        IF LS-OPTION-SELECTION = 1
            DISPLAY "Connection request from " FUNCTION TRIM(PROFILE-NAME) " accepted!"
+           MOVE SPACES TO LS-LOG-TEXT
+           STRING "Connection request from " DELIMITED BY SIZE FUNCTION TRIM(PROFILE-NAME) DELIMITED BY SIZE " accepted!" DELIMITED BY SIZE INTO LS-LOG-TEXT END-STRING
+           CALL "TestOutput" USING "A" LS-LOG-TEXT
            OPEN EXTEND ESTABLISHED-CONNECTIONS-FILE
 
            EVALUATE LS-ESTABLISHED-CONNECTIONS-STAT
@@ -176,6 +224,9 @@ PULL-PROFILE-DATA.
                OPEN EXTEND ESTABLISHED-CONNECTIONS-FILE
            WHEN OTHER
                DISPLAY "Error Opening data/EstablishedConnections.dat: " LS-PENDING-REQUESTS-STAT
+               MOVE SPACES TO LS-LOG-TEXT
+               STRING "Error Opening data/EstablishedConnections.dat: " DELIMITED BY SIZE LS-PENDING-REQUESTS-STAT DELIMITED BY SIZE INTO LS-LOG-TEXT END-STRING
+               CALL "TestOutput" USING "A" LS-LOG-TEXT
                CLOSE ESTABLISHED-CONNECTIONS-FILE
                GOBACK
            END-EVALUATE
@@ -191,4 +242,7 @@ PULL-PROFILE-DATA.
            CLOSE ESTABLISHED-CONNECTIONS-FILE
        ELSE
            DISPLAY "Connection request from " FUNCTION TRIM(PROFILE-NAME) " rejected!"
+           MOVE SPACES TO LS-LOG-TEXT
+           STRING "Connection request from " DELIMITED BY SIZE FUNCTION TRIM(PROFILE-NAME) DELIMITED BY SIZE " rejected!" DELIMITED BY SIZE INTO LS-LOG-TEXT END-STRING
+           CALL "TestOutput" USING "A" LS-LOG-TEXT
        END-IF.

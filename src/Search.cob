@@ -65,6 +65,8 @@ WORKING-STORAGE SECTION.
 01     WS-FOUND-FLAG       PIC X VALUE 'N'.
 01     I                   PIC 9 VALUE 1.
 01     WS-CONN-CHOICE      PIC X VALUE SPACES.
+01     WS-SEARCH-LEN       PIC 9(4) VALUE 50.
+01     WS-CONN-LEN         PIC 9(4) VALUE 1.
 01     WS-RECIPIENT-USER   PIC X(30).
 01     WS-DUPLICATE-FOUND  PIC X VALUE 'N'.
 01     WS-ALREADY-CONNECTED PIC X VALUE 'N'.
@@ -109,7 +111,7 @@ MAIN-LOGIC.
        MOVE "Enter the full name of the person you are looking for:" TO OUT-RECORD
        PERFORM DISPLAY-AND-WRITE
 
-       ACCEPT WS-SEARCH-QUERY
+    CALL "TestInput" USING WS-SEARCH-LEN WS-SEARCH-QUERY
        INSPECT WS-SEARCH-QUERY REPLACING ALL X'0D' BY SPACE
        INSPECT WS-SEARCH-QUERY REPLACING ALL X'0A' BY SPACE
 
@@ -145,7 +147,7 @@ MAIN-LOGIC.
                                MOVE "2. Back to Main Menu" TO OUT-RECORD
                                PERFORM DISPLAY-AND-WRITE
 
-                               ACCEPT WS-CONN-CHOICE
+                               CALL "TestInput" USING WS-CONN-LEN WS-CONN-CHOICE
 
                                MOVE WS-CONN-CHOICE TO OUT-RECORD
                                PERFORM DISPLAY-AND-WRITE
@@ -240,8 +242,7 @@ DISPLAY-PROFILE.
        PERFORM DISPLAY-AND-WRITE.
 DISPLAY-AND-WRITE.
        DISPLAY FUNCTION TRIM(OUT-RECORD)
-       *> uncomment the line below if output is not being written to InCollege-Output
-      *> WRITE OUT-RECORD
+    CALL "TestOutput" USING "A" OUT-RECORD
        MOVE SPACES TO OUT-RECORD.
 
 COPY "SendRequest.cpy".

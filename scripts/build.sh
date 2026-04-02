@@ -5,6 +5,8 @@ mkdir -p bin
 
 cobc -x -free -I src -o bin/InCollege \
   src/InCollege.cob \
+  src/TestInput.cob \
+  src/TestOutput.cob \
   src/CreateAccount.cob \
   src/LogIn.cob \
   src/DataStore.cob \
@@ -24,5 +26,8 @@ cobc -x -free -I src -o bin/InCollege \
   src/Messages.cob \
   src/SendMessage.cob \
   src/ViewMessages.cob
+
+cobc -x -free -I src -o bin/TestRunner \
+  src/TestRunner.cob
 
 echo "Build complete: bin/InCollege"

@@ -4,6 +4,7 @@ PROGRAM-ID. ViewMessages.
 
 DATA DIVISION.
 WORKING-STORAGE SECTION.
+77 WS-LOG-TEXT PIC X(300) VALUE SPACES.
 
 LINKAGE SECTION.
 01 LNK-USER-NAME   PIC X(30).
@@ -11,5 +12,7 @@ LINKAGE SECTION.
 PROCEDURE DIVISION USING LNK-USER-NAME.
 MAIN.
        DISPLAY "View My Messages is under construction.".
+       MOVE "View My Messages is under construction." TO WS-LOG-TEXT
+       CALL "TestOutput" USING "A" WS-LOG-TEXT.
        GOBACK.
 END PROGRAM ViewMessages.

@@ -20,6 +20,7 @@ WORKING-STORAGE SECTION.
 77 WS-FILE-STATUS       PIC XX VALUE "00".
 77 WS-EOF               PIC X VALUE "N".
 77 WS-ALREADY-APPLIED   PIC X VALUE "N".
+77 WS-LOG-TEXT          PIC X(300) VALUE SPACES.
 
 LINKAGE SECTION.
 01 LNK-USERNAME PIC X(30).
@@ -32,6 +33,9 @@ MAIN.
 
     IF WS-ALREADY-APPLIED = "Y"
         DISPLAY "You have already applied to job ID: " LNK-JOB-ID
+        MOVE SPACES TO WS-LOG-TEXT
+        STRING "You have already applied to job ID: " DELIMITED BY SIZE LNK-JOB-ID DELIMITED BY SIZE INTO WS-LOG-TEXT END-STRING
+        CALL "TestOutput" USING "A" WS-LOG-TEXT
         GOBACK
     END-IF
 
@@ -50,6 +54,8 @@ CHECK-IF-ALREADY-APPLIED.
 
     IF WS-FILE-STATUS NOT = "00"
         DISPLAY "Error opening applications file for checking."
+        MOVE "Error opening applications file for checking." TO WS-LOG-TEXT
+        CALL "TestOutput" USING "A" WS-LOG-TEXT
         GOBACK
     END-IF
 
@@ -81,6 +87,8 @@ SAVE-APPLICATION.
 
     IF WS-FILE-STATUS NOT = "00"
         DISPLAY "Error opening applications file."
+        MOVE "Error opening applications file." TO WS-LOG-TEXT
+        CALL "TestOutput" USING "A" WS-LOG-TEXT
         GOBACK
     END-IF
 
@@ -91,8 +99,13 @@ SAVE-APPLICATION.
 
     IF WS-FILE-STATUS = "00"
         DISPLAY "Successfully applied to job ID: " LNK-JOB-ID
+        MOVE SPACES TO WS-LOG-TEXT
+        STRING "Successfully applied to job ID: " DELIMITED BY SIZE LNK-JOB-ID DELIMITED BY SIZE INTO WS-LOG-TEXT END-STRING
+        CALL "TestOutput" USING "A" WS-LOG-TEXT
     ELSE
         DISPLAY "Error saving application."
+        MOVE "Error saving application." TO WS-LOG-TEXT
+        CALL "TestOutput" USING "A" WS-LOG-TEXT
     END-IF
 
     CLOSE JOB-APP-FILE.

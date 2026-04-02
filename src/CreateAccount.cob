@@ -18,6 +18,9 @@ WORKING-STORAGE SECTION.
 77 WS-FLAG-HAS-DIGIT PIC X VALUE "N".
 77 WS-FLAG-SPECIAL-CHAR PIC X VALUE "N".
 77 WS-CURRENT-CHAR PIC X VALUE SPACE.
+77 WS-USERNAME-LENGTH PIC 9(4) VALUE 30.
+77 WS-PASSWORD-LENGTH PIC 9(4) VALUE 12.
+77 WS-LOG-TEXT PIC X(300) VALUE SPACES.
 LINKAGE SECTION.
 77 LK-STORED-COUNT PIC 9.
 01 LK-CREDENTIALS-LIST.
@@ -29,6 +32,8 @@ PROCEDURE DIVISION USING LK-STORED-COUNT LK-CREDENTIALS-LIST.
 SIGNUP-FLOW.
     IF LK-STORED-COUNT = WS-LIMIT-ACCOUNTS
         DISPLAY "All permitted accounts have been created, please come back later"
+        MOVE "All permitted accounts have been created, please come back later" TO WS-LOG-TEXT
+        CALL "TestOutput" USING "A" WS-LOG-TEXT
         GOBACK
     END-IF
     PERFORM PROMPT-USERNAME
@@ -41,6 +46,8 @@ SIGNUP-FLOW.
     END-IF
     PERFORM STORE-NEW-CREDS
     DISPLAY "Account created successfully!"
+    MOVE "Account created successfully!" TO WS-LOG-TEXT
+    CALL "TestOutput" USING "A" WS-LOG-TEXT
     GOBACK.
 
 PROMPT-USERNAME.
@@ -51,22 +58,35 @@ PROMPT-USERNAME.
         ADD 1 TO WS-TRY-COUNT
         IF WS-TRY-COUNT > 10
             DISPLAY "Too many attempts. Returning to menu."
+            MOVE "Too many attempts. Returning to menu." TO WS-LOG-TEXT
+            CALL "TestOutput" USING "A" WS-LOG-TEXT
             MOVE SPACES TO WS-TEMP-USERNAME
             EXIT PARAGRAPH
         END-IF
         DISPLAY "Enter a username: "
-        ACCEPT WS-TEMP-USERNAME
+        MOVE "Enter a username: " TO WS-LOG-TEXT
+        CALL "TestOutput" USING "A" WS-LOG-TEXT
+        CALL "TestInput" USING WS-USERNAME-LENGTH WS-TEMP-USERNAME
         INSPECT WS-TEMP-USERNAME REPLACING ALL X"0D" BY SPACE
         INSPECT WS-TEMP-USERNAME REPLACING ALL X"0A" BY SPACE
         DISPLAY FUNCTION TRIM(WS-TEMP-USERNAME)
+        MOVE SPACES TO WS-LOG-TEXT
+        STRING FUNCTION TRIM(WS-TEMP-USERNAME) DELIMITED BY SIZE
+          INTO WS-LOG-TEXT
+        END-STRING
+        CALL "TestOutput" USING "A" WS-LOG-TEXT
         COMPUTE WS-USERNAME-LEN = FUNCTION LENGTH(FUNCTION TRIM(WS-TEMP-USERNAME))
         IF WS-USERNAME-LEN = 0
             DISPLAY "Username cannot be blank."
+            MOVE "Username cannot be blank." TO WS-LOG-TEXT
+            CALL "TestOutput" USING "A" WS-LOG-TEXT
             MOVE "Y" TO WS-NAME-ALREADY-USED
         ELSE
             PERFORM CHECK-USERNAME-TAKEN
             IF WS-NAME-ALREADY-USED = "Y"
                 DISPLAY "That username is already taken."
+                MOVE "That username is already taken." TO WS-LOG-TEXT
+                CALL "TestOutput" USING "A" WS-LOG-TEXT
             END-IF
         END-IF
     END-PERFORM.
@@ -90,22 +110,35 @@ PROMPT-PASSWORD.
         ADD 1 TO WS-TRY-COUNT
         IF WS-TRY-COUNT > 10
             DISPLAY "Too many attempts. Returning to menu."
+            MOVE "Too many attempts. Returning to menu." TO WS-LOG-TEXT
+            CALL "TestOutput" USING "A" WS-LOG-TEXT
             MOVE SPACES TO WS-TEMP-PASSWORD
             EXIT PARAGRAPH
         END-IF
         DISPLAY "Enter password: "
-        ACCEPT WS-TEMP-PASSWORD
+        MOVE "Enter password: " TO WS-LOG-TEXT
+        CALL "TestOutput" USING "A" WS-LOG-TEXT
+        CALL "TestInput" USING WS-PASSWORD-LENGTH WS-TEMP-PASSWORD
         INSPECT WS-TEMP-PASSWORD REPLACING ALL X"0D" BY SPACE
         INSPECT WS-TEMP-PASSWORD REPLACING ALL X"0A" BY SPACE
         DISPLAY FUNCTION TRIM(WS-TEMP-PASSWORD)
+        MOVE SPACES TO WS-LOG-TEXT
+        STRING FUNCTION TRIM(WS-TEMP-PASSWORD) DELIMITED BY SIZE
+          INTO WS-LOG-TEXT
+        END-STRING
+        CALL "TestOutput" USING "A" WS-LOG-TEXT
         COMPUTE WS-PASSWORD-LEN = FUNCTION LENGTH(FUNCTION TRIM(WS-TEMP-PASSWORD))
         IF WS-PASSWORD-LEN = 0
             DISPLAY "Password cannot be blank."
+            MOVE "Password cannot be blank." TO WS-LOG-TEXT
+            CALL "TestOutput" USING "A" WS-LOG-TEXT
             MOVE "N" TO WS-PASS-IS-GOOD
         ELSE
             PERFORM VALIDATE-PASSWORD
             IF WS-PASS-IS-GOOD = "N"
                 DISPLAY "Password does not meet requirements."
+                MOVE "Password does not meet requirements." TO WS-LOG-TEXT
+                CALL "TestOutput" USING "A" WS-LOG-TEXT
             END-IF
         END-IF
     END-PERFORM.

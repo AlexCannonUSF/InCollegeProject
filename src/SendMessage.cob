@@ -36,6 +36,9 @@ WORKING-STORAGE SECTION.
 77 WS-CONNECTIONS-FILE-STATUS  PIC XX VALUE "00".
 77 WS-MESSAGE-FILE-STATUS      PIC XX VALUE "00".
 01 WS-FORMATTED-TIMESTAMP      PIC X(20).
+77 WS-LOG-TEXT                 PIC X(300) VALUE SPACES.
+77 WS-RECIPIENT-LENGTH         PIC 9(4) VALUE 30.
+77 WS-MESSAGE-LENGTH           PIC 9(4) VALUE 200.
 01 WS-CURRENT-DATE-DATA.
        05 WS-CURRENT-DATE      PIC 9(8).
        05 WS-CURRENT-TIME      PIC 9(8).
@@ -47,8 +50,13 @@ LINKAGE SECTION.
 PROCEDURE DIVISION USING LNK-USER-NAME.
 MAIN.
        DISPLAY "Enter recipient's username (must be a connection): "
-       ACCEPT RECIPIENT-USERNAME
+    MOVE "Enter recipient's username (must be a connection): " TO WS-LOG-TEXT
+    CALL "TestOutput" USING "A" WS-LOG-TEXT
+    CALL "TestInput" USING WS-RECIPIENT-LENGTH RECIPIENT-USERNAME
        DISPLAY RECIPIENT-USERNAME
+    MOVE SPACES TO WS-LOG-TEXT
+    STRING FUNCTION TRIM(RECIPIENT-USERNAME) DELIMITED BY SIZE INTO WS-LOG-TEXT END-STRING
+    CALL "TestOutput" USING "A" WS-LOG-TEXT
 
        MOVE 'N' TO WS-IS-CONNECTED
        MOVE 'N' TO WS-EOF-CONNECTIONS
@@ -72,13 +80,22 @@ MAIN.
 
        IF WS-IS-CONNECTED = 'N'
            DISPLAY "User not found in your network. You can only message users you are connected with."
+           MOVE "User not found in your network. You can only message users you are connected with." TO WS-LOG-TEXT
+           CALL "TestOutput" USING "A" WS-LOG-TEXT
            DISPLAY "---------------------"
+           MOVE "---------------------" TO WS-LOG-TEXT
+           CALL "TestOutput" USING "A" WS-LOG-TEXT
            GOBACK
        END-IF
 
        DISPLAY "Enter your message (max 200 chars): "
-       ACCEPT MESSAGE-BODY
+       MOVE "Enter your message (max 200 chars): " TO WS-LOG-TEXT
+       CALL "TestOutput" USING "A" WS-LOG-TEXT
+       CALL "TestInput" USING WS-MESSAGE-LENGTH MESSAGE-BODY
        DISPLAY MESSAGE-BODY
+       MOVE SPACES TO WS-LOG-TEXT
+       STRING FUNCTION TRIM(MESSAGE-BODY) DELIMITED BY SIZE INTO WS-LOG-TEXT END-STRING
+       CALL "TestOutput" USING "A" WS-LOG-TEXT
 
        MOVE FUNCTION CURRENT-DATE TO WS-CURRENT-DATE-DATA
 
@@ -111,5 +128,12 @@ MAIN.
        CLOSE MESSAGE-FILE
 
        DISPLAY "Message sent to " FUNCTION TRIM(RECIPIENT-USERNAME) " successfully!".
+    MOVE SPACES TO WS-LOG-TEXT
+    STRING "Message sent to " DELIMITED BY SIZE
+        FUNCTION TRIM(RECIPIENT-USERNAME) DELIMITED BY SIZE
+        " successfully!" DELIMITED BY SIZE
+      INTO WS-LOG-TEXT
+    END-STRING
+    CALL "TestOutput" USING "A" WS-LOG-TEXT.
        GOBACK.
 END PROGRAM SendMessage.
