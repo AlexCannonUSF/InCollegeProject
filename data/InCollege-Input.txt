@@ -1,20 +1,64 @@
 2
 AlexCannon
 Abcdef1!
+2
+ConnectedUser
+Abcdef1!
 1
 AlexCannon
 Abcdef1!
-3
 1
-Software Engineering Intern
-Build AI tooling for USF computer science students
-OpenAI
-Tampa, FL
-25/hour
-2
+Alex
+Cannon
+USF
+Computer Science
+2027
+CS student at USF interested in AI and software engineering.
+
+
+
+
+
+
+9
 1
+ConnectedUser
+Abcdef1!
 1
-3
+Connected
+User
+USF
+Computer Science
+2027
+Interested in software engineering and campus tech projects.
+
+
+
+
+
+
+9
+1
+AlexCannon
+Abcdef1!
 4
+Connected User
+1
+9
+1
+ConnectedUser
+Abcdef1!
+5
+1
+9
+1
+AlexCannon
+Abcdef1!
 8
+1
+ConnectedUser
+Hi, I want to connect about software engineering opportunities at USF.
+2
+3
+9
 3
