@@ -1,0 +1,228 @@
+Welcome to InCollege!
+1) Log In
+2) Create Account
+3) Exit
+Choose an option: 
+2
+Enter a username: 
+Tester1
+Enter password: 
+Abcdef1!
+Account created successfully!
+Welcome to InCollege!
+1) Log In
+2) Create Account
+3) Exit
+Choose an option: 
+2
+Enter a username: 
+Tester2
+Enter password: 
+Abcdef1!
+Account created successfully!
+Welcome to InCollege!
+1) Log In
+2) Create Account
+3) Exit
+Choose an option: 
+1
+Enter username: 
+Tester1
+Enter password: 
+Abcdef1!
+You have successfully logged in
+Welcome, Tester1!
+1. Create/Edit My Profile
+2. View My Profile
+3. Job search/internship
+4. Find someone you know
+5. View my pending connection requests
+6. View my network
+7. Learn a new skill
+8. Messages
+9. Logout
+Enter your choice:
+1
+--- Create/Edit Profile ---
+Enter first name (required):
+Tester 1
+Enter last name (required):
+Sender
+Enter university (required):
+USF
+Enter major (required):
+CS
+Enter graduation year (YYYY):
+2026
+Enter About Me:
+Sender profile for pending request test.
+Experience #1 - Job Title (blank to skip):
+
+Experience #2 - Job Title (blank to skip):
+
+Experience #3 - Job Title (blank to skip):
+
+Education #1 - Degree (blank to skip):
+
+Education #2 - Degree (blank to skip):
+
+Education #3 - Degree (blank to skip):
+
+Profile created successfully.
+Profile saved successfully.
+1. Create/Edit My Profile
+2. View My Profile
+3. Job search/internship
+4. Find someone you know
+5. View my pending connection requests
+6. View my network
+7. Learn a new skill
+8. Messages
+9. Logout
+Enter your choice:
+9
+Welcome to InCollege!
+1) Log In
+2) Create Account
+3) Exit
+Choose an option: 
+1
+Enter username: 
+Tester2
+Enter password: 
+Abcdef1!
+You have successfully logged in
+Welcome, Tester2!
+1. Create/Edit My Profile
+2. View My Profile
+3. Job search/internship
+4. Find someone you know
+5. View my pending connection requests
+6. View my network
+7. Learn a new skill
+8. Messages
+9. Logout
+Enter your choice:
+1
+--- Create/Edit Profile ---
+Enter first name (required):
+Tester 2
+Enter last name (required):
+Receiver
+Enter university (required):
+USF
+Enter major (required):
+CS
+Enter graduation year (YYYY):
+2026
+Enter About Me:
+Receiver profile for pending request test.
+Experience #1 - Job Title (blank to skip):
+
+Experience #2 - Job Title (blank to skip):
+
+Experience #3 - Job Title (blank to skip):
+
+Education #1 - Degree (blank to skip):
+
+Education #2 - Degree (blank to skip):
+
+Education #3 - Degree (blank to skip):
+
+Profile created successfully.
+Profile saved successfully.
+1. Create/Edit My Profile
+2. View My Profile
+3. Job search/internship
+4. Find someone you know
+5. View my pending connection requests
+6. View my network
+7. Learn a new skill
+8. Messages
+9. Logout
+Enter your choice:
+9
+Welcome to InCollege!
+1) Log In
+2) Create Account
+3) Exit
+Choose an option: 
+1
+Enter username: 
+Tester1
+Enter password: 
+Abcdef1!
+You have successfully logged in
+Welcome, Tester1!
+1. Create/Edit My Profile
+2. View My Profile
+3. Job search/internship
+4. Find someone you know
+5. View my pending connection requests
+6. View my network
+7. Learn a new skill
+8. Messages
+9. Logout
+Enter your choice:
+4
+Enter the full name of the person you are looking for:
+Tester 2 Receiver
+
+--- Found User Profile ---
+Name: Tester 2 Receiver
+University: USF
+Major: CS
+Graduation Year: 2026
+About Me: Receiver profile for pending request test.
+Experience:
+Education:
+-------------------------
+
+1. Send Connection Request
+2. Back to Main Menu
+1
+Connection request sent successfully.
+1. Create/Edit My Profile
+2. View My Profile
+3. Job search/internship
+4. Find someone you know
+5. View my pending connection requests
+6. View my network
+7. Learn a new skill
+8. Messages
+9. Logout
+Enter your choice:
+8
+--- Messages Menu---
+1. Send a New Message
+2. View My Message
+3. Back to Main Menu
+Enter your choice: 
+1
+Enter recipient's username (must be a connection): 
+Tester2                       
+User not found in your network. You can only message users you are connected with.
+---------------------
+--- Messages Menu---
+1. Send a New Message
+2. View My Message
+3. Back to Main Menu
+Enter your choice: 
+3
+1. Create/Edit My Profile
+2. View My Profile
+3. Job search/internship
+4. Find someone you know
+5. View my pending connection requests
+6. View my network
+7. Learn a new skill
+8. Messages
+9. Logout
+Enter your choice:
+9
+Welcome to InCollege!
+1) Log In
+2) Create Account
+3) Exit
+Choose an option: 
+3

@@ -17,6 +17,12 @@ cobc -x -free -I src -o bin/InCollege \
   src/Search.cob \
   src/ViewRequests.cob \
   src/ViewNetwork.cob \
-  src/Jobs.cob
+  src/Jobs.cob \
+  src/ViewJobs.cob \
+  src/ApplyJob.cob \
+  src/MyApplications.cob \
+  src/Messages.cob \
+  src/SendMessage.cob \
+  src/ViewMessages.cob
 
 echo "Build complete: bin/InCollege"

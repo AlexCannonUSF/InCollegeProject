@@ -1,0 +1,7 @@
+: > "./data/accounts.dat"
+: > "./data/profiles.dat"
+: > "./data/PendingRequests.dat"
+cat "./tests/indexed_base_data.txt" > "./data/EstablishedConnections.dat"
+: > "./data/PendingRequests.dat"
+: > "./data/JobPostings.dat"
+: > "./data/JobApplications.dat"

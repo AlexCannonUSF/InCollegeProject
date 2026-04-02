@@ -81,13 +81,20 @@ MAIN.
     END-IF
 
     DISPLAY "--------------------"
-    DISPLAY "1. Return to Main Menu"
-    DISPLAY "Enter your choice:"
-    ACCEPT WS-RETURN-TO-MENU-CHOICE
-    DISPLAY FUNCTION TRIM(WS-RETURN-TO-MENU-CHOICE)
-    IF WS-RETURN-TO-MENU-CHOICE NOT = "1"
-        DISPLAY "Returning to Main Menu."
-    END-IF
+
+    PERFORM UNTIL WS-RETURN-TO-MENU-CHOICE = "1"
+       DISPLAY "1. Return to Main Menu"
+       DISPLAY "Enter your choice: "
+       ACCEPT WS-RETURN-TO-MENU-CHOICE
+       DISPLAY FUNCTION TRIM(WS-RETURN-TO-MENU-CHOICE)
+
+       IF WS-RETURN-TO-MENU-CHOICE NOT = "1"
+           DISPLAY "Invalid choice. Please enter 1 to return."
+           DISPLAY "--------------------"
+       END-IF
+    END-PERFORM
+
+    DISPLAY "Returning to Main Menu."
     GOBACK.
 
 LOAD-PROFILE-DATA.
