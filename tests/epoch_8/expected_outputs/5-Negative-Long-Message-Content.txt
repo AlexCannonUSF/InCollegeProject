@@ -55,7 +55,7 @@ CS
 Enter graduation year (YYYY):
 2026
 Enter About Me:
-fnjdsfds
+Sender profile for long message test.
 Experience #1 - Job Title (blank to skip):
 
 Experience #2 - Job Title (blank to skip):
@@ -116,7 +116,7 @@ CS
 Enter graduation year (YYYY):
 2026
 Enter About Me:
-fdskfndsk
+Receiver profile for long message test.
 Experience #1 - Job Title (blank to skip):
 
 Experience #2 - Job Title (blank to skip):
@@ -173,7 +173,7 @@ Name: Tester 2 Receiver
 University: USF
 Major: CS
 Graduation Year: 2026
-About Me: fdskfndsk
+About Me: Receiver profile for long message test.
 Experience:
 Education:
 -------------------------
@@ -235,24 +235,6 @@ Connection request from Tester 1 Sender accepted!
 8. Messages
 9. Logout
 Enter your choice:
-6
---- Your Network ---
-Connected with: Tester 1 Sender (University: USF, Major: CS)
---------------------
-1. Return to Main Menu
-Enter your choice: 
-1
-Returning to Main Menu.
-1. Create/Edit My Profile
-2. View My Profile
-3. Job search/internship
-4. Find someone you know
-5. View my pending connection requests
-6. View my network
-7. Learn a new skill
-8. Messages
-9. Logout
-Enter your choice:
 9
 Welcome to InCollege!
 1) Log In
@@ -286,7 +268,7 @@ Enter your choice:
 Enter recipient's username (must be a connection): 
 Tester2                       
 Enter your message (max 200 chars): 
-Hi, I want to know you, please                                                                                                                                                                          
+This message is intentionally longer than two hundred characters to verify how the messaging feature handles oversized input from a connected user in Epic 8 testing. It keeps going past the field limi
 Message sent to Tester2 successfully!
 --- Messages Menu---
 1. Send a New Message

@@ -1,0 +1,63 @@
+2
+Tester1
+Abcdef1!
+2
+Tester2
+Abcdef1!
+1
+Tester1
+Abcdef1!
+1
+Tester 1
+Sender
+USF
+CS
+2026
+Sender profile for long message test.
+
+
+
+
+
+
+9
+1
+Tester2
+Abcdef1!
+1
+Tester 2
+Receiver
+USF
+CS
+2026
+Receiver profile for long message test.
+
+
+
+
+
+
+9
+1
+Tester1
+Abcdef1!
+4
+Tester 2 Receiver
+1
+9
+1
+Tester2
+Abcdef1!
+5
+1
+9
+1
+Tester1
+Abcdef1!
+8
+1
+Tester2
+This message is intentionally longer than two hundred characters to verify how the messaging feature handles oversized input from a connected user in Epic 8 testing. It keeps going past the field limit so the tester can confirm truncation or rejection behavior in the stored message record.
+3
+9
+3

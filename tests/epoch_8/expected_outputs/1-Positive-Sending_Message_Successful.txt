@@ -240,8 +240,9 @@ Enter your choice:
 Connected with: Tester 1 Sender (University: USF, Major: CS)
 --------------------
 1. Return to Main Menu
-Enter your choice:
+Enter your choice: 
 1
+Returning to Main Menu.
 1. Create/Edit My Profile
 2. View My Profile
 3. Job search/internship
