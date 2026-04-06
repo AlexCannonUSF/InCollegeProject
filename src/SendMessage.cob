@@ -26,7 +26,7 @@ FILE SECTION.
            05 MESSAGE-SENDER       PIC X(30).
            05 MESSAGE-RECIPIENT    PIC X(30).
            05 MESSAGE-CONTENT      PIC X(200).
-           05 MESSAGE-TIMESTAMP    PIC X(20).
+           05 MESSAGE-TIMESTAMP    PIC X(25).
 
 WORKING-STORAGE SECTION.
 01 RECIPIENT-USERNAME          PIC X(30).
@@ -35,10 +35,17 @@ WORKING-STORAGE SECTION.
 01 WS-IS-CONNECTED             PIC X VALUE 'N'.
 77 WS-CONNECTIONS-FILE-STATUS  PIC XX VALUE "00".
 77 WS-MESSAGE-FILE-STATUS      PIC XX VALUE "00".
-01 WS-FORMATTED-TIMESTAMP      PIC X(20).
-01 WS-CURRENT-DATE-DATA.
-       05 WS-CURRENT-DATE      PIC 9(8).
-       05 WS-CURRENT-TIME      PIC 9(8).
+01 WS-FORMATTED-TIMESTAMP      PIC X(25).
+01 WS-CURRENT-DATE-DATA.       
+       05 WS-CURRENT-YEAR      PIC 9(4).
+       05 WS-CURRENT-MONTH     PIC 9(2).
+       05 WS-CURRENT-DAY       PIC 9(2).
+
+       05 WS-CURRENT-HOUR      PIC 9(2).
+       05 WS-CURRENT-MINUTE    PIC 9(2).
+       05 WS-CURRENT-SECOND      PIC 9(2).
+       05 WS-CURRENT-MILLISECOND PIC 9(2).
+
        05 WS-UNUSED            PIC X(5).
 
 LINKAGE SECTION.
@@ -83,11 +90,12 @@ MAIN.
        MOVE FUNCTION CURRENT-DATE TO WS-CURRENT-DATE-DATA
 
        STRING
-           WS-CURRENT-DATE(5:2)    "/"     *>month
-           WS-CURRENT-DATE(7:2)    "/"     *>day
-           WS-CURRENT-DATE(1:4)    " @ "   *>year
-           WS-CURRENT-TIME(1:2)    ":"     *>hour
-           WS-CURRENT-TIME(3:2)            *>mins
+           WS-CURRENT-MONTH    "/"     *>month
+           WS-CURRENT-DAY      "/"     *>day
+           WS-CURRENT-YEAR    " @ "   *>year
+           WS-CURRENT-HOUR    ":"     *>hour
+           WS-CURRENT-MINUTE  ":"     *>mins
+           WS-CURRENT-SECOND
            DELIMITED BY SIZE
            INTO WS-FORMATTED-TIMESTAMP
 
