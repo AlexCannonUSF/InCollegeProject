@@ -32,7 +32,7 @@ MAIN.
        GOBACK.
 
 DISPLAY-MENU.
-       DISPLAY "--- Messages Menu---"
+       DISPLAY "--- Messages Menu ---"
        DISPLAY "1. Send a New Message"
        DISPLAY "2. View My Message"
        DISPLAY "3. Back to Main Menu"
