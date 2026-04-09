@@ -79,9 +79,9 @@ MAIN.
     ELSE
         PERFORM DISPLAY-CONNECTION-LIST
     END-IF
-
     DISPLAY "--------------------"
 
+    MOVE SPACE TO WS-RETURN-TO-MENU-CHOICE
     PERFORM UNTIL WS-RETURN-TO-MENU-CHOICE = "1"
        DISPLAY "1. Return to Main Menu"
        DISPLAY "Enter your choice: "
